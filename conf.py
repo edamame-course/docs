@@ -44,8 +44,8 @@ source_suffix = '.txt'
 master_doc = 'index'
 
 # General information about the project.
-project = u'khmer-protocols'
-copyright = u'2013, C. Titus Brown et al.'
+project = u'EDAMAME Course'
+copyright = u'2014'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -175,10 +175,10 @@ htmlhelp_basename = 'labibidoc'
 # Various settings to pass to templates:
 
 html_context = {
-   "google_analytics_id" : 'UA-43434100-1',
-   "disqus_shortname" : 'khmer-protocols',
-   "github_base_account" : 'ged-lab',
-   "github_project" : 'khmer-protocols',
+   "google_analytics_id" : '',
+   "disqus_shortname" : '',
+   "github_base_account" : 'EDAMAME',
+   "github_project" : 'docs',
 }
 
 
@@ -198,8 +198,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'labibi.tex', u'labibi Documentation',
-   u'C. Titus Brown', 'manual'),
+  ('index', 'labibi.tex', u'Course Documentation',
+   u'EDAMAME Authors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
