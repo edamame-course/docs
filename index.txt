@@ -1,5 +1,5 @@
 ===============
-khmer protocols
+EDAMAME Course Materials a WORK IN PROGRESS (ported from GED web)
 ===============
 
 :version: 0.8.5 (unreleased)
