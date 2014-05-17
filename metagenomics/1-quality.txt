@@ -12,7 +12,6 @@ software and reboot the machine::
               pkg-config libncurses5-dev r-base-core r-cran-gplots python-matplotlib\
               sysstat && shutdown -r now
 
-
 .. note::
 
    Some of these commands may take a very long time.  Please see
