@@ -1,8 +1,8 @@
-===========================================
-0. Downloading and Saving Your Initial Data
-===========================================
+================================================================
+0. Getting Started With Downloading and Saving Your Initial Data
+================================================================
 
-We're going to run transcriptome assembly completely in the cloud,
+We're going to run our metagenome assembly completely in the cloud,
 because that way (a) you don't need to buy a big computer, and (b)
 I don't have to figure out all the special details of your own
 computer system.
