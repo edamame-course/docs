@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Examples &mdash; Demo 0.4.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootswatch-3.1.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.4.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Demo 0.4.0 documentation" href="index.html" />
+    <link rel="next" title="Sidebar Examples" href="sidebar.html" />
+    <link rel="prev" title="Sphinx Bootstrap Theme" href="README.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+  
+  <a href="https://github.com/ryan-roemer/sphinx-bootstrap-theme"
+     class="visible-desktop hidden-xs"><img
+    id="gh-banner"
+    style="position: absolute; top: 50px; right: 0; border: 0;"
+    src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"
+    alt="Fork me on GitHub"></a>
+  <script>
+    // Adjust banner height.
+    $(function () {
+      var navHeight = $(".navbar .container").css("height");
+      $("#gh-banner").css("top", navHeight);
+    });
+  </script>
+
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Demo</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="README.html">Sphinx Bootstrap Theme</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="README.html#introduction-and-demos">Introduction and Demos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#customization">Customization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#theme-notes">Theme Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#contributing">Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="README.html#licenses">Licenses</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#headings">Headings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admonitions">Admonitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tables">Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#code-documentation">Code Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sidebar.html">Sidebar Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sidebar.html#headings">Headings</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="subdir/index.html">Subdirectory Page</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="subdir/index.html#headings">Headings</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="HISTORY.html">History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-4-0">v0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-9">v0.3.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-8">v0.3.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-7">v0.3.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-6">v0.3.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-5">v0.3.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-4">v0.3.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-3">v0.3.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-2">v0.3.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-1">v0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-3-0">v0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-9">v0.2.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-8">v0.2.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-7">v0.2.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-6">v0.2.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-5">v0.2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-4">v0.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-3">v0.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-2">v0.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-1">v0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-2-0">v0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-8">v0.1.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-7">v0.1.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-4">v0.1.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-3">v0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-2">v0.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-1">v0.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-1-0">v0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-0-6">v0.0.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-0-4">v0.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-0-3">v0.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-0-2">v0.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HISTORY.html#v0-0-1">v0.0.1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TODO.html">Future Work</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="TODO.html#css-layout">CSS / Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TODO.html#infrastructure">Infrastructure</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Examples</a><ul>
+<li><a class="reference internal" href="#headings">Headings</a><ul>
+<li><a class="reference internal" href="#sub-heading">Sub-Heading</a><ul>
+<li><a class="reference internal" href="#sub-sub-heading">Sub-Sub-Heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code">Code</a></li>
+<li><a class="reference internal" href="#admonitions">Admonitions</a><ul>
+<li><a class="reference internal" href="#note">Note</a></li>
+<li><a class="reference internal" href="#todo">Todo</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
+<li><a class="reference internal" href="#danger">Danger</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+<li><a class="reference internal" href="#tables">Tables</a><ul>
+<li><a class="reference internal" href="#grid">Grid</a></li>
+<li><a class="reference internal" href="#simple">Simple</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#code-documentation">Code Documentation</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="README.html" title="Previous Chapter: Sphinx Bootstrap Theme"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Sphinx Bootstrap...</span>
+    </a>
+  </li>
+  <li>
+    <a href="sidebar.html" title="Next Chapter: Sidebar Examples"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Sidebar Examples &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/examples.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<p>Various examples of Bootstrap styling applied to Sphinx constructs. You can
+view the <a class="reference external" href="./_sources/examples.txt">source</a> of this page to see the specific
+reStructuredText used to create these examples.</p>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>This is a first level heading (<tt class="docutils literal"><span class="pre">h1</span></tt>).</p>
+<div class="section" id="sub-heading">
+<h3>Sub-Heading<a class="headerlink" href="#sub-heading" title="Permalink to this headline">¶</a></h3>
+<p>This is a second level heading (<tt class="docutils literal"><span class="pre">h2</span></tt>).</p>
+<div class="section" id="sub-sub-heading">
+<h4>Sub-Sub-Heading<a class="headerlink" href="#sub-sub-heading" title="Permalink to this headline">¶</a></h4>
+<p>This is a third level heading (<tt class="docutils literal"><span class="pre">h3</span></tt>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>The Sphinx Bootstrap Theme uses Bootstrap styling for <tt class="docutils literal"><span class="pre">inline</span> <span class="pre">code</span> <span class="pre">text</span></tt> and</p>
+<div class="highlight-python"><div class="highlight"><pre>multiline
+code text
+</pre></div>
+</div>
+<p>Here&#8217;s an included example with line numbers.</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span class="sd">&quot;&quot;&quot;Sphinx bootstrap theme.&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="n">VERSION</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">__version__</span> <span class="o">=</span> <span class="s">&quot;.&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">VERSION</span><span class="p">)</span>
+<span class="n">__version_full__</span> <span class="o">=</span> <span class="n">__version__</span>
+
+<span class="k">def</span> <span class="nf">get_html_theme_path</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return list of HTML theme paths.&quot;&quot;&quot;</span>
+    <span class="n">cur_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">__file__</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">cur_dir</span><span class="p">]</span>
+</pre></div>
+</td></tr></table></div>
+<p>It also works with existing Sphinx highlighting:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>Hello World<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Greet.&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="s">&quot;Hello World&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/**</span>
+<span class="cm"> * Greet.</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">hello</span><span class="p">()</span><span class="o">:</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="admonitions">
+<h2>Admonitions<a class="headerlink" href="#admonitions" title="Permalink to this headline">¶</a></h2>
+<p>The Sphinx Bootstrap Theme uses the Bootstrap <tt class="docutils literal"><span class="pre">alert</span></tt> classes for Sphinx
+admonitions.</p>
+<div class="section" id="note">
+<h3>Note<a class="headerlink" href="#note" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This is a <strong>note</strong>.</p>
+</div>
+</div>
+<div class="section" id="todo">
+<h3>Todo<a class="headerlink" href="#todo" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">This is a <strong>todo</strong>.</p>
+</div>
+</div>
+<div class="section" id="warning">
+<h3>Warning<a class="headerlink" href="#warning" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is a <strong>warning</strong>.</p>
+</div>
+</div>
+<div class="section" id="danger">
+<h3>Danger<a class="headerlink" href="#danger" title="Permalink to this headline">¶</a></h3>
+<div class="admonition danger">
+<p class="first admonition-title">Danger</p>
+<p class="last">This is <strong>danger</strong>-ous.</p>
+</div>
+</div>
+</div>
+<div class="section" id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<p>I have footnoted a first item <a class="footnote-reference" href="#f1" id="id1">[1]</a> and second item <a class="footnote-reference" href="#f2" id="id2">[2]</a>.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>My first footnote.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>My second footnote.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="tables">
+<h2>Tables<a class="headerlink" href="#tables" title="Permalink to this headline">¶</a></h2>
+<p>Here are some examples of Sphinx
+<a class="reference external" href="http://sphinx-doc.org/rest.html#rst-tables">tables</a>. The Sphinx Bootstrap
+Theme removes all Sphinx <tt class="docutils literal"><span class="pre">docutils</span></tt> classes and replaces them with the
+default Bootstrap <tt class="docutils literal"><span class="pre">table</span></tt> class.  You can add additional table classes
+using the Sphinx <tt class="docutils literal"><span class="pre">cssclass::</span></tt> directive, as demonstrated in the following
+tables.</p>
+<div class="section" id="grid">
+<h3>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h3>
+<p>A &#8220;<strong>bordered</strong>&#8221; grid table:</p>
+<table border="1" class="table-bordered docutils">
+<colgroup>
+<col width="43%" />
+<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Header1</th>
+<th class="head">Header2</th>
+<th class="head">Header3</th>
+<th class="head">Header4</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>row1, cell1</td>
+<td>cell2</td>
+<td>cell3</td>
+<td>cell4</td>
+</tr>
+<tr class="row-odd"><td>row2 ...</td>
+<td>...</td>
+<td>...</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>...</td>
+<td>...</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. cssclass:: table-bordered
+</pre></div>
+</div>
+</div>
+<div class="section" id="simple">
+<h3>Simple<a class="headerlink" href="#simple" title="Permalink to this headline">¶</a></h3>
+<p>A simple &#8220;<strong>striped</strong>&#8221; table:</p>
+<table border="1" class="table-striped docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">H1</th>
+<th class="head">H2</th>
+<th class="head">H3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cell1</td>
+<td>cell2</td>
+<td>cell3</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. cssclass:: table-striped
+</pre></div>
+</div>
+<p>And a &#8220;<strong>hoverable</strong>&#8221; table:</p>
+<table border="1" class="table-hover docutils">
+<colgroup>
+<col width="29%" />
+<col width="29%" />
+<col width="41%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">H1</th>
+<th class="head">H2</th>
+<th class="head">H3</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>cell1</td>
+<td>cell2</td>
+<td>cell3</td>
+</tr>
+<tr class="row-odd"><td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="row-even"><td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>which uses the directive:</p>
+<div class="highlight-python"><div class="highlight"><pre>.. cssclass:: table-hover
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="code-documentation">
+<h2>Code Documentation<a class="headerlink" href="#code-documentation" title="Permalink to this headline">¶</a></h2>
+<p>An example Python function.</p>
+<dl class="function">
+<dt id="format_exception">
+<tt class="descname">format_exception</tt><big>(</big><em>etype</em>, <em>value</em>, <em>tb</em><span class="optional">[</span>, <em>limit=None</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#format_exception" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format the exception with a traceback.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>etype</strong> &#8211; exception type</li>
+<li><strong>value</strong> &#8211; exception value</li>
+<li><strong>tb</strong> &#8211; traceback object</li>
+<li><strong>limit</strong> (<em>integer or None</em>) &#8211; maximum number of stack frames to show</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of strings</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p>An example JavaScript function.</p>
+<dl class="class">
+<dt id="MyAnimal">
+<em class="property">class </em><tt class="descname">MyAnimal</tt><big>(</big><em>name</em><span class="optional">[</span>, <em>age</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#MyAnimal" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> (<em>string</em>) &#8211; The name of the animal</li>
+<li><strong>age</strong> (<em>number</em>) &#8211; an optional age for the animal</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011-2014, Ryan Roemer.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
