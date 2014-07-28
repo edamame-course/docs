@@ -1,0 +1,234 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="pandoc" />
+    <meta name="author" content="Josh Herr" />
+    <meta name="date" content="2014-07-28" />
+
+    <title>EDAMAME Tutorials</title>
+    <style type="text/css">
+/*<![CDATA[*/
+    code {
+      white-space: pre;
+    }
+    /*]]>*/
+    </style>
+    <link rel="stylesheet" href="css/template.css" type="text/css" />
+</head>
+
+<body>
+    <div class="navbar navbar-static-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <span class="doc-title">EDAMAME course</span>
+
+                <ul class="nav pull-right doc-info">
+                    <li>
+                        <p class="navbar-text"></p>
+                    </li>
+
+                    <li>
+                        <p class="navbar-text">August 2014</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div id="TOC" class="span3">
+                <div class="well toc">
+                    <ul>
+                        <li class="nav-header">Table of Contents</li>
+                    </ul>
+
+                    <ul>
+                        <li><strong>Wednesday, August 13th, 2014</strong></li>
+
+                        <li><a href="#1">How to set up an EC2 Instance</a></li>
+
+                        <li><a href="#2">More</a></li>
+
+                        <li><strong>Thursday, August 14th, 2014</strong></li>
+
+                        <li><strong>Friday, August 15th, 2014</strong></li>
+
+                        <li><strong>Saturday, August 16th, 2014</strong></li>
+
+                        <li><strong>Sunday, August 17th, 2014</strong></li>
+
+                        <li><strong>Monday, August 18th, 2014</strong></li>
+
+                        <li><strong>Tuesday, August 19th, 2014</strong></li>
+
+                        <li><strong>Wednesday, August 20th, 2014</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="span9">
+                <h1 id="howtosetupanec2instance"><a href="#1">How to set up an <em>EC2 Instance</em></a></h1>
+
+                <p>Go to <a href="https://aws.amazon.com">Amazon Web Services</a> in a web browser.<br />
+                * * *<br />
+                Select ‘My Account/Console’ menu option ‘AWS Management Console.”<br />
+                <img src="img/AWS_Login.png" alt="AWS Login Image" /><br />
+                Log in with your username &amp; password. If you are new to <em>Amazon</em> then select <strong>&#8216;I am a new user.&#8217;</strong> and create an account (NOTE: You do need a credit card, but there is a free tier of usage).<br />
+                * * *<br />
+                Click on <strong>EC2</strong> (towards the upper left of the page).</p>
+
+                <p><img src="img/EC2_Services.png" alt="EC2 Instance" /><br />
+                * * *<br />
+                Click on the blue “Launch Instance” button (midway down the page)<br />
+                * * *</p>
+
+                <h4 id="step1:">Step 1:</h4>
+
+                <p>Select &#8220;Community AMIs&#8221; and search for EDAMAME and Click the blue &#8220;Select&#8221; button on the right.<br />
+                * * *<br />
+                <img src="img/EDAMAME.png" alt="Community AMIs" /><br />
+                * * *</p>
+
+                <h4 id="step2:">Step 2:</h4>
+
+                <p>Select the appropriate instance type. This depends on the size of the data you are working with.</p>
+
+                <p>For the purpose of this workshop we will choose <strong>m3.large</strong></p>
+
+                <p>Select <strong>Next: Configure Instance Details</strong><br />
+                * * *</p>
+
+                <h4 id="step3:">Step 3:</h4>
+
+                <p>At this step you can change specfic components of the instance.</p>
+
+                <p>For the purposes of this workshop we will not need to change any details.</p>
+
+                <p>Select <strong>Next: Add Storage</strong><br />
+                * * *</p>
+
+                <h4 id="step4:">Step 4:</h4>
+
+                <p>You can get up to 30 Gb of free storage on an EC2 Instance. If you have a particularly large data set, then you may want to request more data storage space.</p>
+
+                <p>For the purposes of this workshop, 30 Gb should be plenty of space for our data files.</p>
+
+                <p>Select <strong>Next: Tag Instance</strong><br />
+                * * *</p>
+
+                <h4 id="step5:">Step 5:</h4>
+
+                <p>As you become more adept at utilizing EC2 Instances, you may wish to create tags for them.</p>
+
+                <p>For the purposes of this workshop we will not need to create a tag of the instance.</p>
+
+                <p>Select <strong>Next: Configure Security Group</strong><br />
+                * * *</p>
+
+                <h4 id="step6:">Step 6:</h4>
+
+                <p>Here we <strong>will</strong> be making some changes.</p>
+
+                <ol>
+                    <li>Name the <strong>Security Group Name</strong> to something you like.</li>
+                </ol>
+
+                <p>&gt;We chose the name EDAMAME for the purposes of this workshop.</p>
+
+                <ol>
+                    <li>
+                        <p>If you would like to give a description of the Security Group, then please feel free to do so at this time.</p>
+                    </li>
+
+                    <li>
+                        <p>Next we will be adding some rules to the security group.</p>
+                    </li>
+
+                    <li>
+                        <p>Click on <strong>Add Rule</strong> and select HTTP.</p>
+                    </li>
+
+                    <li>
+                        <p>Click on <strong>Add Rule</strong> and select HTTPS.</p>
+                    </li>
+
+                    <li>
+                        <p>Click on <strong>Add Rule</strong> and select Custom TCP Rule.<br />
+                        &gt;Change the Port Range to <strong>8787</strong>.</p>
+                    </li>
+
+                    <li>
+                        <p>Click on <strong>Add Rule</strong> and select Custom TCP Rule.<br />
+                        &gt;Change the Port Range to <strong>8888</strong> .</p>
+                    </li>
+                </ol>
+
+                <p>The Security Group Configuration should look like the image below once you add the above rules.</p>
+
+                <figure>
+                    <img src="img/ConfigureSecurityGroup.png" alt="Configure Security Group" />
+
+                    <figcaption>Configure Security Group</figcaption>
+                </figure>
+                <hr />
+
+                <h4 id="clickonthebluereviewandlaunchbutton">Click on the blue <em>Review and Launch</em> button!</h4>
+
+                <p>If you would like to, take the time to double check that everything is setup the way you intended.</p>
+
+                <p>Once you are sure that the EC2 Instance is set up the way you would like it to be set up, then click on the blue <strong>Launch</strong> button.<br />
+                * * *</p>
+
+                <h4 id="keypairpop-up">Key Pair Pop-up</h4>
+
+                <p>If you already have a key pair and you wish to use it, then select <strong>Choose an existing key pair</strong>, pick your desired key, select the acknowledgement <strong>(making sure you have access to .pem file)</strong> and then click on the blue <strong>Launch Instances</strong> button.</p>
+
+                <p>If you do not have an existing key pair or you do not want to use one you already have, then select <strong>Create a new key pair</strong>. Give the key pair a name; the below example&#8217;s key pair&#8217;s name is &#8220;EDAMAME&#8221;.</p>
+
+                <ul>
+                    <li>
+                        <p>Click on <strong>Download Key Pair</strong> and save it to a known location.</p>
+                    </li>
+
+                    <li>
+                        <p>Click on the blue <strong>Launch Instances</strong> button.<br />
+                        <img src="img/KeyPair.png" alt="Key Pair Pop-up" /></p>
+                    </li>
+                </ul>
+                <hr />
+
+                <h4 id="ec2dashboard-instances">EC2 Dashboard - Instances</h4>
+
+                <p>At this point you will be brought to your list of Instances on the EC2 Dashboard.<br />
+                The instance you just launched will have a yellow pending circle next to it.<br />
+                When the yellow cirle changes to a green circle, your instance is up and running.</p>
+
+                <blockquote>
+                    <p>In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.</p>
+                </blockquote>
+
+                <figure>
+                    <img src="img/EC2Dashboard.png" alt="EC2 Dashboard Instance List" />
+
+                    <figcaption>EC2 Dashboard Instance List</figcaption>
+                </figure>
+
+                <p>Locate the Public DNS for your instance. It should look something like this:</p>
+
+                <blockquote>
+                    <p>ec2-<strong>some set of numbers</strong>.compute&#8216;41.amazonaws.com.</p>
+                </blockquote>
+
+                <p>At some point you will need to highlight and copy the Public DNS.<br />
+                This is the link to your specific instance that you started at Amazon Web Services (AWS).</p>
+
+                <p><br /></p>
+
+                <h1 id="setup"><a href="#2">More</a></h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
