@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+        <title>MobaXTerm - EDAMAME Tutorials</title>
+
+        <link href="../../css/bootstrap-3.0.3.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/prettify-1.0.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../..">EDAMAME Tutorials</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            <!-- Main navigation -->
+            <ul class="nav navbar-nav">
+            
+            
+                <li >
+                    <a href="../..">Home</a>
+                </li>
+            
+            
+            
+                <li class="dropdown active">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Before We Begin <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../intro_to_ec2_instance/">Setting Up An Amazon EC2 Instance</a>
+                        </li>
+                    
+                        <li class="active">
+                            <a href="./">MobaXTerm</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Wednesday - August 13th, 2014 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                    
+                        <li >
+                            <a href="../../13/test/">Test</a>
+                        </li>
+                    
+                    </ul>
+                </li>
+            
+            
+            </ul>
+
+            <!-- Search, Navigation and Repo links -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li >
+                    <a rel="next" href="../intro_to_ec2_instance/">
+                        <i class="fa fa-arrow-left"></i> Previous
+                    </a>
+                </li>
+                <li >
+                    <a rel="prev" href="../../13/test/">
+                        Next <i class="fa fa-arrow-right"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/edamame-course/docs">
+                        
+                            <i class="fa fa-github"></i>
+                        
+                        GitHub
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#windows-users-follow-these-directions-to-install-mobaxterm-and-access-your-ec2-instance">Windows Users follow these directions to install MobaXterm and access your EC2 Instance</a></li>
+        
+    
+        <li class="main "><a href="#mac-linux-users">MAC &amp; Linux users</a></li>
+        
+    
+    </ul>
+</div></div>
+            <div class="col-md-9" role="main">
+
+<h3 id="windows-users-follow-these-directions-to-install-mobaxterm-and-access-your-ec2-instance">Windows Users follow these directions to install MobaXterm and access your EC2 Instance</h3>
+<p>Download <a href="http://mobaxterm.mobatek.net/MobaXterm_Setup_7.1.msi">MobaXterm Terminal</a></p>
+<p>Here is a nice <a href="http://mobaxterm.mobatek.net/">MobaXterm Introduction</a> (if you are interested).</p>
+<hr />
+<p>Open MobaXterm after it is finished installing
+<img alt="What MobaXterm looks like" src="https://github.com/KWHall/DataCarpentry/raw/master/Pictures/DataCarpentry/MobaXterm.png" /></p>
+<p>Click on Session</p>
+<p>Click on SSH</p>
+<hr />
+<p>Under the Basic Settings</p>
+<p>Enter the Public DNS from your EC2 Instance. It should look like: ec2-<strong>UNIQUE SET OF NUMBERS</strong>.compute-1.amazonaws.com</p>
+<p>Check the box next to "Specify username" and fill in the username as "ubuntu"</p>
+<hr />
+<p>Click the Advanced SSH settings tab</p>
+<p>Check the box next to "Use private key" and specify the location <strong>key pair</strong> you created when you launched your instance.</p>
+<p>Click <strong>"OK"</strong>
+<img alt="How to start a sesssion" src="https://github.com/KWHall/DataCarpentry/raw/master/Pictures/DataCarpentry/Start_Session.png" /></p>
+<hr />
+<h3 id="mac-linux-users">MAC &amp; Linux users</h3>
+<p>Open a Terminal </p>
+<blockquote>
+<p>MAC Users: Terminal is under: Applications --&gt; Utilities
+Linux Users: Press Ctrl + Alt + t</p>
+</blockquote>
+<p>You will need to know the location of your <strong>key pair</strong> you created when you launched your instance.</p>
+<p>You will need to know what your Public DNS is for your EC2 Instance.</p>
+<p>Enter the following into the terminal:</p>
+<pre class="prettyprint well"><code>ssh -i **/path/to/your/key/**EDAMAME.pem ec2-user@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+</code></pre>
+
+<hr />
+<p>SUCCESS! You have now logged into your computer in the cloud!</p>
+</div>
+        </div>
+
+        
+
+        <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/prettify-1.0.min.js"></script>
+        <script src="../../js/base.js"></script>
+    </body>
+</html>
