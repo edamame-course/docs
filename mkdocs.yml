@@ -8,6 +8,7 @@ theme: bootstrap
 
 pages:
 - ['index.md', 'Home']
+- ['before/macqiime_installation.md', 'Before We Begin', 'Installing MacQIIME on MacOSX']
 - ['before/intro_to_ec2_instance.md', 'Before We Begin', 'Setting Up An Amazon EC2 Instance']
 - ['before/mobaxterm.md', 'Before We Begin', 'MobaXTerm']
 - ['13/test.md', 'Wednesday - August 13th, 2014', 'Test']
