@@ -7,7 +7,7 @@ site_flavicon: null
 theme: bootstrap
 
 pages:
-- ['index.md', 'Home']
+- ['index.md', 'Tutorial Home']
 - ['before/macqiime_installation.md', 'Before We Begin', 'Installing MacQIIME on MacOSX']
 - ['before/intro_to_ec2_instance.md', 'Before We Begin', 'Setting Up An Amazon EC2 Instance']
 - ['before/mobaxterm.md', 'Before We Begin', 'MobaXTerm']
