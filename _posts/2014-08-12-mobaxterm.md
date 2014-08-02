@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Windows Users: Using MobaXterm to access your EC2 Instance"
+title: "Connecting to your EC2 Instance"
 category: tut
 date: 2014-08-12 18:44:36
 order: 4
@@ -36,7 +36,7 @@ Click **"OK"**
 
 * * *
 
-###MAC & Linux users
+#### MAC & Linux users
 Open a Terminal
 >  MAC Users: Terminal is under: Applications --> Utilities
 >Linux Users: Press Ctrl + Alt + t

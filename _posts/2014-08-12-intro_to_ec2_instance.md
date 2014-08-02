@@ -6,12 +6,11 @@ date: 2014-08-12 08:55:36
 order: 3
 ---
 
-## How to set up an _EC2 Instance_
 
 Go to [Amazon Web Services](https://aws.amazon.com) in a web browser.
 * * *
 Select ‘My Account/Console’ menu option ‘AWS Management Console.”
-![AWS Login Image](img/aws_login.png)
+![AWS Login Image](../img/aws_login.png)
 Log in with your username & password. If you are new to _Amazon_ then select **'I am a new user.'** and create an account (NOTE: You do need a credit card, but there is a free tier of usage).
 * * *
 Click on **EC2** (towards the upper left of the page).
