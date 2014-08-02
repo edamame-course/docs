@@ -1,9 +1,7 @@
 ---
 layout: page
 title: "Connecting to your EC2 Instance"
-category: tut
 date: 2014-08-12 18:44:36
-order: 4
 ---
 
 #### Windows Users follow these directions to install MobaXterm and access your EC2 Instance

@@ -29,47 +29,41 @@
                 
                 
                     <div id=navigation class=span2>
-                        <ul class="nav nav-list">
-    <li><a href="/">Home</a></li>
-    
-        
-        
-
-        
-    
-        
-        
-
-        
-            
-                <li class=nav-header>Tutorial</li>
-            
-            <li data-order="5"><a href="/tut/test.html">Test Document</a></li>
-        
-            
-            <li data-order="4"><a href="/tut/mobaxterm.html">Windows Users: Using MobaXterm to access your EC2 Instance</a></li>
-        
-            
-            <li data-order="3"><a href="/tut/intro_to_ec2_instance.html">How to set up an Amazon EC2 Instance</a></li>
-        
-    
-        
-        
-
-        
-    
-        
-        
-
-        
-    
-        
-        
-
-        
-    
-<!-- List additional links. It is recommended to add a divider
-    e.g. <li class=divider></li> first to break up the content. -->
+                        
+<ul class="nav nav-list">
+    <li class=divider></li>
+    <li class=nav-header>HOME</li>
+    <li><a href="http://edamame-course.org">EDAMAME course materials</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Before We Begin</li>
+    <li><a href="macqiime_installation.html">MacOS: Installing MacQIIME</a></li>
+    <li><a href="intro_to_ec2_instance.html">Setting up an EC2 instance</a></li>
+    <li><a href="mobaxterm.html">Connecting to your EC2 instance</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 13th</li>
+    <li><a href="test.html">EDAMAME course home page</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Thursday, August 14th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Friday, August 15th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Saturday, August 16th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Sunday, August 17th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Monday, August 18th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Tuesday, August 19th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 20th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
 </ul>
 
                     </div>
@@ -81,21 +75,19 @@
     </h2>
 </div>
 
-<h2 id="how-to-set-up-an-ec2-instance">How to set up an <em>EC2 Instance</em></h2>
-
 <p>Go to <a href="https://aws.amazon.com">Amazon Web Services</a> in a web browser.</p>
 
 <hr>
 
 <p>Select ‘My Account/Console’ menu option ‘AWS Management Console.”
-<img src="img/aws_login.png" alt="AWS Login Image">
+<img src="/img/aws/aws_login.png" alt="AWS Login Image">
 Log in with your username &amp; password. If you are new to <em>Amazon</em> then select <strong>&#39;I am a new user.&#39;</strong> and create an account (NOTE: You do need a credit card, but there is a free tier of usage).</p>
 
 <hr>
 
 <p>Click on <strong>EC2</strong> (towards the upper left of the page).</p>
 
-<p><img src="https://github.com/KWHall/DataCarpentry/raw/master/Pictures/EC2_Services.png" alt="EC2 Instance"></p>
+<p><img src="/img/aws/ec2_services.png" alt="EC2 Instance"></p>
 
 <hr>
 
@@ -109,7 +101,7 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <hr>
 
-<p><img src="https://github.com/KWHall/DataCarpentry/raw/039359bd5e0e53af48ecf420bc6dfc4c34c83a41/Pictures/EDAMAME.png" alt="Community AMIs"></p>
+<p><img src="img/aws/ami_choice.png" alt="Community AMIs"></p>
 
 <hr>
 
@@ -187,7 +179,7 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <p>The Security Group Configuration should look like the image below once you add the above rules.</p>
 
-<p><img src="https://github.com/KWHall/DataCarpentry/raw/5e7d746e404ec0e147eaeb6f3bd22496f7f78ca6/Pictures/ConfigureSecurityGroup.png" alt="Configure Security Group"></p>
+<p><img src="img/aws/configure_security_group.png" alt="Configure Security Group"></p>
 
 <hr>
 
@@ -208,7 +200,7 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 <ul>
 <li><p>Click on <strong>Download Key Pair</strong> and save it to a known location.</p></li>
 <li><p>Click on the blue <strong>Launch Instances</strong> button.
-<img src="https://github.com/KWHall/DataCarpentry/raw/master/Pictures/KeyPair.png" alt="Key Pair Pop-up"></p></li>
+<img src="img/aws/key_pair.png" alt="Key Pair Pop-up"></p></li>
 </ul>
 
 <hr>
@@ -223,7 +215,7 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 <p>In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.</p>
 </blockquote>
 
-<p><img src="https://github.com/KWHall/DataCarpentry/raw/master/Pictures/EC2Dashboard.png" alt="EC2 Dashboard Instance List"></p>
+<p><img src="img/aws/ec2_dashboard.png" alt="EC2 Dashboard Instance List"></p>
 
 <p>Locate the Public DNS for your instance. It should look something like this:</p>
 

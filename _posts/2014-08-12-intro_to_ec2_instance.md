@@ -1,28 +1,26 @@
 ---
 layout: page
 title: "How to set up an Amazon EC2 Instance"
-category: tut
 date: 2014-08-12 08:55:36
-order: 3
 ---
 
 
 Go to [Amazon Web Services](https://aws.amazon.com) in a web browser.
 * * *
 Select ‘My Account/Console’ menu option ‘AWS Management Console.”
-![AWS Login Image](../img/aws_login.png)
+![AWS Login Image](/img/aws/aws_login.png)
 Log in with your username & password. If you are new to _Amazon_ then select **'I am a new user.'** and create an account (NOTE: You do need a credit card, but there is a free tier of usage).
 * * *
 Click on **EC2** (towards the upper left of the page).
 
-![EC2 Instance](https://github.com/KWHall/DataCarpentry/raw/master/Pictures/EC2_Services.png)
+![EC2 Instance](/img/aws/ec2_services.png)
 * * *
 Click on the blue “Launch Instance” button (midway down the page)
 * * *
 ####Step 1:
 Select "Community AMIs" and search for EDAMAME and Click the blue "Select" button on the right.
 * * *
-![Community AMIs](https://github.com/KWHall/DataCarpentry/raw/039359bd5e0e53af48ecf420bc6dfc4c34c83a41/Pictures/EDAMAME.png)
+![Community AMIs](img/aws/ami_choice.png)
 * * *
 ####Step 2:
 Select the appropriate instance type. This depends on the size of the data you are working with.
@@ -75,7 +73,7 @@ Here we **will** be making some changes.
 
 The Security Group Configuration should look like the image below once you add the above rules.
 
-![Configure Security Group](https://github.com/KWHall/DataCarpentry/raw/5e7d746e404ec0e147eaeb6f3bd22496f7f78ca6/Pictures/ConfigureSecurityGroup.png)
+![Configure Security Group](img/aws/configure_security_group.png)
 
 * * *
 ####Click on the blue _Review and Launch_ button!
@@ -94,7 +92,7 @@ If you do not have an existing key pair or you do not want to use one you alread
 * Click on **Download Key Pair** and save it to a known location.
 
 * Click on the blue **Launch Instances** button.
-![Key Pair Pop-up](https://github.com/KWHall/DataCarpentry/raw/master/Pictures/KeyPair.png)
+![Key Pair Pop-up](img/aws/key_pair.png)
 
 * * *
 ####EC2 Dashboard - Instances
@@ -104,7 +102,7 @@ At this point you will be brought to your list of Instances on the EC2 Dashboard
 >In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.
 
 
-![EC2 Dashboard Instance List](https://github.com/KWHall/DataCarpentry/raw/master/Pictures/EC2Dashboard.png)
+![EC2 Dashboard Instance List](img/aws/ec2_dashboard.png)
 
 Locate the Public DNS for your instance. It should look something like this:
 >ec2-**some set of numbers**.compute-1.amazonaws.com.

@@ -1,9 +1,7 @@
 ---
 layout: default
-title: "EDAMAME Course Materials"
+title: "Welcome to EDAMAME!"
 ---
-
-## Welcome to EDAMAME!
 
 For more about this course, see [edamame-course.org](http://edamame-course.org).
 
