@@ -17,11 +17,12 @@ You are also welcome to try the terminal emulator of your choice.
 
 3. Start a new session by clicking on **Session**, then click on **SSH**
 
-4. Under the basic settings, enter the public DNS from your EC2 Instance. It should look like: ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+4. Under the basic settings, enter the Public DNS from your EC2 Instance. It should look like: 
+  ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 
 5. Check the box next to "Specify username" and fill in the username as "ubuntu"
 
 6. Click the Advanced SSH settings tab and check the box next to "Use private key" and specify the location **key pair** you created when you launched your instance through the Amazon AWS website and then click **"OK"**
 ![How to start a sesssion](img/moba/start_session.png)
 
-7. SUCCESS! You should now be connection!
+7. SUCCESS! You should now be connected!
