@@ -38,7 +38,6 @@
     <li><a href="mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
     <li><a href="mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
     <li><a href="macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
-    <li><a href="qiime-additions.html">All Users: Installing extras for QIIME</a></li>
     <li class=divider></li>
     <li class=nav-header>Wednesday, August 13th</li>
     <li><a href="test.html">Test</a></li>
@@ -77,33 +76,21 @@
 
 <p>Go to <a href="https://aws.amazon.com">Amazon Web Services</a> in a web browser.</p>
 
-<hr>
-
 <p>Select ‘My Account/Console’ menu option ‘AWS Management Console.”
-<img src="/img/aws/aws_login.png" alt="AWS Login Image">
+<img src="img/aws/aws_login.png" alt="AWS Login Image">
 Log in with your username &amp; password. If you are new to <em>Amazon</em> then select <strong>&#39;I am a new user.&#39;</strong> and create an account (NOTE: You do need a credit card, but there is a free tier of usage).</p>
-
-<hr>
 
 <p>Click on <strong>EC2</strong> (towards the upper left of the page).</p>
 
-<p><img src="/img/aws/ec2_services.png" alt="EC2 Instance"></p>
-
-<hr>
+<p><img src="img/aws/ec2_services.png" alt="EC2 Instance"></p>
 
 <p>Click on the blue “Launch Instance” button (midway down the page)</p>
-
-<hr>
 
 <h4 id="step-1:">Step 1:</h4>
 
 <p>Select &quot;Community AMIs&quot; and search for EDAMAME and Click the blue &quot;Select&quot; button on the right.</p>
 
-<hr>
-
 <p><img src="img/aws/ami_choice.png" alt="Community AMIs"></p>
-
-<hr>
 
 <h4 id="step-2:">Step 2:</h4>
 
@@ -113,8 +100,6 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <p>Select <strong>Next: Configure Instance Details</strong></p>
 
-<hr>
-
 <h4 id="step-3:">Step 3:</h4>
 
 <p>At this step you can change specfic components of the instance.</p>
@@ -122,8 +107,6 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 <p>For the purposes of this workshop we will not need to change any details.</p>
 
 <p>Select <strong>Next: Add Storage</strong></p>
-
-<hr>
 
 <h4 id="step-4:">Step 4:</h4>
 
@@ -133,8 +116,6 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <p>Select <strong>Next: Tag Instance</strong></p>
 
-<hr>
-
 <h4 id="step-5:">Step 5:</h4>
 
 <p>As you become more adept at utilizing EC2 Instances, you may wish to create tags for them.</p>
@@ -143,53 +124,32 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <p>Select <strong>Next: Configure Security Group</strong></p>
 
-<hr>
-
 <h4 id="step-6:">Step 6:</h4>
 
 <p>Here we <strong>will</strong> be making some changes.</p>
 
 <ol>
-<li>Name the <strong>Security Group Name</strong> to something you like.</li>
-</ol>
-
-<blockquote>
-<p>We chose the name EDAMAME for the purposes of this workshop.</p>
-</blockquote>
-
-<ol>
-<li>If you would like to give a description of the Security Group, then please feel free to do so at this time.</li>
-<li>Next we will be adding some rules to the security group.</li>
+<li><p>Name the <strong>Security Group Name</strong> to something you like.  We chose the name EDAMAME for the purposes of this workshop.</p></li>
+<li><p>If you would like to give a description of the Security Group, then please feel free to do so at this time.</p></li>
+<li><p>Next we will be adding some rules to the security group.</p></li>
 </ol>
 
 <ul>
 <li><p>Click on <strong>Add Rule</strong> and select HTTP.</p></li>
 <li><p>Click on <strong>Add Rule</strong> and select HTTPS.</p></li>
-<li><p>Click on <strong>Add Rule</strong> and select Custom TCP Rule.</p>
-
-<blockquote>
-<p>Change the Port Range to <strong>8787</strong>.</p>
-</blockquote></li>
-<li><p>Click on <strong>Add Rule</strong> and select Custom TCP Rule.</p>
-
-<blockquote>
-<p>Change the Port Range to <strong>8888</strong> .</p>
-</blockquote></li>
+<li><p>Click on <strong>Add Rule</strong> and select Custom TCP Rule. Change the Port Range to <strong>8787</strong>.</p></li>
+<li><p>Click on <strong>Add Rule</strong> and select Custom TCP Rule. Change the Port Range to <strong>8888</strong> .</p></li>
 </ul>
 
 <p>The Security Group Configuration should look like the image below once you add the above rules.</p>
 
 <p><img src="img/aws/configure_security_group.png" alt="Configure Security Group"></p>
 
-<hr>
-
 <h4 id="click-on-the-blue-review-and-launch-button!">Click on the blue <em>Review and Launch</em> button!</h4>
 
 <p>If you would like to, take the time to double check that everything is setup the way you intended.</p>
 
 <p>Once you are sure that the EC2 Instance is set up the way you would like it to be set up, then click on the blue <strong>Launch</strong> button.</p>
-
-<hr>
 
 <h4 id="key-pair-pop-up">Key Pair Pop-up</h4>
 
@@ -199,21 +159,14 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 
 <ul>
 <li><p>Click on <strong>Download Key Pair</strong> and save it to a known location.</p></li>
-<li><p>Click on the blue <strong>Launch Instances</strong> button.
-<img src="img/aws/key_pair.png" alt="Key Pair Pop-up"></p></li>
+<li><p>Click on the blue <strong>Launch Instances</strong> button.</p></li>
 </ul>
 
-<hr>
+<p><img src="img/aws/key_pair.png" alt="Key Pair Pop-up"></p>
 
 <h4 id="ec2-dashboard---instances">EC2 Dashboard - Instances</h4>
 
-<p>At this point you will be brought to your list of Instances on the EC2 Dashboard.
- The instance you just launched will have a yellow pending circle next to it.
- When the yellow cirle changes to a green circle, your instance is up and running.</p>
-
-<blockquote>
-<p>In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.</p>
-</blockquote>
+<p>At this point you will be brought to your list of Instances on the EC2 Dashboard. The instance you just launched will have a yellow pending circle next to it. When the yellow cirle changes to a green circle, your instance is up and running. In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.</p>
 
 <p><img src="img/aws/ec2_dashboard.png" alt="EC2 Dashboard Instance List"></p>
 
@@ -223,8 +176,7 @@ Log in with your username &amp; password. If you are new to <em>Amazon</em> then
 <p>ec2-<strong>some set of numbers</strong>.compute-1.amazonaws.com.</p>
 </blockquote>
 
-<p>At some point you will need to highlight and copy the Public DNS.
-This is the link to your specific instance that you started at Amazon Web Services (AWS).</p>
+<p>At some point you will need to highlight and copy the Public DNS. This is the link to your specific instance that you started at Amazon Web Services (AWS).</p>
 
 
                     </div>

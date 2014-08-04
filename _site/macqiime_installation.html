@@ -14,112 +14,198 @@ title: &quot;MacOS Users: Installing MacQIIME&quot;</p>
 <h3 id="installing-macqiime">Installing MacQIIME</h3>
 
 <ol>
-<li>
-Download the tgz archive: [http://www.wernerlab.org/software/macqiime](http://www.wernerlab.org/software/macqiime).  The current version of QIIME is 1.8.0.  Save the archive (do not open with Archive Utility).  It should automatically be saved in the Downloads directory.
-
-![IMG1](img/macqiime/IMG1.png)
-</li>
-
-<li>
-Open your computer's terminal. <strong>Applications -> Utilities -> Terminal</strong>
-</li>
-<li>
-Navigate to the Downloads directory (where the archive was saved), using the `cd` (change directory) command:
-
-`cd ~/Downloads`
-</li>
-<li>
-Check that the file was not corrupted using the “md5” command (message digest 5).  This command provides the sum of the “hashes” to determine the size of the file.  The idea is that if the file were corrupted during download (missing some pieces), the output will be different.  See the “MD5 hashes” section of [this Wikipedia article for an example](http://en.wikipedia.org/wiki/MD5):
-
-To do this, you would type:
-
-`md5 MacQIIME_1.8.0-20140103_OS10.6.tgz`
-
-The computer should return the following:
-
-`MD5 (MacQIIME_1.8.0-20140103_OS10.6.tgz) = 9f1175e0a0ba71ebe6bb5d9b7bb0e6c2`
-
-Check carefully that the number above matches exactly your output.  If it does not, discard the downloaded file (move to trash, empty trash), and start over with an uncorrupted or complete download.
-</li>
-<li>
-Now you will want to unarchive using the tar command:
-
-`tar -xvf MacQIIME_1.8.0-20140103_OS10.6.tgz`
-
-This will show a list of file contents as they are extracted from the archive:
-
-![IMG2](img/macqiime/IMG2.png)
-
-Unarchiving the file will automatically create a new directory called “MacQIIME_1.8.0-20140103_OS10.6”.  Use `cd` to move into that directory:
-
-`cd MacQIIME_1.8.0-20140103_OS10.6/`
-</li>
-<li>
-Use the “ls” command (list) to view the files in that directory:
-
-`ls`
-
-The computer will return the following:
-
-`README.txt install.s   macqiime    scripts`
-
-Run the install.s script to install most of what is needed to run QIIME. Use the command:
-
-`./install.s`
-
-Then, the script will prompt you to agree to write-over the old directory.
-
-![IMG3](img/macqiime/IMG3.png)
-
-As we are starting from scratch this is okay, and you may hit enter.  In the future, if you upgrade to a new QIIME version, it is recommend that you save the older version before upgrading.  [There are directions for saving the old version of MacQIIME](http://www.wernerlab.org/software/macqiime/macqiime-installation).
-
-Then, you will be prompted for a password.  This is where administrator access (`sudo`) is needed:
-
-![IMG4](img/macqiime/IMG4.png)
-
-After you type in your password, and the script will do its thing!
-
-At the end, the terminal look like:
-
-![IMG5](img/macqiime/IMG5.png)
-</li>
+<li>Download the tgz archive: <a href="http://www.wernerlab.org/software/macqiime">http://www.wernerlab.org/software/macqiime</a>.  The current version of QIIME is 1.8.0.  Save the archive (do not open with Archive Utility).  It should automatically be saved in the Downloads directory.</li>
 </ol>
+
+<p><img src="img/macqiime/IMG1.png" alt="IMG1"></p>
+
+<p>Open your computer&#39;s terminal. <strong>Applications -&gt; Utilities -&gt; Terminal</strong></p>
+
+<p>Navigate to the Downloads directory (where the archive was saved), using the <code>cd</code> (change directory) command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd ~/Downloads
+</code></pre></div>
+<ol>
+<li>Check that the file was not corrupted using the “md5” command (message digest 5).  This command provides the sum of the “hashes” to determine the size of the file.  The idea is that if the file were corrupted during download (missing some pieces), the output will be different.  See the “MD5 hashes” section of <a href="http://en.wikipedia.org/wiki/MD5">this Wikipedia article for an example</a>:</li>
+</ol>
+
+<p>To do this, you would type:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">md5 MacQIIME_1.8.0-20140103_OS10.6.tgz
+</code></pre></div>
+<p>The computer should return the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">MD5 (MacQIIME_1.8.0-20140103_OS10.6.tgz) = 9f1175e0a0ba71ebe6bb5d9b7bb0e6c2
+</code></pre></div>
+<p>Check carefully that the number above matches exactly your output.  If it does not, discard the downloaded file (move to trash, empty trash), and start over with an uncorrupted or complete download.</p>
+
+<ol>
+<li>Now you will want to unarchive using the tar command:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">tar -xvf MacQIIME_1.8.0-20140103_OS10.6.tgz
+</code></pre></div>
+<p>This will show a list of file contents as they are extracted from the archive:</p>
+
+<p><img src="img/macqiime/IMG2.png" alt="IMG2"></p>
+
+<p>Unarchiving the file will automatically create a new directory called “MacQIIME_1.8.0-20140103_OS10.6”.  Use <code>cd</code> to move into that directory:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd MacQIIME_1.8.0-20140103_OS10.6/
+</code></pre></div>
+<p>Use the “ls” command (list) to view the files in that directory:<code>ls</code></p>
+
+<p>The computer will return the following:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">README.txt  install.s   macqiime    scripts
+</code></pre></div>
+<ol>
+<li>Run the install.s script to install most of what is needed to run QIIME. Use the command:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">./install.s
+</code></pre></div>
+<p>The script will run the installation of MacQIIME and will prompt you to agree to write-over the old directory.</p>
+
+<p><img src="img/macqiime/IMG3.png" alt="IMG3"></p>
+
+<p>As we are starting from scratch this is okay, and you may hit enter.  In the future, if you upgrade to a new QIIME version, it is recommend that you save the older version before upgrading.  <a href="http://www.wernerlab.org/software/macqiime/macqiime-installation">There are directions for saving the old version of MacQIIME</a>.</p>
+
+<p>You will be prompted for a password.  This is where administrator access (<code>sudo</code>) is needed:</p>
+
+<p><img src="img/macqiime/IMG4.png" alt="IMG4"></p>
+
+<p>After you type in your password, and the script will do its thing!</p>
+
+<p>At the end, the terminal look like:</p>
+
+<p><img src="img/macqiime/IMG5.png" alt="IMG5"></p>
 
 <h3 id="installing-the-fastq-join-and-seqprep-tools">Installing the fastq-join and SeqPrep tools</h3>
 
-<p>This MacQIIME add-on is for joining paired-end Illumina reads.
+<p>This MacQIIME add-on is for joining paired-end Illumina reads.</p>
+
 <ol>
-<li>
-Download the tgz archive:
-<a href="http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0">http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0</a>.
-</li>
-<li>
-Save the archive (do not open with Archive Utility).  The archive (“Add_ea-tools_to_MacQIIME-1.8.0.tgz”) should automatically be saved in the Downloads directory.</p>
+<li>Download the tgz archive:
+<a href="http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0">http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0</a>.</li>
+</ol>
 
-<p><img src="img/macqiime/IMG6.png" alt="IMG6">
-</li>
-<li>
-In terminal, navigate back to the Downloads directory by typing:</p>
+<p>Save the archive (do not open with Archive Utility).  The archive (“Add_ea-tools_to_MacQIIME-1.8.0.tgz”) should automatically be saved in the Downloads directory.</p>
 
-<p><code>cd ~/Downloads/</code>
-<li>
-As before, unarchive:</p>
+<p><img src="img/macqiime/IMG6.png" alt="IMG6"></p>
 
-<p><code>tar -xvf Add_ea-tools_to_MacQIIME-1.8.0.tgz</code></p>
+<ol>
+<li>In terminal, navigate back to the Downloads directory by typing:
+~~~
+cd ~/Downloads/
+~~~</li>
+</ol>
 
-<p><img src="img/macqiime/IMG7.png" alt="IMG7">
-<li>
-Then, use “cd” to navigate into the new directory:</p>
+<p>As before, unarchive:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">tar -xvf Add_ea-tools_to_MacQIIME-1.8.0.tgz
+</code></pre></div>
+<p><img src="img/macqiime/IMG7.png" alt="IMG7"></p>
 
-<p><code>cd Add_ea-tools_to_MacQIIME-1.8.0/</code>
-</li>
-<li>
-Run the installation script:</p>
-
-<p><code>./install.script</code></p>
-
+<ol>
+<li>Then, use “cd” to navigate into the new directory:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd Add_ea-tools_to_MacQIIME-1.8.0/
+</code></pre></div>
+<ol>
+<li>Run the installation script:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">./install.script
+</code></pre></div>
 <p>You will again be prompted for the administrative password.  There is no special message that is returned when the installation is complete, but you will know by the “$” at the end of your userid, which means that the computer is ready for your next command.</p>
 
-<p><img src="img/macqiime/IMG8.png" alt="IMG8">
-</li>
-</ol></p>
+<p><img src="img/macqiime/IMG8.png" alt="IMG8"></p>
+
+<h3 id="installing-legacy-blast-2.2.22">Installing legacy BLAST 2.2.22</h3>
+
+<ol>
+<li>Download (but do not open) the legacy BLAST 2.2.22 archive by copying and pasting the following link into your web browser:</li>
+</ol>
+
+<p><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz</a></p>
+
+<p><img src="img/macqiime/IMG9.png" alt="IMG9"></p>
+
+<p>The file should be automatically saved into your Downloads directory.</p>
+
+<ol>
+<li>Return to your terminal.  As before, navigate to the Downloads directory:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd ~/Downloads
+</code></pre></div>
+<ol>
+<li>Then, unarchive using the “tar” command (do you sense a pattern here?):</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">tar -xvf blast-2.2.22-universal-macosx.tar.gz
+</code></pre></div>
+<p>A long list of files will be displayed on the screen as they are “unpacked” from the archive.  A new directory called “blast-2.2.22” will be automatically created.</p>
+
+<ol>
+<li>Copy (<code>cp</code>) the new blast directory to the <code>opt</code> directory of the computer.  You may be prompted to provide your password.</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo cp -R blast-2.2.22 /opt/
+</code></pre></div>
+<ol>
+<li>Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files.  To do this, we must open an invisible file called “bashrc” using an editor called “nano.”</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo nano /etc/bashrc
+</code></pre></div>
+<p>The nano editor will open the file, and it will look something like this:</p>
+
+<p><img src="img/macqiime/IMG10.png" alt="IMG10"></p>
+
+<p>Then, you want to copy and past the following at the end (after “fi”):</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">export PATH=/opt/blast-2.2.22/bin:${PATH}
+</code></pre></div>
+<p><img src="img/macqiime/IMG11.png" alt="IMG11"></p>
+
+<p>Save the file by using Control-O (“write-out”), and then hit return to accept the file name (essentially, writing over the old bashrc).  Then exit the nano editor using Control-X.</p>
+
+<ol>
+<li>Close the terminal window and start a new one.  This forces the computer to re-read the <code>.bashrc</code> file that we edited.  To determine whether the computer can find an executable file (<code>blastall</code>) in the directory blast-2.2.22 by reading the bashrc file, use the “which” command:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">which blastall
+</code></pre></div>
+<p>The computer will return the location of the of the blastall file if it is now correcly in your path.</p>
+
+<p><img src="img/macqiime/IMG12.png" alt="IMG12"></p>
+
+<p>Now, we must make another file that points the computer to the BLAST data directory.  This file will be called ncbirc.  We will use the nano editor again for this.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">nano ~/.ncbirc
+</code></pre></div>
+<p>Your computer will return an empty file, because we are creating it right now!</p>
+
+<p><img src="img/macqiime/IMG13.png" alt="IMG13"></p>
+
+<p>Copy and paste this text into the empty file:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">Data=/opt/blast-2.2.22/data/
+</code></pre></div>
+<p><img src="img/macqiime/IMG14.png" alt="IMG14"></p>
+
+<p>Save our shiny new <code>.ncbirc</code> file using Control-O, press return to accept the file name, and then exit the nano editor using Control-X.</p>
+
+<p><em>Note:</em> If there is more than one user on a computer, the <code>.ncbirc</code> file will have to be created independently for every user.   To do this, repeat step 6 within every user profile.</p>
+
+<h3 id="testing-macqiime">Testing MacQIIME</h3>
+
+<p>To check if the rest of QIIME was installed correctly, open a new terminal window and type “macqiime” and hit return.  Now you are in the “QIIME” environment, with access to all of its analysis goodies.</p>
+
+<p>You must type macqiime at the beginning of every new terminal session during which you want to use QIIME.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">macqqime
+</code></pre></div>
+<p>Then, use the command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">print_qiime_config.py –t
+</code></pre></div>
+<p>This will help you to determine which versions of all of the dependencies are running on MacQIIME, and it will also test to make sure they are working correctly.  The computer will print the results of the tests.</p>
+
+<p><img src="img/macqiime/IMG15.png" alt="IMG15"></p>
+
+<p>You will note some tests “fail”, such as AmpliconNoise and usearch; this makes sense because we chose not to stall these add-ons.</p>
+
+<h3 id="extra-add-ons-to-qiime">Extra Add-Ons to QIIME</h3>
+
+<p>For the purposes of the workshop, we will not be installing or using:
+* <a href="https://code.google.com/p/ampliconnoise/">AmpliconNoise</a> (alternative to denoise.py, which is installed with MacQIIME)
+* <a href="http://www.drive5.com/usearch/">usearch</a> (alternative OTU picking and clustering methods available)
+* <a href="http://sourceforge.net/projects/sourcetracker/">SourceTracker</a> (Bayesian classification of samples to their likely source)
+* <a href="http://topiaryexplorer.sourceforge.net/">Topiary Explorer</a> (for visualization of sample metadata onto phylogenetic trees)
+* <a href="http://www.cytoscape.org/">Cytoscape</a> (for creating OTU networks)</p>
+
+<p>Feel free to explore these other packages for your own data analysis.</p>
