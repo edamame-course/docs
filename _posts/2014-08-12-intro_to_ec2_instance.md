@@ -15,7 +15,7 @@ Click on **EC2** (towards the upper left of the page).
 
 ![EC2 Instance](img/aws/ec2_services.png)
 
-#### Step 0
+#### Step 0:
 
 In the top right of the page between your login name and 'Help' there's a drop down menu with regions. 
 Select 'US East (N. Virginia)'.
