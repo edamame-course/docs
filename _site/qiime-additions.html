@@ -1,0 +1,119 @@
+<hr>
+
+<p>layout: page
+title: &quot;All Users: Installing BLAST and other additions for QIIME&quot;</p>
+
+<h2 id="date:-2014-08-12-08:55:36">date: 2014-08-12 08:55:36</h2>
+
+<h3 id="installing-legacy-blast-2.2.22">Installing legacy BLAST 2.2.22</h3>
+
+<ol>
+<li>
+Download (but do not open) the legacy BLAST 2.2.22 archive by copying and pasting the following link into your web browser:
+
+`ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz`
+
+![IMG9](img/macqiime/IMG9.png)
+
+The file should be automatically saved into your Downloads directory.
+</li>
+
+<li>
+Return to your terminal.  As before, navigate to the Downloads directory:
+
+`cd ~/Downloads`
+
+Then, unarchive using the “tar” command (do you sense a pattern here?):
+
+`tar -xvf blast-2.2.22-universal-macosx.tar.gz`
+
+A long list of files will be displayed on the screen as they are “unpacked” from the archive.  A new directory called “blast-2.2.22” will be automatically created.
+</li>
+
+<li>
+Copy (“`cp`”) the new blast directory to the opt (options) directory of the computer.   You may be prompted to provide your password.
+
+`sudo cp -R blast-2.2.22 /opt/`
+</li>
+
+<li>
+Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files.  To do this, we must open an invisible file called “bashrc” using an editor called “nano.”
+
+`sudo nano /etc/bashrc`
+
+The nano editor will open the file, and it will look something like this:
+
+![IMG10](img/macqiime/IMG10.png)
+
+Then, you want to copy and past the following at the end (after “fi”):
+
+`export PATH=/opt/blast-2.2.22/bin:${PATH}`
+
+![IMG11](img/macqiime/IMG11.png)
+
+Save the file by using Control-O (“write-out”), and then hit return to accept the file name (essentially, writing over the old bashrc).  Then exit the nano editor using Control-X.
+</li>
+
+<li>
+Close the terminal window and start a new one.  This is to allows the computer re-reading the bashrc file that we edited.  To determine whether the computer can find an executable file(blastall) in the directory blast-2.2.22 by reading the bashrc file, use the “which” command:
+
+`which blastall`
+
+The computer will return the location of the of the blastall file if it is now correcly in your path.
+
+![IMG12](img/macqiime/IMG12.png)
+</li>
+
+<li>
+Now, we must make another file that points the computer to the BLAST data directory.  This file will be called ncbirc.  We will use the nano editor again for this.
+
+`nano ~/.ncbirc`
+
+Your computer will return an empty file, because we are creating it right now!
+
+![IMG13](img/macqiime/IMG13.png)
+
+Copy and paste this text into the empty file:
+
+`Data=/opt/blast-2.2.22/data/`
+
+![IMG14](img/macqiime/IMG14.png)
+
+Save our shiny new `.ncbirc` file using Control-O, press return to accept the file name, and then exit the nano editor using Control-X.
+
+*Note:* If there is more than one user on a computer, the `.ncbirc` file will have to be created independently for every user.   To do this, repeat step 6 within every user profile.
+</li>
+</ol>
+
+<h3 id="testing-macqiime">Testing MacQIIME</h3>
+
+<ol>
+<li>
+To check if the rest of QIIME was installed correctly, open a new terminal window and type “macqiime” and hit return.  Now you are in the “QIIME” environment, with access to all of its analysis goodies.
+
+You must type macqiime at the beginning of every new terminal session during which you want to use QIIME.
+
+`macqqime`
+
+Then, use the command:
+
+`print_qiime_config.py –t`
+
+This will help you to determine which versions of all of the dependencies are running on MacQIIME, and it will also test to make sure they are working correctly.  The computer will print the results of the tests.
+
+![IMG15](img/macqiime/IMG15.png)
+
+You will note some tests “fail”, such as AmpliconNoise and usearch; this makes sense because we chose not to stall these add-ons.
+</li>
+</ol>
+
+<h3 id="extra-add-ons-to-qiime">Extra Add-Ons to QIIME</h3>
+
+<p>For the purposes of the workshop, we will not be installing or using:
+* <a href="https://code.google.com/p/ampliconnoise/">AmpliconNoise</a> (alternative to denoise.py, which is installed with MacQIIME)
+* <a href="http://www.drive5.com/usearch/">usearch</a> (alternative OTU picking and clustering methods available)
+* <a href="http://sourceforge.net/projects/sourcetracker/">SourceTracker</a> (Bayesian classification of samples to their likely source)
+* <a href="http://topiaryexplorer.sourceforge.net/">Topiary Explorer</a> (for visualization of sample metadata onto phylogenetic trees)
+* <a href="http://www.cytoscape.org/">Cytoscape</a> (for creating OTU networks)</p>
+
+<p>Feel free to explore these other packages for your own data analysis.</p>

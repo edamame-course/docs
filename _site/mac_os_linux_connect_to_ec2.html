@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
-        <title>EDAMAME : Windows Users: Connecting to your EC2 Instance</title>
+        <title>EDAMAME : Mac OS & Linux Users: Connecting to your EC2 Instance</title>
         <meta name="description" content="course materials & tutorials">
 
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -69,30 +69,30 @@
 
                     <div id=content class=span9>
                         <div class=page-header>
-    <h2>Windows Users: Connecting to your EC2 Instance
+    <h2>Mac OS & Linux Users: Connecting to your EC2 Instance
         
     </h2>
 </div>
 
-<p>Windows Users follow these directions to install MobaXterm and access your EC2 Instance:</p>
+<p>Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</p>
 
 <ol>
-<li>First you will need a terminal to connect via the web.  We recommend you try MobaXTerm.  You can download here: <a href="http://mobaxterm.mobatek.net/MobaXterm_Setup_7.1.msi">MobaXterm Terminal</a></li>
+<li>Open a Terminal:
+<strong>MAC Users:</strong> Terminal is under: Applications --&gt; Utilities
+<strong>Linux Users:</strong> Press Ctrl + Alt + t</li>
 </ol>
 
-<p>Here is a nice <a href="http://mobaxterm.mobatek.net/">MobaXterm Introduction</a> (if you are interested).</p>
+<p>You will need to know the location of your <strong>key pair</strong> you created when you launched your instance.  Usually this will be in your &quot;Downloads&quot; folder, but you may want to move it elsewhere.</p>
 
-<p>You are also welcome to try the terminal emulator of your choice.</p>
+<p>You will need to know what your Public DNS is for your EC2 Instance.</p>
 
 <ol>
-<li><p>Open MobaXterm after it is finished installing
-<img src="img/moba/mobaxterm.png" alt="What MobaXterm looks like"></p></li>
-<li><p>Start a new session by clicking on <strong>Session</strong>, then click on <strong>SSH</strong></p></li>
-<li><p>Under the basic settings, enter the public DNS from your EC2 Instance. It should look like: ec2-<strong>UNIQUE SET OF NUMBERS</strong>.compute-1.amazonaws.com</p></li>
-<li><p>Check the box next to &quot;Specify username&quot; and fill in the username as &quot;ubuntu&quot;</p></li>
-<li><p>Click the Advanced SSH settings tab and check the box next to &quot;Use private key&quot; and specify the location <strong>key pair</strong> you created when you launched your instance through the Amazon AWS website and then click <strong>&quot;OK&quot;</strong>
-<img src="img/moba/start_session.png" alt="How to start a sesssion"></p></li>
-<li><p>SUCCESS! You should now be connection!</p></li>
+<li>Enter the following into the terminal:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ec2-user@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+</code></pre></div>
+<ol>
+<li>SUCCESS! You have now logged into your computer in the cloud!</li>
 </ol>
 
 

@@ -1,53 +1,27 @@
 ---
 layout: page
-title: "Connecting to your EC2 Instance"
+title: "Windows Users: Connecting to your EC2 Instance"
 date: 2014-08-12 18:44:36
 ---
 
-#### Windows Users follow these directions to install MobaXterm and access your EC2 Instance
+Windows Users follow these directions to install MobaXterm and access your EC2 Instance:
 
-Download [MobaXterm Terminal](http://mobaxterm.mobatek.net/MobaXterm_Setup_7.1.msi)
+1. First you will need a terminal to connect via the web.  We recommend you try MobaXTerm.  You can download here: [MobaXterm Terminal](http://mobaxterm.mobatek.net/MobaXterm_Setup_7.1.msi)
 
 Here is a nice [MobaXterm Introduction](http://mobaxterm.mobatek.net/) (if you are interested).
 
-* * *
-Open MobaXterm after it is finished installing
-![What MobaXterm looks like](https://github.com/KWHall/DataCarpentry/raw/master/Pictures/DataCarpentry/MobaXterm.png)
+You are also welcome to try the terminal emulator of your choice.
 
-Click on Session
+2. Open MobaXterm after it is finished installing
+![What MobaXterm looks like](img/moba/mobaxterm.png)
 
-Click on SSH
+3. Start a new session by clicking on **Session**, then click on **SSH**
 
-* * *
-Under the Basic Settings
+4. Under the basic settings, enter the public DNS from your EC2 Instance. It should look like: ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 
-Enter the Public DNS from your EC2 Instance. It should look like: ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+5. Check the box next to "Specify username" and fill in the username as "ubuntu"
 
-Check the box next to "Specify username" and fill in the username as "ubuntu"
-* * *
-Click the Advanced SSH settings tab
+6. Click the Advanced SSH settings tab and check the box next to "Use private key" and specify the location **key pair** you created when you launched your instance through the Amazon AWS website and then click **"OK"**
+![How to start a sesssion](img/moba/start_session.png)
 
-Check the box next to "Use private key" and specify the location **key pair** you created when you launched your instance.
-
-Click **"OK"**
-![How to start a sesssion](https://github.com/KWHall/DataCarpentry/raw/master/Pictures/DataCarpentry/Start_Session.png)
-
-* * *
-
-#### MAC & Linux users
-Open a Terminal
->  MAC Users: Terminal is under: Applications --> Utilities
->Linux Users: Press Ctrl + Alt + t
-
-You will need to know the location of your **key pair** you created when you launched your instance.
-
-You will need to know what your Public DNS is for your EC2 Instance.
-
-Enter the following into the terminal:
-~~~
-ssh -i **/path/to/your/key/**EDAMAME.pem ec2-user@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
-~~~
-
-* * *
-
-SUCCESS! You have now logged into your computer in the cloud!
+7. SUCCESS! You should now be connection!
