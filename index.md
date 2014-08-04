@@ -19,9 +19,9 @@ Our Mendelay [reading list is located here](http://www.mendeley.com/groups/46884
 
 **Everyone**
 
-1. [Getting set up with Amazon's EC2 Instance](intro_to_ec2_instance.html)
+1. [COMING SOON: General Set-Up Guidelines](#)
 
-2. [After you have QIIME installed, check for these additions](qiime-additions.html)
+2. [Getting set up with Amazon's EC2 Instance](intro_to_ec2_instance.html)
 
 **Mac & Linux Users:**
 
@@ -33,7 +33,7 @@ Our Mendelay [reading list is located here](http://www.mendeley.com/groups/46884
 
 1. [Connecting to your AWS EC2 instance with MobaXTerm](mobaxterm.html)
 
-2. [Installing a Virtual Box to run QIIME on your own machine](#)
+2. [COMING SOON: Installing a Virtual Box to run QIIME on your own machine](#)
 
 ---------------------------------------------
 **Wednesday, August 13th, 2014**
