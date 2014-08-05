@@ -111,3 +111,7 @@ Locate the Public DNS for your instance. It should look something like this:
 
 
 At some point you will need to highlight and copy the Public DNS. This is the link to your specific instance that you started at Amazon Web Services (AWS).
+
+
+-----------------------------------------------
+-----------------------------------------------

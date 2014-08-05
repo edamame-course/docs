@@ -27,3 +27,7 @@ You are also welcome to try the terminal emulator of your choice.
 ![How to start a sesssion](img/moba/start_session.png)
 
 7. SUCCESS! You should now be connected!
+
+
+-----------------------------------------------
+-----------------------------------------------
