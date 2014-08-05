@@ -26,36 +26,56 @@
       <div id="navigation" class="span3">
         <ul class="nav nav-list">
           <li class="nav-header">HOME</li>
-          <li><a href="../_site/index.html">EDAMAME course materials</a></li>
+          <li><a href="../_site/index.html">EDAMAME course materials</a>
+          </li>
 
           <li class="nav-header">Before We Begin</li>
-          <li><a href="../_site/intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a></li>
-          <li><a href="../_site/mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
-          <li><a href="../_site/mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
-          <li><a href="macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
+          <li><a href="https://edamame-course.github.io/docs/intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a>
+          </li>
+          <li><a href="https://edamame-course.github.io/docsmobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a>
+          </li>
+          <li><a href="https://edamame-course.github.io/docsmac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a>
+          </li>
+          <li><a href="https://edamame-course.github.io/docs/extramacqiime_installation.html">Mac Users: Installing MacQIIME</a>
+          </li>
 
           <li class="nav-header">Wednesday, August 13th</li>
 
           <li class="nav-header">Thursday, August 14th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Friday, August 15th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Saturday, August 16th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Sunday, August 17th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Monday, August 18th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Tuesday, August 19th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+          </li>
 
           <li class="nav-header">Wednesday, August 20th</li>
-          <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+          <li>
+            <a href="#"></a>
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -86,6 +106,9 @@
           <div class="highlight">
             <code>cd ~/Downloads</code>
           </div>
+          <p>
+
+          </p>
 
           <p><strong>Step 2:</strong> Check that the file was not corrupted using the “md5” command (message digest 5). This command provides the sum of the “hashes” to determine the size of the file. The idea is that if the file were corrupted during download
             (missing some pieces), the output will be different. See the “MD5 hashes” section of <a href="http://en.wikipedia.org/wiki/MD5">this Wikipedia article for an example</a>.</p>
@@ -95,12 +118,18 @@
           <div class="highlight">
             <code>md5 MacQIIME_1.8.0-20140103_OS10.6.tgz</code>
           </div>
+          <p>
+
+          </p>
 
           <p>The computer should return the following:</p>
 
           <div class="highlight">
             <code>MD5 (MacQIIME_1.8.0-20140103_OS10.6.tgz) = 9f1175e0a0ba71ebe6bb5d9b7bb0e6c2</code>
           </div>
+          <p>
+
+          </p>
 
           <p>Check carefully that the number above matches exactly your output. If it does not, discard the downloaded file (move to trash, empty trash), and start over with an uncorrupted or complete download.</p>
 
@@ -109,6 +138,9 @@
           <div class="highlight">
             <code>tar -xvf MacQIIME_1.8.0-20140103_OS10.6.tgz</code>
           </div>
+          <p>
+
+          </p>
 
           <p>This will show a list of file contents as they are extracted from the archive:</p>
 
@@ -121,7 +153,9 @@
           <div class="highlight">
             <code>cd MacQIIME_1.8.0-20140103_OS10.6/</code>
           </div>
+          <p>
 
+          </p>
           <p>Use the “ls” command (list) to view the files in that directory:<code>ls</code>
           </p>
 
@@ -130,13 +164,17 @@
           <div class="highlight">
             <code>README.txt  install.s   macqiime    scripts</code>
           </div>
+          <p>
 
+          </p>
           <p><strong>Step 4:</strong> Run the install.s script to install most of what is needed to run QIIME. Use the command:</p>
 
           <div class="highlight">
             <code>./install.s</code>
           </div>
+          <p>
 
+          </p>
           <p>The script will run the installation of MacQIIME and will prompt you to agree to write-over the old directory.</p>
 
           <p>
@@ -179,7 +217,9 @@
           <div class="highlight">
             <code>tar -xvf Add_ea-tools_to_MacQIIME-1.8.0.tgz</code>
           </div>
+          <p>
 
+          </p>
           <p>
             <img src="../img/macqiime/IMG7.png" alt="IMG7">
           </p>
@@ -189,13 +229,17 @@
           <div class="highlight">
             <code>cd Add_ea-tools_to_MacQIIME-1.8.0/</code>
           </div>
+          <p>
 
+          </p>
           <p><strong>Step 7:</strong> Run the installation script:</p>
 
           <div class="highlight">
             <code>./install.script</code>
           </div>
+          <p>
 
+          </p>
           <p>You will again be prompted for the administrative password. There is no special message that is returned when the installation is complete, but you will know by the “$” at the end of your userid, which means that the computer is ready for your
             next command.</p>
 
@@ -221,13 +265,17 @@
           <div class="highlight">
             <code>cd ~/Downloads</code>
           </div>
+          <p>
 
+          </p>
           <p><strong>Step 3:</strong> Then, unarchive using the “tar” command (do you sense a pattern here?):</p>
 
           <div class="highlight">
             <code>tar -xvf blast-2.2.22-universal-macosx.tar.gz</code>
           </div>
+          <p>
 
+          </p>
           <p>A long list of files will be displayed on the screen as they are “unpacked” from the archive. A new directory called “blast-2.2.22” will be automatically created.</p>
 
           <p><strong>Step 4:</strong> Copy (<code>cp</code>) the new blast directory to the <code>opt</code> directory of the computer. You may be prompted to provide your password.</p>
@@ -235,13 +283,17 @@
           <div class="highlight">
             <code>sudo cp -R blast-2.2.22 /opt/</code>
           </div>
+          <p>
 
+          </p>
           <p><strong>Step 5:</strong> Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files. To do this, we must open an invisible file called <code>.bashrc</code> using an editor called <code>nano</code>.</p>
 
           <div class="highlight">
             <code>sudo nano /etc/bashrc</code>
           </div>
+          <p>
 
+          </p>
           <p>The nano editor will open the file, and it will look something like this:</p>
 
           <p>
@@ -253,7 +305,9 @@
           <div class="highlight">
             <code>export PATH=/opt/blast-2.2.22/bin:${PATH}</code>
           </div>
+          <p>
 
+          </p>
           <p>
             <img src="../img/macqiime/IMG11.png" alt="IMG11">
           </p>
@@ -266,7 +320,9 @@
           <div class="highlight">
             <code>which blastall</code>
           </div>
+          <p>
 
+          </p>
           <p>The computer will return the location of the of the blastall file if it is now correcly in your path.</p>
 
           <p>
@@ -278,7 +334,9 @@
           <div class="highlight">
             <code>nano ~/.ncbirc</code>
           </div>
+          <p>
 
+          </p>
           <p>Your computer will return an empty file, because we are creating it right now!</p>
 
           <p>
@@ -290,7 +348,9 @@
           <div class="highlight">
             <code>Data=/opt/blast-2.2.22/data/</code>
           </div>
+          <p>
 
+          </p>
           <p>
             <img src="../img/macqiime/IMG14.png" alt="IMG14">
           </p>
@@ -308,13 +368,17 @@
           <div class="highlight">
             <code>macqqime</code>
           </div>
+          <p>
 
+          </p>
           <p>Then, use the command:</p>
 
           <div class="highlight">
             <code>print_qiime_config.py –t </code>
           </div>
+          <p>
 
+          </p>
           <p>This will help you to determine which versions of all of the dependencies are running on MacQIIME, and it will also test to make sure they are working correctly. The computer will print the results of the tests.</p>
 
           <p>

@@ -21,17 +21,17 @@ Our Mendelay [reading list is located here](http://www.mendeley.com/groups/46884
 
 1. [COMING SOON: General Set-Up Guidelines](#)
 
-2. [Getting set up with Amazon's EC2 Instance](intro_to_ec2_instance.html)
+2. [Getting set up with Amazon's EC2 Instance](https://edamame-course.github.io/docs/intro_to_ec2_instance.html)
 
 **Mac & Linux Users:**
 
-1. [Installing MacQIIME for MacOSX Users](macqiime_installation.html)
+1. [Installing MacQIIME for MacOSX Users](https://edamame-course.github.io/docs/extra/macqiime_installation.html)
 
-2. [Connecting to your AWS EC2 instance with your terminal](mac_os_linux_connect_to_ec2.html)
+2. [Connecting to your AWS EC2 instance with your terminal](https://edamame-course.github.io/docs/mac_os_linux_connect_to_ec2.html)
 
 **Windows Users:**
 
-1. [Connecting to your AWS EC2 instance with MobaXTerm](mobaxterm.html)
+1. [Connecting to your AWS EC2 instance with MobaXTerm](https://edamame-course.github.io/docs/mobaxterm.html)
 
 2. [COMING SOON: Installing a Virtual Box to run QIIME on your own machine](#)
 
