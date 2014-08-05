@@ -14,10 +14,15 @@ You will need to know the location of your **key pair** you created when you lau
 
 You will need to know what your Public DNS is for your EC2 Instance.
 
- 2. Enter the following into the terminal:
+ 2. Enter the following command into the terminal:
 
 ```
-ssh -i **/path/to/your/key/**EDAMAME.pem ec2-user@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+chmod 400 **/path/to/your/key/**EDAMAME.pem
+```
+ 3. Enter the following command into the terminal:
+
+```
+ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 ```
 
-3. SUCCESS! You have now logged into your computer in the cloud!
+4. SUCCESS! You have now logged into your computer in the cloud!
