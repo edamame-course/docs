@@ -176,17 +176,13 @@
 
                     <p>This MacQIIME add-on is for joining paired-end Illumina reads.</p>
 
-                    <ol>
-                        <li>Download the tgz archive: <a href="http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0">http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0</a>.</li>
-                    </ol>
+                    <p><strong>Step 5:</strong> Download the tgz archive: <a href="http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0">http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0</a>.</p>
 
                     <p>Save the archive (do not open with Archive Utility). The archive (“Add_ea-tools_to_MacQIIME-1.8.0.tgz”) should automatically be saved in the Downloads directory.</p>
 
                     <p><img src="img/macqiime/IMG6.png" alt="IMG6"></p>
 
-                    <ol>
-                        <li>In terminal, navigate back to the Downloads directory by typing: ~~~ cd ~/Downloads/ ~~~</li>
-                    </ol>
+                    <p><strong>Step 6:</strong> In terminal, navigate back to the Downloads directory by typing: <code>cd ~/Downloads/</code></p>
 
                     <p>As before, unarchive:</p>
 
@@ -199,9 +195,7 @@
 
                     <p><img src="img/macqiime/IMG7.png" alt="IMG7"></p>
 
-                    <ol>
-                        <li>Then, use “cd” to navigate into the new directory:</li>
-                    </ol>
+                    <p><strong>Step 6:</strong> Then, use “cd” to navigate into the new directory:</p>
 
                     <div class="highlight">
                         <pre>
@@ -210,9 +204,7 @@
 </pre>
                     </div>
 
-                    <ol>
-                        <li>Run the installation script:</li>
-                    </ol>
+                    <p><strong>Step 7:</strong> Run the installation script:</p>
 
                     <div class="highlight">
                         <pre>
@@ -227,9 +219,7 @@
 
                     <h3 id="installing-legacy-blast-2.2.22">Installing legacy BLAST 2.2.22</h3>
 
-                    <ol>
-                        <li>Download (but do not open) the legacy BLAST 2.2.22 archive by copying and pasting the following link into your web browser:</li>
-                    </ol>
+                    <p><strong>Step 1:</strong> Download (but do not open) the legacy BLAST 2.2.22 archive by copying and pasting the following link into your web browser:</p>
 
                     <p><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz</a></p>
 
@@ -237,9 +227,7 @@
 
                     <p>The file should be automatically saved into your Downloads directory.</p>
 
-                    <ol>
-                        <li>Return to your terminal. As before, navigate to the Downloads directory:</li>
-                    </ol>
+                    <p><strong>Step 2:</strong> Return to your terminal. As before, navigate to the Downloads directory:</p>
 
                     <div class="highlight">
                         <pre>
@@ -248,9 +236,7 @@
 </pre>
                     </div>
 
-                    <ol>
-                        <li>Then, unarchive using the “tar” command (do you sense a pattern here?):</li>
-                    </ol>
+                    <p><strong>Step 3:</strong> Then, unarchive using the “tar” command (do you sense a pattern here?):</p>
 
                     <div class="highlight">
                         <pre>
@@ -261,9 +247,7 @@
 
                     <p>A long list of files will be displayed on the screen as they are “unpacked” from the archive. A new directory called “blast-2.2.22” will be automatically created.</p>
 
-                    <ol>
-                        <li>Copy (<code>cp</code>) the new blast directory to the <code>opt</code> directory of the computer. You may be prompted to provide your password.</li>
-                    </ol>
+                    <p><strong>Step 4:</strong> Copy (<code>cp</code>) the new blast directory to the <code>opt</code> directory of the computer. You may be prompted to provide your password.</p>
 
                     <div class="highlight">
                         <pre>
@@ -272,9 +256,7 @@
 </pre>
                     </div>
 
-                    <ol>
-                        <li>Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files. To do this, we must open an invisible file called “bashrc” using an editor called “nano.”</li>
-                    </ol>
+                    <p><strong>Step 5:</strong> Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files. To do this, we must open an invisible file called <code>.bashrc</code> using an editor called <code>nano</code>.</p>
 
                     <div class="highlight">
                         <pre>
@@ -300,9 +282,7 @@
 
                     <p>Save the file by using Control-O (“write-out”), and then hit return to accept the file name (essentially, writing over the old bashrc). Then exit the nano editor using Control-X.</p>
 
-                    <ol>
-                        <li>Close the terminal window and start a new one. This forces the computer to re-read the <code>.bashrc</code> file that we edited. To determine whether the computer can find an executable file (<code>blastall</code>) in the directory blast-2.2.22 by reading the bashrc file, use the “which” command:</li>
-                    </ol>
+                    <p><strong>Step 6:</strong> Close the terminal window and start a new one. This forces the computer to re-read the <code>.bashrc</code> file that we edited. To determine whether the computer can find an executable file (<code>blastall</code>) in the directory blast-2.2.22 by reading the bashrc file, use the <code>which</code> command:</p>
 
                     <div class="highlight">
                         <pre>
@@ -376,6 +356,10 @@
                     <p>For the purposes of the workshop, we will not be installing or using: * <a href="https://code.google.com/p/ampliconnoise/">AmpliconNoise</a> (alternative to denoise.py, which is installed with MacQIIME) * <a href="http://www.drive5.com/usearch/">usearch</a> (alternative OTU picking and clustering methods available) * <a href="http://sourceforge.net/projects/sourcetracker/">SourceTracker</a> (Bayesian classification of samples to their likely source) * <a href="http://topiaryexplorer.sourceforge.net/">Topiary Explorer</a> (for visualization of sample metadata onto phylogenetic trees) * <a href="http://www.cytoscape.org/">Cytoscape</a> (for creating OTU networks)</p>
 
                     <p>Feel free to explore these other packages for your own data analysis.</p>
+
+                    <hr>
+
+<hr>
 
                     <div id="disqus_thread"></div><script type="text/javascript">
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
