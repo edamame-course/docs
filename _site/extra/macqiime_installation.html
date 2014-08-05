@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>EDAMAME : Install MacQIIME on Mac OSX operating systems</title>
+    <meta name="description" content="course materials & tutorials">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row-fluid">
+            <div id="header" class="span12">
+                <h4><a class="brand" href="http://edamame-course.org">EDAMAME</a> <small>course materials & tutorials</small></h4>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div id="navigation" class="span3">
+                <ul class="nav nav-list">
+                    <li class="nav-header">HOME</li>
+
+                    <li><a href="index.html">EDAMAME course materials</a></li>
+
+                    <li class="nav-header">Before We Begin</li>
+
+                    <li><a href="intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a></li>
+
+                    <li><a href="mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
+
+                    <li><a href="mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
+
+                    <li><a href="macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
+
+                    <li class="nav-header">Wednesday, August 13th</li>
+
+                    <li><a href="test.html">Test</a></li>
+
+                    <li class="nav-header">Thursday, August 14th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Friday, August 15th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Saturday, August 16th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Sunday, August 17th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Monday, August 18th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Tuesday, August 19th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+
+                    <li class="nav-header">Wednesday, August 20th</li>
+                    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+                </ul>
+            </div>
+
+            <div id="content" class="span9">
+                <div class="page-header">
+                    <h2>MacOS Users: Installing MacQIIME</h2>
+
+                    <p>These directions are slightly modified from <a href="http://www.wernerlab.org/software/macqiime/macqiime-installation">those provided by the Werner lab</a>.</p>
+
+                    <p>Please note:</p>
+                    <p>1. You must have administrator access on a computer to install MacQIIME.</p>
+                    <p>2. You must install R and the required dependency packages. We recommend that you install R before installing MacQIIME.</p>
+
+                    <h3 id="installing-macqiime">Installing MacQIIME</h3>
+
+                    <p><strong>Step 1:</strong> Download the tgz archive: <a href="http://www.wernerlab.org/software/macqiime">http://www.wernerlab.org/software/macqiime</a>. The current version of QIIME is 1.8.0. Save the archive (do not open with Archive Utility). It should automatically be saved in the Downloads directory.</p>
+
+                    <p><img src="img/macqiime/IMG1.png" alt="IMG1"></p>
+
+                    <p>Open your computer&#39;s terminal. <strong>Applications -&gt; Utilities -&gt; Terminal</strong></p>
+
+                    <p>Navigate to the Downloads directory (where the archive was saved), using the <code>cd</code> (change directory) command:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">cd ~/Downloads
+</code>
+</pre>
+                    </div>
+
+                    <p><strong>Step 2:</strong> Check that the file was not corrupted using the “md5” command (message digest 5). This command provides the sum of the “hashes” to determine the size of the file. The idea is that if the file were corrupted during download (missing some pieces), the output will be different. See the “MD5 hashes” section of <a href="http://en.wikipedia.org/wiki/MD5">this Wikipedia article for an example</a>.</p>
+
+                    <p>To do this, you would type:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">md5 MacQIIME_1.8.0-20140103_OS10.6.tgz
+</code>
+</pre>
+                    </div>
+
+                    <p>The computer should return the following:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">MD5 (MacQIIME_1.8.0-20140103_OS10.6.tgz) = 9f1175e0a0ba71ebe6bb5d9b7bb0e6c2
+</code>
+</pre>
+                    </div>
+
+                    <p>Check carefully that the number above matches exactly your output. If it does not, discard the downloaded file (move to trash, empty trash), and start over with an uncorrupted or complete download.</p>
+
+                    <p><strong>Step 3:</strong> Now you will want to unarchive using the tar command:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">tar -xvf MacQIIME_1.8.0-20140103_OS10.6.tgz
+</code>
+</pre>
+                    </div>
+
+                    <p>This will show a list of file contents as they are extracted from the archive:</p>
+
+                    <p><img src="img/macqiime/IMG2.png" alt="IMG2"></p>
+
+                    <p>Unarchiving the file will automatically create a new directory called “MacQIIME_1.8.0-20140103_OS10.6”. Use <code>cd</code> to move into that directory:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">cd MacQIIME_1.8.0-20140103_OS10.6/
+</code>
+</pre>
+                    </div>
+
+                    <p>Use the “ls” command (list) to view the files in that directory:<code>ls</code></p>
+
+                    <p>The computer will return the following:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">README.txt  install.s   macqiime    scripts
+</code>
+</pre>
+                    </div>
+
+                    <p><strong>Step 4:</strong> Run the install.s script to install most of what is needed to run QIIME. Use the command:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">./install.s
+</code>
+</pre>
+                    </div>
+
+                    <p>The script will run the installation of MacQIIME and will prompt you to agree to write-over the old directory.</p>
+
+                    <p><img src="img/macqiime/IMG3.png" alt="IMG3"></p>
+
+                    <p>As we are starting from scratch this is okay, and you may hit enter. In the future, if you upgrade to a new QIIME version, it is recommend that you save the older version before upgrading. <a href="http://www.wernerlab.org/software/macqiime/macqiime-installation">There are directions for saving the old version of MacQIIME</a>.</p>
+
+                    <p>You will be prompted for a password. This is where administrator access (<code>sudo</code>) is needed:</p>
+
+                    <p><img src="img/macqiime/IMG4.png" alt="IMG4"></p>
+
+                    <p>After you type in your password, and the script will do its thing!</p>
+
+                    <p>At the end, the terminal look like:</p>
+
+                    <p><img src="img/macqiime/IMG5.png" alt="IMG5"></p>
+
+                    <h3 id="installing-the-fastq-join-and-seqprep-tools">Installing the fastq-join and SeqPrep tools</h3>
+
+                    <p>This MacQIIME add-on is for joining paired-end Illumina reads.</p>
+
+                    <p><strong>Step 5:</strong> Download the tgz archive: <a href="http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0">http://www.wernerlab.org/software/macqiime/add-fastq-join-to-macqiime-1-8-0</a>.</p>
+
+                    <p>Save the archive (do not open with Archive Utility). The archive (“Add_ea-tools_to_MacQIIME-1.8.0.tgz”) should automatically be saved in the Downloads directory.</p>
+
+                    <p><img src="img/macqiime/IMG6.png" alt="IMG6"></p>
+
+                    <p><strong>Step 6:</strong> In terminal, navigate back to the Downloads directory by typing: <code>cd ~/Downloads/</code></p>
+
+                    <p>As before, unarchive:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">tar -xvf Add_ea-tools_to_MacQIIME-1.8.0.tgz
+</code>
+</pre>
+                    </div>
+
+                    <p><img src="img/macqiime/IMG7.png" alt="IMG7"></p>
+
+                    <p><strong>Step 6:</strong> Then, use “cd” to navigate into the new directory:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">cd Add_ea-tools_to_MacQIIME-1.8.0/
+</code>
+</pre>
+                    </div>
+
+                    <p><strong>Step 7:</strong> Run the installation script:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">./install.script
+</code>
+</pre>
+                    </div>
+
+                    <p>You will again be prompted for the administrative password. There is no special message that is returned when the installation is complete, but you will know by the “$” at the end of your userid, which means that the computer is ready for your next command.</p>
+
+                    <p><img src="img/macqiime/IMG8.png" alt="IMG8"></p>
+
+                    <h3 id="installing-legacy-blast-2.2.22">Installing legacy BLAST 2.2.22</h3>
+
+                    <p><strong>Step 1:</strong> Download (but do not open) the legacy BLAST 2.2.22 archive by copying and pasting the following link into your web browser:</p>
+
+                    <p><a href="ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz">ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/2.2.22/blast-2.2.22-universal-macosx.tar.gz</a></p>
+
+                    <p><img src="img/macqiime/IMG9.png" alt="IMG9"></p>
+
+                    <p>The file should be automatically saved into your Downloads directory.</p>
+
+                    <p><strong>Step 2:</strong> Return to your terminal. As before, navigate to the Downloads directory:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">cd ~/Downloads
+</code>
+</pre>
+                    </div>
+
+                    <p><strong>Step 3:</strong> Then, unarchive using the “tar” command (do you sense a pattern here?):</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">tar -xvf blast-2.2.22-universal-macosx.tar.gz
+</code>
+</pre>
+                    </div>
+
+                    <p>A long list of files will be displayed on the screen as they are “unpacked” from the archive. A new directory called “blast-2.2.22” will be automatically created.</p>
+
+                    <p><strong>Step 4:</strong> Copy (<code>cp</code>) the new blast directory to the <code>opt</code> directory of the computer. You may be prompted to provide your password.</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">sudo cp -R blast-2.2.22 /opt/
+</code>
+</pre>
+                    </div>
+
+                    <p><strong>Step 5:</strong> Now, we have to add blast-2.2.22 to the PATH so that the computer knows were to find the BLAST scripts and files. To do this, we must open an invisible file called <code>.bashrc</code> using an editor called <code>nano</code>.</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">sudo nano /etc/bashrc
+</code>
+</pre>
+                    </div>
+
+                    <p>The nano editor will open the file, and it will look something like this:</p>
+
+                    <p><img src="img/macqiime/IMG10.png" alt="IMG10"></p>
+
+                    <p>Then, you want to copy and past the following at the end (after “fi”):</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">export PATH=/opt/blast-2.2.22/bin:${PATH}
+</code>
+</pre>
+                    </div>
+
+                    <p><img src="img/macqiime/IMG11.png" alt="IMG11"></p>
+
+                    <p>Save the file by using Control-O (“write-out”), and then hit return to accept the file name (essentially, writing over the old bashrc). Then exit the nano editor using Control-X.</p>
+
+                    <p><strong>Step 6:</strong> Close the terminal window and start a new one. This forces the computer to re-read the <code>.bashrc</code> file that we edited. To determine whether the computer can find an executable file (<code>blastall</code>) in the directory blast-2.2.22 by reading the bashrc file, use the <code>which</code> command:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">which blastall
+</code>
+</pre>
+                    </div>
+
+                    <p>The computer will return the location of the of the blastall file if it is now correcly in your path.</p>
+
+                    <p><img src="img/macqiime/IMG12.png" alt="IMG12"></p>
+
+                    <p>Now, we must make another file that points the computer to the BLAST data directory. This file will be called ncbirc. We will use the nano editor again for this.</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">nano ~/.ncbirc
+</code>
+</pre>
+                    </div>
+
+                    <p>Your computer will return an empty file, because we are creating it right now!</p>
+
+                    <p><img src="img/macqiime/IMG13.png" alt="IMG13"></p>
+
+                    <p>Copy and paste this text into the empty file:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">Data=/opt/blast-2.2.22/data/
+</code>
+</pre>
+                    </div>
+
+                    <p><img src="img/macqiime/IMG14.png" alt="IMG14"></p>
+
+                    <p>Save our shiny new <code>.ncbirc</code> file using Control-O, press return to accept the file name, and then exit the nano editor using Control-X.</p>
+
+                    <p><em>Note:</em> If there is more than one user on a computer, the <code>.ncbirc</code> file will have to be created independently for every user. To do this, repeat step 6 within every user profile.</p>
+
+                    <h3 id="testing-macqiime">Testing MacQIIME</h3>
+
+                    <p>To check if the rest of QIIME was installed correctly, open a new terminal window and type “macqiime” and hit return. Now you are in the “QIIME” environment, with access to all of its analysis goodies.</p>
+
+                    <p>You must type macqiime at the beginning of every new terminal session during which you want to use QIIME.</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">macqqime
+</code>
+</pre>
+                    </div>
+
+                    <p>Then, use the command:</p>
+
+                    <div class="highlight">
+                        <pre>
+<code class="language-text" data-lang="text">print_qiime_config.py –t
+</code>
+</pre>
+                    </div>
+
+                    <p>This will help you to determine which versions of all of the dependencies are running on MacQIIME, and it will also test to make sure they are working correctly. The computer will print the results of the tests.</p>
+
+                    <p><img src="img/macqiime/IMG15.png" alt="IMG15"></p>
+
+                    <p>You will note some tests “fail”, such as AmpliconNoise and usearch; this makes sense because we chose not to stall these add-ons.</p>
+
+                    <h3 id="extra-add-ons-to-qiime">Extra Add-Ons to QIIME</h3>
+
+                    <p>For the purposes of the workshop, we will not be installing or using: * <a href="https://code.google.com/p/ampliconnoise/">AmpliconNoise</a> (alternative to denoise.py, which is installed with MacQIIME) * <a href="http://www.drive5.com/usearch/">usearch</a> (alternative OTU picking and clustering methods available) * <a href="http://sourceforge.net/projects/sourcetracker/">SourceTracker</a> (Bayesian classification of samples to their likely source) * <a href="http://topiaryexplorer.sourceforge.net/">Topiary Explorer</a> (for visualization of sample metadata onto phylogenetic trees) * <a href="http://www.cytoscape.org/">Cytoscape</a> (for creating OTU networks)</p>
+
+                    <p>Feel free to explore these other packages for your own data analysis.</p>
+
+                    <hr>
+
+<hr>
+
+                    <div id="disqus_thread"></div><script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'edamame'; // required: replace example with your forum shortname
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                    </script> <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <div id="footer" class="span12">
+                    Documentation for <a href="http://edamame-course.org">EDAMAME</a>.
+                </div>
+            </div>
+        </div><script type="text/javascript">
+    function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+    </div>
+</body>
+</html>

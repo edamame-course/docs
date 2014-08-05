@@ -37,7 +37,7 @@
     <li><a href="intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a></li>
     <li><a href="mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
     <li><a href="mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
-    <li><a href="macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
+    <li><a href="extra/macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
     <li class=divider></li>
     <li class=nav-header>Wednesday, August 13th</li>
     <li><a href="test.html">Test</a></li>
@@ -77,23 +77,33 @@
 <p>Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</p>
 
 <ol>
-<li>Open a Terminal:
-<strong>MAC Users:</strong> Terminal is under: Applications --&gt; Utilities
-<strong>Linux Users:</strong> Press Ctrl + Alt + t</li>
+<li>Open a Terminal:</li>
 </ol>
+
+<p><strong>MAC Users:</strong> Terminal is under: Applications --&gt; Utilities
+<strong>Linux Users:</strong> Press Ctrl + Alt + t</p>
 
 <p>You will need to know the location of your <strong>key pair</strong> you created when you launched your instance.  Usually this will be in your &quot;Downloads&quot; folder, but you may want to move it elsewhere.</p>
 
 <p>You will need to know what your Public DNS is for your EC2 Instance.</p>
 
 <ol>
-<li>Enter the following into the terminal:</li>
+<li>Enter the following command into the terminal:</li>
 </ol>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ec2-user@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+<div class="highlight"><pre><code class="language-text" data-lang="text">chmod 400 **/path/to/your/key/**EDAMAME.pem
+</code></pre></div>
+<ol>
+<li>Enter the following command into the terminal:</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 </code></pre></div>
 <ol>
 <li>SUCCESS! You have now logged into your computer in the cloud!</li>
 </ol>
+
+<hr>
+
+<hr>
 
 
 <div id="disqus_thread"></div>

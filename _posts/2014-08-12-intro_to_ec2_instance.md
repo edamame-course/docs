@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "How to set up an Amazon EC2 Instance"
+comments: true
 date: 2014-08-12 08:55:36
 ---
 
@@ -17,7 +18,7 @@ Click on **EC2** (towards the upper left of the page).
 
 #### Step 0:
 
-In the top right of the page between your login name and 'Help' there's a drop down menu with regions. 
+In the top right of the page between your login name and 'Help' there's a drop down menu with regions.
 Select 'US East (N. Virginia)'.
 
 Click on the blue “Launch Instance” button (midway down the page)
@@ -110,3 +111,7 @@ Locate the Public DNS for your instance. It should look something like this:
 
 
 At some point you will need to highlight and copy the Public DNS. This is the link to your specific instance that you started at Amazon Web Services (AWS).
+
+
+-----------------------------------------------
+-----------------------------------------------
