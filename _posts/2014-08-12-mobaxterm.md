@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Windows Users: Connecting to your EC2 Instance"
+comments: true
 date: 2014-08-12 18:44:36
 ---
 
@@ -17,7 +18,7 @@ You are also welcome to try the terminal emulator of your choice.
 
 3. Start a new session by clicking on **Session**, then click on **SSH**
 
-4. Under the basic settings, enter the Public DNS from your EC2 Instance. It should look like: 
+4. Under the basic settings, enter the Public DNS from your EC2 Instance. It should look like:
   ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 
 5. Check the box next to "Specify username" and fill in the username as "ubuntu"
