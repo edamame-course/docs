@@ -29,6 +29,12 @@ ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.co
 
 4. SUCCESS! You have now logged into your computer in the cloud!
 
+After the first login to the EC2, you do not need to repeat the chmod to change permissions for the key.
+Every time you start an previously-stopped EC2 instance, there will be a new Public DNS.  To connect to the EC2 after the first login, copy and paste that new Public DNS into "UNIQUE SET OF NUMBERS", open terminal, and paste:
+```
+ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+```
+
 
 -----------------------------------------------
 -----------------------------------------------
