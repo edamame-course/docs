@@ -7,9 +7,11 @@ title: "Welcome to EDAMAME!"
 
 ![edamame header image](img/gull_lake.jpg)
 
-For more about this course, see [edamame-course.org](http://edamame-course.org).
+[For more about this course, see edamame-course.org](http://edamame-course.org).
 
-Our Mendelay [reading list is located here](http://www.mendeley.com/groups/4688421/edamame/).
+[Our Mendelay reading list is located here](http://www.mendeley.com/groups/4688421/edamame/).
+
+[Our Etherpad is located here and is a shared note-taking space](https://edamame.etherpad.mozilla.org/1).
 
 ---------------------------------------------
 
