@@ -35,7 +35,7 @@ title: "Welcome to EDAMAME!"
 
 1. [Connecting to your AWS EC2 instance with MobaXTerm](https://edamame-course.github.io/docs/mobaxterm.html)
 
-2. [Installing a Virtual Box to run QIIME on your own machine](https://edamame-course.github.io/docs/QIIME_VB.html)
+2. [Installing a Virtual Box to run QIIME on your own machine](https://edamame-course.github.io/docs/QIIME_VB_for_Windows.html)
 
 ---------------------------------------------
 **Wednesday, August 13th, 2014**
