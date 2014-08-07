@@ -97,20 +97,18 @@ Again, the directory name VBOXADDITIONS... may differ depending on your version 
 
 ![Restart the Virtual Machine](img/QIIME_VB/Restart_Image.png)
 
-6. After the virtual box restarts, select "Devices" then "Drag 'n' Drop" then click on "Bidirectional". This will enable you to copy and paste material from your "Host" Windows 7 computer into your "Virtual Box" Linux computer.
+6. After the virtual box restarts, select "Devices" then "Drag 'n' Drop" then click on "Bidirectional". This will enable you to copy and paste material from your "Host" Windows 7 computer into your "Virtual Box" Linux computer. The “1.Welcome.txt” provides details on how to copy and paste in the terminal.
 
 * If you are interested in knowing which software has been installed in this Virtual Machine move on to Document 2; if you are having problems with the network, i.e. the wget commands do not work, move to Document 3; otherwise move along to Document 4. All the Documents are in the Before_you_start folder on your desktop.
 
 ---------------------------------
 __Software and Dataset Installations in your Virtual Box__
 
-* Open a terminal by clicking on the black window with a “>_” in the left menu bar of the virtual machine, and enter this command into the terminal:
+* Open a terminal by clicking on the black window with a “>_” in the left menu bar of the virtual machine. First, install PandaSeq from Dr. Josh Neufeld's Lab from Waterloo University by entering this command into the terminal:
 
 ~~~
 sudo apt-add-repository ppa:neufeldlab/ppa && sudo apt-get update && sudo apt-get install pandaseq
 ~~~
-
-This installs PandaSeq from Dr. Josh Neufeld's Lab from Waterloo University.
 
 * Now we will get an example data set from the Schloss Lab at the University of Michigan by entering this command into the terminal:
 
