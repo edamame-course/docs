@@ -5,9 +5,9 @@ title: "Welcome to EDAMAME!"
 
 ## Welcome to the EDAMAME course!
 
-![edamame header image](img/gull_lake.jpg)
-
 [For more about this course, see edamame-course.org](http://edamame-course.org).
+
+![edamame header image](img/gull_lake.jpg)
 
 [Our Mendelay reading list is located here](http://www.mendeley.com/groups/4688421/edamame/).
 
@@ -21,7 +21,7 @@ title: "Welcome to EDAMAME!"
 
 **Everyone**
 
-1. [COMING SOON: General Set-Up Guidelines](#)
+1. [General Set-Up Guidelines](https://edamame-course.github.io/docs/general_set_up_guidelines.html)
 
 2. [Getting set up with Amazon's EC2 Instance](https://edamame-course.github.io/docs/intro_to_ec2_instance.html)
 
@@ -40,4 +40,4 @@ title: "Welcome to EDAMAME!"
 ---------------------------------------------
 **Wednesday, August 13th, 2014**
 
-1. [Test](#)
+1. [Wednesday, August 13th Overview](#)
