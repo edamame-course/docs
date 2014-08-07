@@ -24,19 +24,21 @@
             <div class=row-fluid>
                 {% assign post_count = site.posts|size %}
                 {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
-                    <div id=navigation class=span2>
+                    <div id=navigation class=span3>
                         {% include navigation.html %}
                     </div>
 
-                    <div id=content class=span10>
+                    <div id=content class=span9>
                         {{ content }}
                     </div>
+
                 {% else %}
                     <div id=content class=span12>
                         {{ content }}
                     </div>
                 {% endif %}
             </div>
+
 
             <div class=row-fluid>
                 <div id=footer class=span12>

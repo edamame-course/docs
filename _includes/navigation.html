@@ -1,16 +1,36 @@
-<ul class="nav nav-list">
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
-    {% for section in site.sections %}
-        {% assign attr = section[0] %}
-        {% assign label = section[1] %}
 
-        {% for page in site.categories[attr] %}
-            {% if forloop.first %}
-                <li class=nav-header>{{ label }}</li>
-            {% endif %}
-            <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}
-    {% endfor %}
-<!-- List additional links. It is recommended to add a divider
-    e.g. <li class=divider></li> first to break up the content. -->
+<ul class="nav nav-list">
+    <li class=nav-header>HOME</li>
+    <li><a href="index.html">EDAMAME course materials</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Before We Begin</li>
+    <li><a href="https://edamame-course.github.io/docs/intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/extra/macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 13th</li>
+    <li><a href="https://edamame-course.github.io/docs/test.html">Test</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Thursday, August 14th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Friday, August 15th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Saturday, August 16th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Sunday, August 17th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Monday, August 18th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Tuesday, August 19th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 20th</li>
+    <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
+    <li class=divider></li>
 </ul>

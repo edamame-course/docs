@@ -9,7 +9,7 @@ subtitle: 'course materials & tutorials'
 navigation: 2
 
 # URL to source code, used in _includes/footer.html
-codeurl: 'https://github.com/edamame-course/docs'
+codeurl: 'https://edamame-course.org'
 
 # Default categories (in order) to appear in the navigation
 sections: [
