@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "General Set Up Guidelines"
+title: "Getting Set Up For The Course"
 comments: true
 date: 2014-08-12 08:55:36
 ---
@@ -44,4 +44,3 @@ Finally, if you're using a Windows machine, please install [GitBash](http://git-
 
 ----------------------------------------------------
 ----------------------------------------------------
-[]
