@@ -19,7 +19,7 @@ Otherwise, it makes sense for you to use programs on your laptops during the cou
 
 **Please have [mothur installed on your computer](http://www.mothur.org/wiki/Installation).**
 
-**You will have to have R installed on your computer:* [R](http://www.r-project.org/)**
+**You will have to have R installed on your computer:* [R](http://www.r-project.org/).  We also recommend [R-Studio](http://www.rstudio.com/).**
 
 **You'll absolutely need a good text editor.  Here's just a few that we recommend:**
 1. **Mac OSX**: [TextWrangler](http://www.barebones.com/products/textwrangler/), [Sublime Text](http://www.sublimetext.com/), [Atom](https://atom.io/), [TextMate](http://macromates.com/)
@@ -30,6 +30,8 @@ Otherwise, it makes sense for you to use programs on your laptops during the cou
 1. **Mac OSX**: [FileZilla](https://filezilla-project.org/), [ForkLift](http://www.binarynights.com/forklift/)
 2. **Linux**: [FileZilla](https://filezilla-project.org/),
 3. **Windows**: [Filezilla](https://filezilla-project.org/), [WinSCP](http://winscp.net/download/winscp554setup.exe)
+
+Finally, if you're using a Windows machine, please install [GitBash](http://git-scm.com/downloads) for the tutorials about using the command line.
 
 
 
