@@ -9,13 +9,14 @@ title: "Welcome to EDAMAME!"
 
 ![edamame header image](img/gull_lake.jpg)
 
-[Our Mendelay reading list is located here](http://www.mendeley.com/groups/4688421/edamame/).
+[Our Mendelay reading list is located here](http://www.mendeley.com/groups/4688421/edamame/). [PDF copies of readings can be found here](https://github.com/edamame-course/docs/tree/gh-pages/extra/PDFs)
 
 [Our Etherpad is located here and is a shared note-taking space](https://edamame.etherpad.mozilla.org/1).
 
 ---------------------------------------------
 
-## Schedule
+## Announcements
+
 ---------------------------------------------
 **Before We Begin - Things to install before we start the course.**
 
