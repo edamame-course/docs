@@ -29,7 +29,7 @@ Please have [mothur installed on your computer](http://www.mothur.org/wiki/Insta
 You will have to have R installed on your computer: [R](http://www.r-project.org/).  We also recommend [R-Studio](http://www.rstudio.com/).
 
 
-**You'll absolutely need a good text editor.  Here's just a few that we recommend:**
+You'll absolutely need a good text editor.  Here's just a few that we recommend:
 
 1. **Mac OSX**: [TextWrangler](http://www.barebones.com/products/textwrangler/), [Sublime Text](http://www.sublimetext.com/), [Atom](https://atom.io/), [TextMate](http://macromates.com/)
 
@@ -38,7 +38,7 @@ You will have to have R installed on your computer: [R](http://www.r-project.org
 3. **Windows**: [NotePad++](http://notepad-plus-plus.org/), [Sublime Text](http://www.sublimetext.com/), [Atom](https://atom.io/), [TextPad](https://www.textpad.com/)
 
 
-**Transfering files at the command line is great (we'll go over this), but sometimes you want to use file transfer software.  Here's a few options:**
+Transfering files at the command line is great (we'll go over this), but sometimes you want to use file transfer software.  Here's a few options:
 
 1. **Mac OSX**: [FileZilla](https://filezilla-project.org/), [ForkLift](http://www.binarynights.com/forklift/)
 
@@ -47,7 +47,10 @@ You will have to have R installed on your computer: [R](http://www.r-project.org
 3. **Windows**: [Filezilla](https://filezilla-project.org/), [WinSCP](http://winscp.net/download/winscp554setup.exe)
 
 
-Finally, if you're using a Windows machine, please install [GitBash](http://git-scm.com/downloads) for the tutorials about using the command line.
+If you're using a Windows machine, please install [GitBash](http://git-scm.com/downloads) for the tutorials about using the command line.
+
+**Important:** If at any point, you're lost about all of this installation stuff, don't worry.  We'll be available on [Tuesday, August 12th, in the evening](https://edamame-course.github.io/website/schedule.html) to help you out.  We'll also have plenty of time throughout the course to get everything working for you.
+
 
 ----------------------------------------------------
 ----------------------------------------------------
