@@ -49,6 +49,7 @@ Transfering files at the command line is great (we'll go over this), but sometim
 
 If you're using a Windows machine, please install [GitBash](http://git-scm.com/downloads) for the tutorials about using the command line.
 
+
 **Important:** If at any point, you're lost about all of this installation stuff, don't worry.  We'll be available on [Tuesday, August 12th, in the evening](https://edamame-course.github.io/website/schedule.html) to help you out.  We'll also have plenty of time throughout the course to get everything working for you.
 
 
