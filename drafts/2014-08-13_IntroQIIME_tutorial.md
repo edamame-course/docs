@@ -6,8 +6,8 @@ date: 2014-08-13 08:44:36
 ---
 ###Assembling Illumina paired-end sequences
 1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
-About half-way down the page, click on "Example data from Schloss lab" [http://www.mothur.org/wiki/MiSeq_SOP]
-!(img/QIIMETutorial1_IMG/IMG_01.jpg).
+About half-way down the page, click on ["Example data from Schloss lab"](http://www.mothur.org/wiki/MiSeq_SOP)  
+![Download Schloss Data](img/QIIMETutorial1_IMG/IMG_01.jpg).  
 Unzip and move into a new directory called "QIIME_Tutorial."
 
 2.  **Open terminal, and use `cd`** to navigate to your new QIIME_Tutorial directory.  Use `mkdir` to create a new directory called "assembled_reads"
@@ -59,7 +59,7 @@ This creates a new file called "list.txt", in which all instances of the charact
 ```
 head list.txt
 ```
-!(img/QIIMETutorial1_IMG/IMG_03.jpg)
+![Sanity Check #1](img/QIIMETutorial1_IMG/IMG_03.jpg)
 
   Our positive control worked, and we should be convinced and joyous that we executed `grep` correctly AND that the primers were trimmed by PANDAseq.  We can now remove the list file.
 ```
@@ -67,18 +67,15 @@ rm list.txt
 ```
 
 5.  **Automate assembly with a shell script.**
-We would have to execute an iteration of the PANDAseq command for every pair of reads that need to be assembled. This could take a long time.  So, we'll use a shell script to automate the task.
-
-Download this [list](SchlossSampleNames.txt) **InsertLink!!** of all the unique sample names and move it to your QIIMETutorial directory.
-
-Then, download this shell [script](pandaseq_merge.sh) **InsertLink**  and move it to your QIIMETutorial directory.
-
+We would have to execute an iteration of the PANDAseq command for every pair of reads that need to be assembled. This could take a long time.  So, we'll use a shell script to automate the task.  
+Download this [list](misc/QIIMETutorial_Misc/SchlossSampleNames.txt) of all the unique sample names and move it to your QIIMETutorial directory.  
+Then, download this shell [script](misc/QIIMETutorial_Misc/pandaseq_merge.sh) and move it to your QIIMETutorial directory.  
 Change permissions on the script
 ```
 chmod +x pandaseq_merge.sh
 ```
 
-Execute the script
+  Execute the script
 ```
 ./pandaseq_merge.sh
 ```
@@ -88,8 +85,9 @@ How many files were we expecting from the assembly?  There were 19 pairs to be a
 ```
 ls -l pandaseq_merged_reads | wc -l
 ```
-The terminal should return the number "38."  Congratulations, you lucky duck! You've assembled paired-end reads!
-!(img/QIIMETutorial1_IMG/IMG_04.jpg)
+The terminal should return the number "38."  Congratulations, you lucky duck! You've assembled paired-end reads!  
+
+  ![Lucky Duck!](img/QIIMETutorial1_IMG/IMG_04.jpg)
 
 
 ###Moving assembled reads into the QIIME environment
@@ -97,13 +95,13 @@ The terminal should return the number "38."  Congratulations, you lucky duck! Yo
 While working through the tutorial, open your web browser and navigate to this [page](http://www.qiime.org/scripts/index.html). It provides an index of qiime scripts and options.  We will be using the default for most of the time, but for each script, it is useful to open its documentation and assess the alternative options.
 
 1.  **Understanding the QIIME mapping file.**
-QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](HERE) **INSERTLINK**, and move it to your QIIMETutorial directory.
+QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](misc/QIIMETutorial_Misc/Schloss_Map.txt), and move it to your QIIMETutorial directory.
 
   Let's spend few moments getting to know the mapping file:
 ```
 more Schloss_Map.txt
 ```
-!(img/QIIMETutorial1_IMG/IMG_05.jpg)
+![Schloss Mapping File](img/QIIMETutorial1_IMG/IMG_05.jpg)
 
   A clear and comprehensive mapping file should contain all of the information that will be used in downstream analyses.  The mapping file includes both categorical (qualitative) and numeric (quantitative) contextual information about a sample. This could include, for example, information about the subject (sex, weight), the experimental treatment, time or spatial location, and all other measured variables (e.g., pH, oxygen, glucose levels). Creating a clear mapping file will provide direction as to appropriate analyses needed to test hypotheses.  Basically, all information for all anticipated analyses should be in the mapping file.
 
@@ -116,7 +114,7 @@ more Schloss_Map.txt
   * The last column must be "Description".
   * There can be as many in-between columns of contextual data as needed.
   * If you plan to use QIIME for quality control (which we do not need because the PEAR assembly included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
-  * Excel can cause formatting heartache.  See more details [here](img/QIIMETutorial/MapFormatExcelHeartAche.md) **CheckTHISLINK**.
+  * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial/MapFormatExcelHeartAche.md).
 
 2.  **Call macqiime**
 For Mac users, to enter the "qiime" environment in all of its glory.
@@ -133,7 +131,7 @@ This script creates a new directory called "combined_fasta."  Use `cd` and `ls` 
 ```
 head combined_seqs.fna
 ```
-!(img/QIIMETutorial1_IMG/IMG_06.jpg)
+![combined_seqs.fna](img/QIIMETutorial1_IMG/IMG_06.jpg)
 Observe that QIIME has added the SampleIDs from the mapping file to the start of each sequence.  This allows QIIME to quickly link each sequence to its sampleID and metadata.
 
 While we are inspecting the combined_seqs.fna file, let's confirm how many sequences we have in the dataset.
@@ -150,8 +148,8 @@ mothur
 ```
 summary.seqs(fasta=combined_seqs.fna)
 ```
-Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.
-!(img/QIIMETutorial1_IMG/summary.seqs.jpg)
+Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  
+![mothur_summary.seqs](img/QIIMETutorial1_IMG/summary.seqs.jpg)
 ```
 quit()
 ```
@@ -181,7 +179,7 @@ pick_otus.py -i combined_fasta/combined_seqs.fna -r refseqs.fasta -m uclust_ref 
 ```
 Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
 
-  !(img/QIIMETutorial1_IMG/IMG_07.jpg)
+  ![combined_seqs_otus.txt](img/QIIMETutorial1_IMG/IMG_07.jpg)
 
   From the head of the combined_seqs_otus.txt file, we can see that OTU 0 has many sequence associated with it, including sequence 9757 from from sample F3D8.S196. We also see that OTU 3 only has one sequence associated with it. The log file has goodies about the algorithm and options chosen.  Keep this (and all) log file, because when you are writing the paper you may not remember what version of which clustering algorithm you used.
 
@@ -196,7 +194,7 @@ pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/co
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
 Inspect the head of the new fasta file, cdhit_rep_seqs.fasta
 
-  !(img/QIIMETutorial1_IMG/IMG_08.jpg)
+  ![cdhit_rep_seqs.fasta](img/QIIMETutorial1_IMG/IMG_08.jpg)
 
   As before, we see the OTU ID given first (consecutively, starting with 0), and then the sequence ID of the representative sequence, and then the full nucleotide information for the sequence. Notice that for OTU 0, which only had one sequence in its "cluster", is defined by that one sequence.  Don't be shy - go ahead and compare it to the combined_seqs_otus.txt file of OTU clusters.
   Take a gander at the log file, as well.
@@ -235,7 +233,7 @@ identify_chimeric_seqs.py -m ChimeraSlayer -i pynast_aligned/cdhit_rep_seqs_alig
 ```
 *Hint*:  The documentation for identify_chimeric_seqs.py recommends that the same alignment reference, the `-a` option, should be used for ChimeraSlayer as was used for building the alignment. This alignment file is, by default with the `align_seqs.py` script, not needed to be user-specified; `align_seqs.py` knows where to find the alignment reference file, which is buried in the guts of the QIIME directories.  However, the `identify_chimeric_seqs.py` does not know where to look for the same alignment file. A good trick to know is that the 'print_qiime_config.py' script will provide the path to many of the common default files used by various QIIME scripts, including the alignment.
 
-  !(img/QIIMETutorial1_IMG/IMG_09.jpg)
+  ![print_qiime_config.py](img/QIIMETutorial1_IMG/IMG_09.jpg)
 
   ChimeraSlayer can take a long time.  You can let it run, or kill the command (Control C on Macs) because we have the next file ready for you [here](link to new directory) **InsertLinkoFile**.
 Inspect the chimeric_seqs_cs.txt file.  We can use `wc` to find that XX sequences are identified as chimeras.  We will remove these (and the alignment failures) from the dataset.
