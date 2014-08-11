@@ -23,7 +23,11 @@ We're going to be using both [QIIME](http://qiime.org/) and [mothur](http://www.
 There are numerous ways to install QIIME.  Please see our tutorials for installation on [MacOSX](https://edamame-course.github.io/docs/extra/macqiime_installation.html).  If you're on a Linux machine, [QIIME installation can be done with package installers](https://github.com/qiime/qiime-deploy).  If you're on a Windows machine, you'll have to install Virtual Box to run a linux machine on top of Windows -- [see our tutorial to do this](https://edamame-course.github.io/docs/QIIME_VB_for_Windows.html).
 
 
-Please have [mothur installed on your computer](http://www.mothur.org/wiki/Installation).  Also make sure to [download the datasets for the mothur tutorials](http://www.mothur.org/wiki/MiSeq_SOP).
+Please have [mothur installed on your computer](http://www.mothur.org/wiki/Installation). For mothur, please make sure you have the following installed in a single directory that is easy for you to navigate to.
+[Download and Unpack the correct mothur for your operating system](http://www.mothur.org/wiki/Download_mothur)
+[Example Dataset from Schloss Lab](http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip)
+[SILVA-based bacterial reference alignment](http://www.mothur.org/w/images/9/98/Silva.bacteria.zip)
+[mothur-formatted version of the RDP training set (v.9)](http://www.mothur.org/w/images/5/59/Trainset9_032012.pds.zip)
 
 
 You will have to have R installed on your computer: [R](http://www.r-project.org/).  We also recommend [R-Studio](http://www.rstudio.com/).

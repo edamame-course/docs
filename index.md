@@ -17,7 +17,7 @@ title: "Welcome to EDAMAME!"
 
 ## Announcements
 
----------------------------------------------
+
 **Before We Begin - Things to install before we start the course.**
 
 **Everyone**
@@ -41,4 +41,9 @@ title: "Welcome to EDAMAME!"
 ---------------------------------------------
 **Wednesday, August 13th, 2014**
 
-1. [Wednesday, August 13th Overview](#)
+1. [Wednesday, August 13th Overview](https://edamame-course.github.io/docs/august_13.html)
+
+---------------------------------------------
+**Thursday, August 14th, 2014**
+
+1. [Thursday, August 14th Overview](https://edamame-course.github.io/docs/august_14.html)
