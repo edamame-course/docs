@@ -24,10 +24,10 @@ There are numerous ways to install QIIME.  Please see our tutorials for installa
 
 
 Please have [mothur installed on your computer](http://www.mothur.org/wiki/Installation). For mothur, please make sure you have the following installed in a single directory that is easy for you to navigate to.
-[Download and Unpack the correct mothur for your operating system](http://www.mothur.org/wiki/Download_mothur)
-[Example Dataset from Schloss Lab](http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip)
-[SILVA-based bacterial reference alignment](http://www.mothur.org/w/images/9/98/Silva.bacteria.zip)
-[mothur-formatted version of the RDP training set (v.9)](http://www.mothur.org/w/images/5/59/Trainset9_032012.pds.zip)
+1. [Download and Unpack the correct mothur for your operating system](http://www.mothur.org/wiki/Download_mothur)
+2. [Example Dataset from Schloss Lab](http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip)
+3. [SILVA-based bacterial reference alignment](http://www.mothur.org/w/images/9/98/Silva.bacteria.zip)
+4. [mothur-formatted version of the RDP training set (v.9)](http://www.mothur.org/w/images/5/59/Trainset9_032012.pds.zip)
 
 
 You will have to have R installed on your computer: [R](http://www.r-project.org/).  We also recommend [R-Studio](http://www.rstudio.com/).
