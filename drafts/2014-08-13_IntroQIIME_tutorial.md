@@ -235,6 +235,7 @@ identify_chimeric_seqs.py -m ChimeraSlayer -i pynast_aligned/cdhit_rep_seqs_alig
 
   !(img/QIIMETutorial1_IMG/IMG_09.jpg)
 
+**AshleyContinueHERE**
   ChimeraSlayer can take a long time.  You can let it run, or kill the command (Control C on Macs) because we have the next file ready for you [here](link to new directory) **InsertLinkoFile**.
 Inspect the chimeric_seqs_cs.txt file.  We can use `wc` to find that XX sequences are identified as chimeras.  We will remove these (and the alignment failures) from the dataset.
 ```
