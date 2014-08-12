@@ -16,12 +16,12 @@ cd QIIMETutorial
 
 ### Assembling Illumina paired-end sequences
 
-1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
+1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:  
 *If you are a Mac user*, about half-way down the page, click on ["Example data from Schloss lab"](http://www.mothur.org/wiki/MiSeq_SOP).
 
   ![img1](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_01.jpg).  
 
-  Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
+  Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.  
 
 *If you are on the EC2 or the QIIME Virtual Box*, download the Schloss data from the terminal, using `wget`:
 ```
@@ -144,11 +144,8 @@ more Schloss_Map.txt
   * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
   * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
 
-2.  **Call macqiime**
-For Mac users, to enter the QIIME environment in all of its glory.
-```
-macqiime
-```
+2.  **Call QIIME**
+For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.  For VB and EC2 users, simply call `qiime`.  
 
 3.  **Merging assembled reads into the one big ol' data file.**
 QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the `add_qiime_labels.py` script. Documentation is [here](http://qiime.org/scripts/add_qiime_labels.html).
@@ -214,23 +211,24 @@ Representative sequences are those that will be aligned and used to build a tree
 mkdir cdhit_rep_seqs/
 ```
 ```
-pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/combined_seqs.fna -o cdhit_rep_seqs/cdhit_rep_seqs.fasta -l cdhit_rep_seqs/cdhit_rep_seqs.log
+pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/combined_seqs.fna -o cdhit_rep_seqs/cdhit_rep_seqs.fasta -l cdhit_rep_seqs/cdhit_rep_seqs.log -n 100
 ```
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
-Inspect the head of the new fasta file, cdhit_rep_seqs.fasta
+Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.
 
   ![img8](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_08.jpg)  
 
   As before, we see the OTU ID given first (consecutively, starting with 0), and then the sequence ID of the representative sequence, and then the full nucleotide information for the sequence. Notice that for OTU 0, which only had one sequence in its "cluster", is defined by that one sequence.  Don't be shy - go ahead and compare it to the combined_seqs_otus.txt file of OTU clusters.
-  Take a gander at the log file, as well.
+  Take a gander at the log file, as well.  
+
 6. **Align representative sequences.**
-We will align our representative sequences using PyNAST, which uses a "gold" reference template for the alignment.  QIIME uses a "gold" pre-aligned template made from the greengenes database.  The default alignment to the template is minimum 75% sequence identity and minimum length 150. The default minimum length is not great for short reads like we have, so we will be more generous and change the default. What should we change it to?
+Navigate back to the QIIMETutorial directory. We will align our representative sequences using PyNAST, which uses a "gold" reference template for the alignment.  QIIME uses a "gold" pre-aligned template made from the greengenes database.  The default alignment to the template is minimum 75% sequence identity and minimum length 150. The default minimum length is not great for short reads like we have, so we will be more generous and change the default. What should we change it to?
 ```
-count_seqs.py -i cdhit_rep_seqs.fasta
+count_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta
 ```
 Given that our average assembled read length is ~252 bp, let's decide that at least 100 bp must align.  We will have the `-e` option to 100. The alignment will take a few minutes.  Documentation for `align_seqs.py` is [here](http://qiime.org/scripts/align_seqs.html).
 ```
-align_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -o pynast_aligned/ -e 100 -v
+align_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -o pynast_aligned/ -e 100
 ```
 Navigate into the pynast_aligned directory.  There are three files waiting there:  one file of sequences that failed to align, one of sequences that did align, and a log file.  Inspect each.
 ```

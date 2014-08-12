@@ -10,13 +10,13 @@ Welcome back!
 
 Previously, we left off with quality-controlled merged Illumina paired-end sequences, picked OTUs and an alignment of the representative sequences from those OTUs.
 1.  **Assign taxonomy to representative sequences**
-Navigate into the QIIMETutorial directory using `cd`, and, if you are on a Mac, call `macqiime` to enter the QIIME environment.  We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top.
+Navigate into the QIIMETutorial directory using `cd`, and, enter the QIIME environment. We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top.
 
 ```
 assign_taxonomy.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -m rdp -c 0.8
 ```
 
-
+![img11](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_11.jpg)
 
 
 
