@@ -187,10 +187,7 @@ In the above script:
   *  We defined an output file "cdhit_picked_otus" `-o`.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
   *  We define OTUs at 97% sequence identity `-s 0.97`
 
-  Here is an example of using the uclust_ref for picking OTUs (try it later!).
-```
-pick_otus.py -i combined_fasta/combined_seqs.fna -r refseqs.fasta -m uclust_ref --uclust_otu_id_prefix qiime_otu_
-```
+
 Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
 
 ![img7](img/QIIMETutorial1_IMG/IMG_07.jpg)
@@ -221,10 +218,6 @@ Given that our average assembled read length is ~252 bp, let's decide that at le
 ```
 align_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -o pynast_aligned/ -e 100 -v
 ```
-
-test
-align_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -o pynast_aligned_t/ -e 100 -v -t /macqiime/greengenes/core_set_aligned.fasta.imputed
-
 Navigate into the pynast_aligned directory.  There are three files waiting there:  one file of sequences that failed to align, one of sequences that did align, and a log file.  Inspect each.
 ```
 count_seqs.py -i cdhit_rep_seqs_failures.fasta
