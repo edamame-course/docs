@@ -1,3 +1,26 @@
+---
+layout: page
+title: "QIIME Tutorial 2"
+comments: true
+date: 2014-08-14 08:44:36
+---
+
+###Back in the saddle
+Welcome back!
+
+Previously, we left off with quality-controlled merged Illumina paired-end sequences, picked OTUs and an alignment of the representative sequences from those OTUs.
+1.  **Assign taxonomy to representative sequences**
+Navigate into the QIIMETutorial directory using `cd`, and, if you are on a Mac, call `macqiime` to enter the QIIME environment.  We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top.
+
+```
+assign_taxonomy.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -m rdp -c 0.8
+```
+
+
+
+
+
+
 
 
 
@@ -6,3 +29,33 @@ Filter OTU table
 ```
 filter_otus_by_sample.py -i  cdhit_picked_otus/combined_seqs_otus.txt  -f combined_fasta/combined_seqs.fna -s pynast_aligned/cdhit_rep_seqs_failures_names.txt
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##Where to find QIIME resources and help
+*  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
+*  [Documentation](http://www.qiime.org/scripts/index.html) for all QIIME scripts.
+*  There is a very active [QIIME Forum](https://groups.google.com/forum/#!forum/qiime-forum) on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!
+*  The [QIIME Blog](http://qiime.wordpress.com/) provides updates like bug fixes, new features, and new releases.
+*  QIIME development is on [GitHub](https://github.com/biocore/qiime).
+
+-----------------------------------------------
+-----------------------------------------------

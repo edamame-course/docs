@@ -23,7 +23,7 @@ About half-way down the page, click on ["Example data from Schloss lab"](http://
 
   Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
 
-2.  Use `mkdir` to create a new directory called "assembled_reads"
+2.  Use `mkdir` to create a new directory called "pandaseq_merged_reads"
 ```
 mkdir pandaseq_merged_reads
 ```
@@ -78,10 +78,10 @@ head list.txt
 rm list.txt
 ```
 
-5.  **Automate assembly with a shell script.**
+5.  **Automate paired-end merging with a shell script.**
 We would have to execute an iteration of the PANDAseq command for every pair of reads that need to be assembled. This could take a long time.  So, we'll use a shell script to automate the task.  
-Download this [list](misc/QIIMETutorial_Misc/SchlossSampleNames.txt) of all the unique sample names and move it to your QIIMETutorial directory.  
-Then, download this shell [script](misc/QIIMETutorial_Misc/pandaseq_merge.sh) and move it to your QIIMETutorial directory.  
+Download this [list](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/SchlossSampleNames.txt) of all the unique sample names and move it to your QIIMETutorial directory.  
+Then, download this shell [script](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/pandaseq_merge.sh) and move it to your QIIMETutorial directory.  
 Change permissions on the script
 ```
 chmod +x pandaseq_merge.sh
