@@ -19,9 +19,9 @@ cd QIIMETutorial
 1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
 About half-way down the page, click on ["Example data from Schloss lab"](http://www.mothur.org/wiki/MiSeq_SOP)  
 
-![img1](img/QIIMETutorial1_IMG/IMG_01.jpg).  
+  ![img1](img/QIIMETutorial1_IMG/IMG_01.jpg).  
 
-Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
+  Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
 
 2.  Use `mkdir` to create a new directory called "assembled_reads"
 ```
@@ -33,13 +33,12 @@ pandaseq -f MiSeq_SOP/F3D0_S188_L001_R1_001.fastq -r MiSeq_SOP/F3D0_S188_L001_R2
 ```
 Let's look carefully at the anatomy of this command.
 
-  `pandaseq` calls the package of pandaseq scripts.
-  `-f MiSeq_SOP/F3D0_S188_L001_R1_001.fastq` tells the script where to find the forward read.
-  `-r` tells the script where to find its matching reverse read.
-  `-w PEAR_assembled_reads/F3D0_S188.fasta` directs the script to make a new fasta file of the assembled reads and to put it in the "PEAR_assembled_reads" directory.
-  `-g PEAR_assembled_reads/F3D0_S188.log` Selects an option of creating a log file.
-  `-L` specifies the maximum length of the assembled reads, which, in truth, should be 251 bp. This is a very important option to specify, otherwise PEAR will assemble a lot of crazy-long sequences.
-
+  -  `pandaseq` calls the package of pandaseq scripts.
+  -  `-f MiSeq_SOP/F3D0_S188_L001_R1_001.fastq` tells the script where to find the forward read.
+  -  `-r` tells the script where to find its matching reverse read.
+  -  `-w pandaseq_merged_reads/F3D0_S188.fasta` directs the script to make a new fasta file of the assembled reads and to put it in the "pandaseq_merged_reads" directory.
+  -  `-g pandaseq_merged_reads/F3D0_S188.log` Selects an option of creating a log file.
+  -  `-L` specifies the maximum length of the assembled reads, which, in truth, should be 251 bp. This is a very important option to specify, otherwise PANDAseq will assemble a lot of crazy-long sequences.
 
   All of the above information, and more options, are fully described in the [PANDAseq Manual.](http://neufeldserver.uwaterloo.ca/~apmasell/pandaseq_man1.html).  The log file includes details as to how well the merging went.
 
@@ -94,7 +93,7 @@ chmod +x pandaseq_merge.sh
 ```
 
 6.  **Sanity check #2.**
-How many files were we expecting from the assembly?  There were 19 pairs to be assembled, and we are generating one assembled fasta and one log for each.  Thus, the PEAR_assembled_reads directory should contain 38 files.  We use the `wc` command to check the number of files in the directory.
+How many files were we expecting from the assembly?  There were 19 pairs to be assembled, and we are generating one assembled fasta and one log for each.  Thus, the pandaseq_merged_reads directory should contain 38 files.  We use the `wc` command to check the number of files in the directory.
 ```
 ls -l pandaseq_merged_reads | wc -l
 ```
@@ -126,7 +125,7 @@ more Schloss_Map.txt
   *  SampleIDs are VERY IMPORTANT. Choose wisely! Ideally, a user who did not design the experiment should be able to distiguishes the samples easily, as is the case with the Schloss data. SampleIDs must be alphanumeric characters or periods.  They cannot have underscores.
   * The last column must be "Description".
   * There can be as many in-between columns of contextual data as needed.
-  * If you plan to use QIIME for quality control (which we do not need because the PEAR assembly included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
+  * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
   * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial/MapFormatExcelHeartAche.md).
 
 2.  **Call macqiime**
