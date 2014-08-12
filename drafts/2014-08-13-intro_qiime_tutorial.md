@@ -4,6 +4,16 @@ title: "Mac OS & Linux Users: Connecting to your EC2 Instance"
 comments: true
 date: 2014-08-13 08:44:36
 ---
+### Getting started
+Make a new directory `mkdir` in which to put all of your QIIME-related analyses for today and tomorrow, and then 'cd' to move into that directory.  Execute all commands from within this directory.
+```
+mkdir QIIMETutorial
+```
+
+```
+cd QIIMETutorial
+```
+
 ### Assembling Illumina paired-end sequences
 
 1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
