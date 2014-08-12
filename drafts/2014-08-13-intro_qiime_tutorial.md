@@ -42,7 +42,7 @@ Let's look carefully at the anatomy of this command.
 
   All of the above information, and more options, are fully described in the [PANDAseq Manual.](http://neufeldserver.uwaterloo.ca/~apmasell/pandaseq_man1.html).  The log file includes details as to how well the merging went.
 
-5.  **Sanity check and file inspection.**
+5.  **Sanity check #1 and file inspection.**
 There are some questions you may be having: What does pandaseq return?  Are there primers/barcodes on the assembled reads?  Are these automatically trimmed?
 
   It turns out, that PANDAseq, by default, removes primers and barcodes (There are also options to keep primers, please see the manual link above).  Given that we used the default pandaseq options, how do we check to make sure that what we expect to happen actually did happen?
@@ -145,28 +145,28 @@ head combined_seqs.fna
 ```
 ![img6](img/QIIMETutorial1_IMG/IMG_06.jpg)
 
-Observe that QIIME has added the SampleIDs from the mapping file to the start of each sequence.  This allows QIIME to quickly link each sequence to its sampleID and metadata.
+  Observe that QIIME has added the SampleIDs from the mapping file to the start of each sequence.  This allows QIIME to quickly link each sequence to its sampleID and metadata.
 
-While we are inspecting the combined_seqs.fna file, let's confirm how many sequences we have in the dataset.
+  While we are inspecting the combined_seqs.fna file, let's confirm how many sequences we have in the dataset.
 ```
 count_seqs.py -i combined_seqs.fna
 ```
 This is a nice QIIME command to call frequently, because it provides the total number of sequences in a file, as well as some information about the lengths of those sequences.  But, suppose we wanted to know more than the median/mean of these sequences?
 
-Another trick with QIIME is that you can call all the mothur commands within the QIIME environment, which is very handy.  mothur offers a very useful command called `summary.seqs`, which operates on a fasta/fna file to give summary statistics about its contents.  We will cover mothur in all its glory later, but for now, execute the command:
+  Another trick with QIIME is that you can call all the mothur commands within the QIIME environment, which is very handy.  mothur offers a very useful command called `summary.seqs`, which operates on a fasta/fna file to give summary statistics about its contents.  We will cover mothur in all its glory later, but for now, execute the command:
 
-```
-mothur
-```
-```
-summary.seqs(fasta=combined_seqs.fna)
-```
-Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  
+  ```
+  mothur
+  ```
+  ```
+  summary.seqs(fasta=combined_seqs.fna)
+  ```
+  Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  
 !(img/QIIMETutorial1_IMG/summary.seqs.jpg)
 ```
 quit()
 ```
-  3.5  *Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required). Alternatively, we will identify chimeras after OTU picking.
+  3.5  *Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required).
 
 4.  **Picking Operational Taxonomic Units, OTUs.**
 Picking OTUs is sometimes called "clustering," as sequences with some threshold of identity are "clustered" together to into an OTU.
@@ -182,14 +182,13 @@ pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ 
 ```
 In the above script:
   *  We tell QIIME to look in the "combined_fasta" directory for the input file `-i`, "combined_seqs.fna".
-  *  We chose the clustering method CD-Hit `-m`
+  *  We chose the clustering method CD-HIT `-m`
   *  We defined an output file "cdhit_picked_otus" `-o`.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
   *  We define OTUs at 97% sequence identity `-s 0.97`
 
+  Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
 
-Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
-
-![img7](img/QIIMETutorial1_IMG/IMG_07.jpg)
+  ![img7](img/QIIMETutorial1_IMG/IMG_07.jpg)
 
   From the head of the combined_seqs_otus.txt file, we can see that OTU 0 has many sequence associated with it, including sequence 9757 from from sample F3D8.S196. We also see that OTU 3 only has one sequence associated with it. The log file has goodies about the algorithm and options chosen.  Keep this (and all) log file, because when you are writing the paper you may not remember what version of which clustering algorithm you used.
 
@@ -204,7 +203,7 @@ pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/co
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
 Inspect the head of the new fasta file, cdhit_rep_seqs.fasta
 
-![img8](img/QIIMETutorial1_IMG/IMG_08.jpg)
+  ![img8](img/QIIMETutorial1_IMG/IMG_08.jpg)  
 
   As before, we see the OTU ID given first (consecutively, starting with 0), and then the sequence ID of the representative sequence, and then the full nucleotide information for the sequence. Notice that for OTU 0, which only had one sequence in its "cluster", is defined by that one sequence.  Don't be shy - go ahead and compare it to the combined_seqs_otus.txt file of OTU clusters.
   Take a gander at the log file, as well.
@@ -224,11 +223,11 @@ count_seqs.py -i cdhit_rep_seqs_failures.fasta
 ```
 count_seqs.py -i cdhit_rep_seqs_aligned.fasta
 ```
-We see that there were ~3 rep. sequences that failed to align, and ~1224 that did.  (Also, notice what short-read alignments generally look like...not amazing).
+  We see that there were ~3 rep. sequences that failed to align, and ~1224 that did.  (Also, notice what short-read alignments generally look like...not amazing).
 
-*Sanity check?*  If you like, [BLAST](http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) the top sequence that failed to align to convince yourself that it is, indeed, a failure.
+  *Sanity check?*  If you like, [BLAST](http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) the top sequence that failed to align to convince yourself that it is, indeed, a pitiful failure.
 
-If, in the future, you ever have a large proportion of rep seqs that fail to align, it could be due to:
+  If, in the future, you ever have a large proportion of rep seqs that fail to align, it could be due to:
  *  Hooray! These are novel organisms! (But, think about the habitat before jumping to conclusions. As lucky as we would be to discover new species in the mouse gut, this is unlikely.)
  *  The alignment parameters were too stringent for short reads, causing "real" sequences to fail alignment.
  * The paired-end merger algorithm (e.g., pandaseq) did not do a perfect job, and concatenated ends that do not belong together.
@@ -236,13 +235,13 @@ If, in the future, you ever have a large proportion of rep seqs that fail to ali
 
   We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset after we make the OTU table.  In the meantime, let's create a text file of all the names of the rep. sequence OTU IDs that we want to remove.  We only have three failures, so we easily could do it by hand.  What if we had more?  Here's how to automate the generation of the "cdhit_rep_seqs_failures_names.txt" file using the `grep` command. We will not go into details, but general grep help is [here](http://unixhelp.ed.ac.uk/CGI/man-cgi?grep).
 
-```
-grep -o -E "^>\w+" pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d ">" > cdhit_rep_seqs_failures_names.txt
-```
+  ```
+  grep -o -E "^>\w+" pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d ">" > cdhit_rep_seqs_failures_names.txt
+  ```
 
-Congratulations!  You just had the QIIME of Your Life!
+  Congratulations!  You just had the QIIME of Your Life!
 
-![img10](img/QIIMETutorial1_IMG/IMG_10.jpg)
+  ![img10](img/QIIMETutorial1_IMG/IMG_10.jpg)
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
