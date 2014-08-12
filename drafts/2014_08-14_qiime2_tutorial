@@ -5,21 +5,30 @@ comments: true
 date: 2014-08-14 08:44:36
 ---
 
-###Back in the saddle
-Welcome back!
+###Creating an OTU table
+Welcome back, Microbe Enthusiasts!
 
 Previously, we left off with quality-controlled merged Illumina paired-end sequences, picked OTUs and an alignment of the representative sequences from those OTUs.
-1.  **Assign taxonomy to representative sequences**
-Navigate into the QIIMETutorial directory using `cd`, and, enter the QIIME environment. We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top.
+
+
+** 3.1  Assign taxonomy to representative sequences**
+
+Navigate into the QIIMETutorial directory using `cd`, and, enter the QIIME environment. We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top. Documentation is [here](http://qiime.org/scripts/assign_taxonomy.html).
 
 ```
 assign_taxonomy.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -m rdp -c 0.8
 ```
+Navigate into the new rdp_assigned_taxonomy directory and inspect the head of the tax_assignments file.
+```
+head cdhit_rep_seqs_tax_assignments.txt
+```
 
 ![img11](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_11.jpg)
 
+This assignment file is used anytime an OTU ID (the number) needs to be linked with its taxonomic assignment.
+*Note* that this list of OTUs and taxonomic assignments includes our "failed-to-align" representative sequences.  We will remove these at the next step.
 
-
+3.2  Make an OTU table and append the assigned taxonomy
 
 
 

@@ -4,7 +4,7 @@ title: "Intro to QIIME"
 comments: true
 date: 2014-08-13 08:44:36
 ---
-### Getting started
+## Getting started
 Make a new directory `mkdir` in which to put all of your QIIME-related analyses for today and tomorrow, and then 'cd' to move into that directory.  Execute all commands from within this directory.
 ```
 mkdir QIIMETutorial
@@ -14,9 +14,10 @@ mkdir QIIMETutorial
 cd QIIMETutorial
 ```
 
-### Assembling Illumina paired-end sequences
+## Assembling Illumina paired-end sequences
 
-1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:  
+###1.1  Download Schloss mouse data
+These data are 16S rRRNA V4 amplicons sequenced with MiSeq technology:  
 *If you are a Mac user*, about half-way down the page, click on ["Example data from Schloss lab"](http://www.mothur.org/wiki/MiSeq_SOP).
 
   ![img1](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_01.jpg).  
@@ -33,11 +34,11 @@ unzip MiSeqSOPData.zip
 This will make the directory "MISeq_SOP."  Move this into the QIIMETutorial directory.
 
 
-2.  Use `mkdir` to create a new directory called "pandaseq_merged_reads"
+###1.2  Use `mkdir` to create a new directory called "pandaseq_merged_reads"
 ```
 mkdir pandaseq_merged_reads
 ```
-3.  **Join paired end Illumina reads with PANDAseq**
+###**1.3  Join paired end Illumina reads with PANDAseq**
 ```
 pandaseq -f MiSeq_SOP/F3D0_S188_L001_R1_001.fastq -r MiSeq_SOP/F3D0_S188_L001_R2_001.fastq -w pandaseq_merged_reads/F3D0_S188.fasta -g pandaseq_merged_reads/F3D0_S188.log -L 255 -t 0.90
 ```
@@ -52,7 +53,7 @@ Let's look carefully at the anatomy of this command.
 
   All of the above information, and more options, are fully described in the [PANDAseq Manual.](http://neufeldserver.uwaterloo.ca/~apmasell/pandaseq_man1.html).  The log file includes details as to how well the merging went.
 
-5.  **Sanity check #1 and file inspection.**
+###1.4  Sanity check #1 and file inspection.
 There are some questions you may be having: What does pandaseq return?  Are there primers/barcodes on the assembled reads?  Are these automatically trimmed?
 
   It turns out, that PANDAseq, by default, removes primers and barcodes (There are also options to keep primers, please see the manual link above).  Given that we used the default pandaseq options, how do we check to make sure that what we expect to happen actually did happen?
@@ -94,7 +95,7 @@ head list.txt
 rm list.txt
 ```
 
-5.  **Automate paired-end merging with a shell script.**
+###1.5  Automate paired-end merging with a shell script.
 We would have to execute an iteration of the PANDAseq command for every pair of reads that need to be assembled. This could take a long time.  So, we'll use a shell script to automate the task.  
 Download this [list](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/SchlossSampleNames.txt) (*VB/EC2 users*, use `wget`) of all the unique sample names and move it to your QIIMETutorial directory.  
 Then, download this shell [script](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/pandaseq_merge.sh) (*VB/EC2 users*, use `wget`) and move it to your QIIMETutorial directory.  
@@ -108,7 +109,7 @@ chmod +x pandaseq_merge.sh
 ./pandaseq_merge.sh
 ```
 
-6.  **Sanity check #2.**
+###1.6  Sanity check #2.
 How many files were we expecting from the assembly?  There were 19 pairs to be assembled, and we are generating one assembled fasta and one log for each.  Thus, the pandaseq_merged_reads directory should contain 38 files.  We use the `wc` command to check the number of files in the directory.
 ```
 ls -1 pandaseq_merged_reads | wc -l
@@ -118,11 +119,11 @@ The terminal should return the number "38."  Congratulations, you lucky duck! Yo
 ![img4](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_04.jpg)
 
 
-###Moving assembled reads into the QIIME environment
+##Moving assembled reads into the QIIME environment
 
 While working through the tutorial, open your web browser and navigate to this [page](http://www.qiime.org/scripts/index.html). It provides an index of qiime scripts and options.  We will be using the default for most of the time, but for each script, it is useful to open its documentation and assess the alternative options.
 
-1.  **Understanding the QIIME mapping file.**
+###2.1  Understanding the QIIME mapping file.
 QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/Schloss_Map.txt) (*VB/EC2* users, use `wget`), and move it to your QIIMETutorial directory.
 
   Let's spend few moments getting to know the mapping file:
@@ -144,10 +145,10 @@ more Schloss_Map.txt
   * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
   * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
 
-2.  **Call QIIME**
+###2.2  Call QIIME
 For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.  For VB and EC2 users, simply call `qiime`.  
 
-3.  **Merging assembled reads into the one big ol' data file.**
+###2.3  Merging assembled reads into the one big ol' data file.
 QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the `add_qiime_labels.py` script. Documentation is [here](http://qiime.org/scripts/add_qiime_labels.html).
 ```
 add_qiime_labels.py -i pandaseq_merged_reads/ -m Schloss_Map.txt -c InputFileName -n 1 -o combined_fasta
@@ -179,9 +180,9 @@ This is a nice QIIME command to call frequently, because it provides the total n
 ```
 quit()
 ```
-  3.5  *Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required).
+  *2.3.2  Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required).
 
-4.  **Picking Operational Taxonomic Units, OTUs.**
+###2.4  Picking Operational Taxonomic Units, OTUs.
 Picking OTUs is sometimes called "clustering," as sequences with some threshold of identity are "clustered" together to into an OTU.
 
   *Important decision*: Should I use a de-novo method of picking OTUs or a reference-based method, or some combination? ([Or not at all?](http://www.mendeley.com/catalog/interpreting-16s-metagenomic-data-without-clustering-achieve-subotu-resolution/)). The answer to this will depend, in part, on what is known about the community a priori.  For instance, a human or mouse gut bacterial community will have lots of representatives in well-curated 16S databases, simply because these communities are relatively well-studied.  Therefore, a reference-based method may be preferred.  The limitation is that any taxa that are unknown or previously unidentified will be omitted from the community.  As another example, a community from a lesser-known environment, like Mars or a cave, or a community from a relatively less-explored environment would have fewer representative taxa in even the best databases.  Therefore, one would miss a lot of taxa if using a reference-based method.  The third option is to use a reference database but to set aside any sequences that do not have good matches to that database, and then to cluster these de novo.
@@ -205,7 +206,7 @@ In the above script:
 
   From the head of the combined_seqs_otus.txt file, we can see that OTU 0 has many sequence associated with it, including sequence 9757 from from sample F3D8.S196. We also see that OTU 3 only has one sequence associated with it. The log file has goodies about the algorithm and options chosen.  Keep this (and all) log file, because when you are writing the paper you may not remember what version of which clustering algorithm you used.
 
-5.  **Pick a representative sequence from each OTU.**
+###2.5  Pick a representative sequence from each OTU.
 Representative sequences are those that will be aligned and used to build a tree.  They are selected as the one sequence, out of its whole OTU cluster, that will "define" its OTUs. As you can imagine, understanding how these "rep seqs" are chosen is very important.  Here, we will use the default method (the first sequence listed in the OTU cluster) of QIIME's `pick_rep_set.py` script; documentation [here](http://qiime.org/scripts/pick_rep_set.html).
 ```
 mkdir cdhit_rep_seqs/
@@ -221,7 +222,7 @@ Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.
   As before, we see the OTU ID given first (consecutively, starting with 0), and then the sequence ID of the representative sequence, and then the full nucleotide information for the sequence. Notice that for OTU 0, which only had one sequence in its "cluster", is defined by that one sequence.  Don't be shy - go ahead and compare it to the combined_seqs_otus.txt file of OTU clusters.
   Take a gander at the log file, as well.  
 
-6. **Align representative sequences.**
+###2.6 Align representative sequences.
 Navigate back to the QIIMETutorial directory. We will align our representative sequences using PyNAST, which uses a "gold" reference template for the alignment.  QIIME uses a "gold" pre-aligned template made from the greengenes database.  The default alignment to the template is minimum 75% sequence identity and minimum length 150. The default minimum length is not great for short reads like we have, so we will be more generous and change the default. What should we change it to?
 ```
 count_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta
@@ -247,7 +248,7 @@ count_seqs.py -i cdhit_rep_seqs_aligned.fasta
  * The paired-end merger algorithm (e.g., pandaseq) did not do a perfect job, and concatenated ends that do not belong together.
  * Some combination of the above, as well as some other scenarios.
 
-  We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset after we make the OTU table.  In the meantime, let's create a text file of all the names of the rep. sequence OTU IDs that we want to remove.  We only have three failures, so we easily could do it by hand.  What if we had more?  Here's how to automate the generation of the "cdhit_rep_seqs_failures_names.txt" file using the `grep` command. We will not go into details, but general grep help is [here](http://unixhelp.ed.ac.uk/CGI/man-cgi?grep).
+  We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset after we make the OTU table.  In the meantime, let's create a text file of all the names of the rep. sequence OTU IDs that we want to remove.  We only have three failures, so we easily could do it by hand.  What if we had more?  Here's how to automate the generation of the "cdhit_rep_seqs_failures_names.txt" file using the `grep` command. We will not go into details, but general grep help is [here](http://unixhelp.ed.ac.uk/CGI/man-cgi?grep). Navigate back into the QIIMETutorial directory to run the grep command.
 
   ```
   grep -o -E "^>\w+" pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d ">" > cdhit_rep_seqs_failures_names.txt
@@ -256,6 +257,7 @@ count_seqs.py -i cdhit_rep_seqs_aligned.fasta
   Congratulations!  You just had the QIIME of Your Life!
 
   ![img10](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_10.jpg)
+
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
