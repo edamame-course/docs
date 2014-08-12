@@ -1,0 +1,8 @@
+
+
+
+
+Filter OTU table
+```
+filter_otus_by_sample.py -i  cdhit_picked_otus/combined_seqs_otus.txt  -f combined_fasta/combined_seqs.fna -s pynast_aligned/cdhit_rep_seqs_failures_names.txt
+```
