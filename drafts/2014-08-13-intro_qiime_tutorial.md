@@ -77,7 +77,7 @@ We can double check our sanity by using a positive control.  Let's use `grep` to
 ```
 grep M00967 F3D0_S188.fasta
 ```
-Whoa!  That is hard to read all of those lines. Let's put the results into a list by appending `>list.txt` to the command:
+Whoa!  That is hard to read all of those lines. Let's put the results into a list by appending `> list.txt` to the command.  The ">" symbol means to output the results to a new file, which is specified next.
 
 ```
 grep M00967 F3D0_S188.fasta > list.txt
@@ -96,8 +96,8 @@ rm list.txt
 
 5.  **Automate paired-end merging with a shell script.**
 We would have to execute an iteration of the PANDAseq command for every pair of reads that need to be assembled. This could take a long time.  So, we'll use a shell script to automate the task.  
-Download this [list](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/SchlossSampleNames.txt) of all the unique sample names and move it to your QIIMETutorial directory.  
-Then, download this shell [script](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/pandaseq_merge.sh) and move it to your QIIMETutorial directory.  
+Download this [list](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/SchlossSampleNames.txt) (*VB/EC2 users*, use `wget`) of all the unique sample names and move it to your QIIMETutorial directory.  
+Then, download this shell [script](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/pandaseq_merge.sh) (*VB/EC2 users*, use `wget`) and move it to your QIIMETutorial directory.  
 Change permissions on the script
 ```
 chmod +x pandaseq_merge.sh
@@ -123,7 +123,7 @@ The terminal should return the number "38."  Congratulations, you lucky duck! Yo
 While working through the tutorial, open your web browser and navigate to this [page](http://www.qiime.org/scripts/index.html). It provides an index of qiime scripts and options.  We will be using the default for most of the time, but for each script, it is useful to open its documentation and assess the alternative options.
 
 1.  **Understanding the QIIME mapping file.**
-QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](misc/QIIMETutorial_Misc/Schloss_Map.txt), and move it to your QIIMETutorial directory.
+QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/Schloss_Map.txt) (*VB/EC2* users, use `wget`), and move it to your QIIMETutorial directory.
 
   Let's spend few moments getting to know the mapping file:
 ```
