@@ -19,7 +19,7 @@ cd QIIMETutorial
 1.  **Download Schloss mouse data**, which are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
 About half-way down the page, click on ["Example data from Schloss lab"](http://www.mothur.org/wiki/MiSeq_SOP)  
 
-  ![img1](https://github.com/edamame-course/docs/raw/gh-pages/docs/img/QIIMETutorial1_IMG/IMG_01.jpg).  
+  ![img1](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_01.jpg).  
 
   Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
 
