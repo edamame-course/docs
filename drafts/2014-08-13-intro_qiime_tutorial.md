@@ -57,7 +57,7 @@ cd pandaseq_merged_reads
 ```
 head F3D0_S188.fasta
 ```
-![img2](img/QIIMETutorial1_IMG/IMG_02.jpg)
+![img2](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_02.jpg)
 ```
 grep GTCCAGCMGCCGCGGTAA F3D0_S188.fasta
 ```
@@ -71,7 +71,7 @@ This creates a new file called "list.txt", in which all instances of the charact
 ```
 head list.txt
 ```
-![img3](img/QIIMETutorial1_IMG/IMG_03.jpg)
+![img3](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_03.jpg)
 
   Our positive control worked, and we should be convinced and joyous that we executed `grep` correctly AND that the primers were trimmed by PANDAseq.  We can now remove the list file.
 ```
@@ -99,7 +99,7 @@ ls -1 pandaseq_merged_reads | wc -l
 ```
 The terminal should return the number "38."  Congratulations, you lucky duck! You've assembled paired-end reads!  
 
-![img4](img/QIIMETutorial1_IMG/IMG_04.jpg)
+![img4](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_04.jpg)
 
 
 ###Moving assembled reads into the QIIME environment
@@ -113,7 +113,7 @@ QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html
 ```
 more Schloss_Map.txt
 ```
-![img5](img/QIIMETutorial1_IMG/IMG_05.jpg)
+![img5](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_05.jpg)
 
   A clear and comprehensive mapping file should contain all of the information that will be used in downstream analyses.  The mapping file includes both categorical (qualitative) and numeric (quantitative) contextual information about a sample. This could include, for example, information about the subject (sex, weight), the experimental treatment, time or spatial location, and all other measured variables (e.g., pH, oxygen, glucose levels). Creating a clear mapping file will provide direction as to appropriate analyses needed to test hypotheses.  Basically, all information for all anticipated analyses should be in the mapping file.
 
@@ -143,7 +143,7 @@ This script creates a new directory called "combined_fasta."  Use `cd` and `ls` 
 ```
 head combined_seqs.fna
 ```
-![img6](img/QIIMETutorial1_IMG/IMG_06.jpg)
+![img6](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_06.jpg)
 
   Observe that QIIME has added the SampleIDs from the mapping file to the start of each sequence.  This allows QIIME to quickly link each sequence to its sampleID and metadata.
 
@@ -188,7 +188,7 @@ In the above script:
 
   Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
 
-  ![img7](img/QIIMETutorial1_IMG/IMG_07.jpg)
+  ![img7](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_07.jpg)
 
   From the head of the combined_seqs_otus.txt file, we can see that OTU 0 has many sequence associated with it, including sequence 9757 from from sample F3D8.S196. We also see that OTU 3 only has one sequence associated with it. The log file has goodies about the algorithm and options chosen.  Keep this (and all) log file, because when you are writing the paper you may not remember what version of which clustering algorithm you used.
 
@@ -203,7 +203,7 @@ pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/co
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
 Inspect the head of the new fasta file, cdhit_rep_seqs.fasta
 
-  ![img8](img/QIIMETutorial1_IMG/IMG_08.jpg)  
+  ![img8](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_08.jpg)  
 
   As before, we see the OTU ID given first (consecutively, starting with 0), and then the sequence ID of the representative sequence, and then the full nucleotide information for the sequence. Notice that for OTU 0, which only had one sequence in its "cluster", is defined by that one sequence.  Don't be shy - go ahead and compare it to the combined_seqs_otus.txt file of OTU clusters.
   Take a gander at the log file, as well.
@@ -241,7 +241,7 @@ count_seqs.py -i cdhit_rep_seqs_aligned.fasta
 
   Congratulations!  You just had the QIIME of Your Life!
 
-  ![img10](img/QIIMETutorial1_IMG/IMG_10.jpg)
+  ![img10](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_10.jpg)
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
