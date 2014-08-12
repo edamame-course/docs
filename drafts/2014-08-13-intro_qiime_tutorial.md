@@ -95,7 +95,7 @@ chmod +x pandaseq_merge.sh
 6.  **Sanity check #2.**
 How many files were we expecting from the assembly?  There were 19 pairs to be assembled, and we are generating one assembled fasta and one log for each.  Thus, the pandaseq_merged_reads directory should contain 38 files.  We use the `wc` command to check the number of files in the directory.
 ```
-ls -l pandaseq_merged_reads | wc -l
+ls -1 pandaseq_merged_reads | wc -l
 ```
 The terminal should return the number "38."  Congratulations, you lucky duck! You've assembled paired-end reads!  
 
@@ -126,10 +126,10 @@ more Schloss_Map.txt
   * The last column must be "Description".
   * There can be as many in-between columns of contextual data as needed.
   * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
-  * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial/MapFormatExcelHeartAche.md).
+  * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
 
 2.  **Call macqiime**
-For Mac users, to enter the "qiime" environment in all of its glory.
+For Mac users, to enter the QIIME environment in all of its glory.
 ```
 macqiime
 ```
@@ -234,27 +234,15 @@ If, in the future, you ever have a large proportion of rep seqs that fail to ali
  * The paired-end merger algorithm (e.g., pandaseq) did not do a perfect job, and concatenated ends that do not belong together.
  * Some combination of the above, as well as some other scenarios.
 
-  We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset, but first, let's check for chimeras among the non-failures.
-
-**ASHLEY IS HERE**
-7.  **Filtering (removing) representative sequences that fail to align**
-
-Filtering is a two step process.  Remember that we have a .fasta file of all the sequences, and we also have an OTU map of "clusters."  
-
-First, we remove the "failed" OTU clusters (that represent those failed rep seqs) from the combined_seqs_otu.txt file.  
-
-Then, we can also filter the original fasta file, combined_seqs.fna, to make sure that these are not ever used in analyses.  To use the filter_fasta.py function, we must create a text file of all the names a sequences that we want to remove.  We only have three, so we could do it by hand.  What if we had more?  Here's how to automate the generation of the "seqs_to_remove.txt" file.
-
-grep -A ">" -B " " cdhit_rep_seqs_failures.fasta > test.txt
-grep -o '<*' cdhit_rep_seqs_failures.fasta > test.txt
-
-In the example below, we use the `-n` option to discard the OTUs in the `-s` file; the default is to keep only what is listed in the `-s` file.
-
+  We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset after we make the OTU table.  In the meantime, let's create a text file of all the names of the rep. sequence OTU IDs that we want to remove.  We only have three failures, so we easily could do it by hand.  What if we had more?  Here's how to automate the generation of the "cdhit_rep_seqs_failures_names.txt" file using the `grep` command. We will not go into details, but general grep help is [here](http://unixhelp.ed.ac.uk/CGI/man-cgi?grep).
 
 ```
-filter_fasta.py -i -f cdhit_ -o CLEAN_rep_set_aligned.fasta -s pynast_aligned/cdhit_re_set_failures.fasta -n
+grep -o -E "^>\w+" pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d ">" > cdhit_rep_seqs_failures_names.txt
 ```
 
+Congratulations!  You just had the QIIME of Your Life!
+
+![img10](img/QIIMETutorial1_IMG/IMG_10.jpg)
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
