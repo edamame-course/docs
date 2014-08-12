@@ -21,9 +21,9 @@ About half-way down the page, click on ["Example data from Schloss lab"](http://
 
 ![img1](img/QIIMETutorial1_IMG/IMG_01.jpg).  
 
-Unzip and move into a new directory called "QIIME_Tutorial."
+Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.
 
-2.  **Open terminal, and use `cd`** to navigate to your new QIIME_Tutorial directory.  Use `mkdir` to create a new directory called "assembled_reads"
+2.  Use `mkdir` to create a new directory called "assembled_reads"
 ```
 mkdir pandaseq_merged_reads
 ```
