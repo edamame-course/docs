@@ -87,7 +87,7 @@ We can double check our sanity by using a positive control.  Let's use `grep` to
 grep M00967 F3D0_S188.fasta
 ```
 
-Whoa!  That is hard to read all of those lines. Let's put the results into a list by appending `> list.txt` to the command.  The ">" symbol means to output the results to a new file, which is specified next.
+Whoa!  That is hard to read all of those lines. Let's put the results into a list by appending `> list.txt` to the command.  The ">" symbol means to output the results to a new file, which is specified next.  
 
 
 ```
