@@ -50,16 +50,8 @@ The summary file contains information about the number of sequences per sample, 
 
 ![img13](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_13.jpg)
 
-###3.2  Sanity check #3
-**NotWorkingYet**
-How can we be sure that our failed alignment sequences were excluded from the OTU table?
 
-```
-grep '[265,' Schloss_otu_table.biom
-```
-**EndNotWork**
-
-###3.3  Make a phylogenetic tree
+###3.2  Make a phylogenetic tree
 We will make a phylogenetic tree of the short-read sequences so that we can use information about the relatedness among taxa to estimate and compare diversity.  We will use FastTree for this.  
 It is best not to use trees made from short-reads as very robust hypotheses of evolution. I suggest using trees from short-read sequences for ecological analyses, visualization and hypothesis-generation rather than strict phylogenetic inference.
 Documentation is [here](http://qiime.org/scripts/make_phylogeny.html).
@@ -74,7 +66,7 @@ A few notables:  The tree algorithm input is the alignment file; the output exte
 Inspect the new tree file ([Newick](http://marvin.cs.uidaho.edu/Teaching/CS515/newickFormat.html) format). The OTU ID is given first, and then the branch length to the next node. This format is generally compatible with other tree-building and viewing software. For example, I have used it to input into the [Interactive Tree of Life](http://itol.embl.de/) to build visually appealing figures. [Topiary Explorer](http://topiaryexplorer.sourceforge.net/) is another options for visualization, and is a QIIME add-on.
 
 
-###3.4 Rarefaction (subsampling)
+###3.3 Rarefaction (subsampling)
 Navigate back into the QIIMETutorial directory.
 Before we start any ecological analyses, we want to evenly subsample ("rarefy", but see ) all the samples to an equal ("even") number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by [Gihring et al. 2011](http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full)) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.
 To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples *included* in analyses.  Sometimes this is not straightforward, but here are some things to consider:
@@ -100,41 +92,57 @@ Our "clean" dataset has 19 samples and 858 OTUs defined at 97% sequence identity
 
 There is a [recent paper](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531) that suggests that even subsampling is not necessarily, but it is contentious.
 
-###3.5 Calculating alpha (within-sample) diversity
+###3.3 Calculating alpha (within-sample) diversity
 Navigate back into the QIIMETutorial directory, and make a new directory for alpha diversity results.
 
 ```
 mkdir alphadiversity_even2212
 ```
+
 We will calculate richness (observed # taxa) and phylogenetic diversity (PD) for each sample.
 
 ```
 alpha_diversity.py -i Schloss_otu_table_even2212.biom -m observed_species,PD_whole_tree -o alphadiversity_even2212/cdhit_alpha_even2212.txt -t fasttree_cdhit/fasttree_cdhit.tre
 ```
+
 As always, inspect the results file.  What are the ranges that were observed in richness and PD?
 
 QIIME offers a variety of additional options for calculating diversity, and the -s option prints them all!
+
 ```
 alpha_diversity.py -s
 ```
+**Add alpha diversity to map file?**
 
-**This part is not working? Old scripts w/ old python?**
-We can append the richness and PD calculations to our mapping file, keeping all the data in one convenient place.
+
+###Compare alpha diversity
+
 ```
-add_alpha_to_mapping_file.py -i alphadiversity_even2212/cdhit_alpha_even2212.txt -m Schloss_Map.txt
+compare_alpha_diversity.py -i alphadiversity_even2212/cdhit_alpha_even2212.txt -m Schloss_Map.txt -c Early_Late -o alpha_test/
 ```
 
-
-###3.6 Visualizing alpha diversity
+###3.5 Visualizing alpha diversity
 
 This is a "workflow script" that calculates summaries of taxa at different taxonomic levels.
+
 ```
-mkdir taxa_summary_even2212
+summarize_taxa_through_plots.py -o taxa_summary_even2212/ -i Schloss_otu_table_even2212.biom -m Schloss_Map.txt
 ```
+
+When the script is finished, navigate into the results file, and into the "taxa_summary_plots" and find the html area and bar charts.
+
 ```
-summarize_taxa_through_plots.py -o taxa_summary_even2212/taxa_summary_even2212.txt -i Schloss_otu_table_even2212.biom -m Schloss_Map.txt
+open area_charts.html
 ```
-**EndNotWork**
+
+```
+open bar_charts.html
+```
+
+In your browser, carefully inspect and interact with this quick charts.  Though these are not publication-ready, they are a great first exploration of the taxa in the dataset.
+
+
+
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
