@@ -311,7 +311,7 @@ count_seqs.py -i cdhit_rep_seqs_failures.fasta
 count_seqs.py -i cdhit_rep_seqs_aligned.fasta
 ```
 
-We see that there were ~3 rep. sequences that failed to align, and ~1224 that did.  (Also, notice what short-read alignments generally look like...not amazing).
+We see that there were ~3 rep. sequences that failed to align, and approximately 682 that did.  (Also, notice what short-read alignments generally look like...not amazing).
 
 *Sanity check?*  If you like, [BLAST](http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) the top sequence that failed to align to convince yourself that it is, indeed, a pitiful failure.
 
