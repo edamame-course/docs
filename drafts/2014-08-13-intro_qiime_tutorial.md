@@ -148,6 +148,14 @@ more Schloss_Map.txt
 ###2.2  Call QIIME
 For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.
 
+A good command to know is:
+```
+print_qiime_config.py
+```
+![img9](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_09.jpg)
+
+This will give you really important information about versions of software, etc.  You will need this info
+
 ###2.3  Merging assembled reads into the one big ol' data file.
 QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the `add_qiime_labels.py` script. Documentation is [here](http://qiime.org/scripts/add_qiime_labels.html).
 ```
