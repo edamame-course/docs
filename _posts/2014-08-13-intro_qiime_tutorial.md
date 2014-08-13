@@ -82,6 +82,7 @@ grep GTCCAGCMGCCGCGGTAA F3D0_S188.fasta
 
   When you execute the above command, the terminal does not return anything.  This means that the primer sequence was not found in the file, suggesting that PANDAseq did, in fact, trim them.
 We can double check our sanity by using a positive control.  Let's use `grep` to find a character string that we know is there, for instance the "M00967" string identifying the first sequence.
+
 ```
 grep M00967 F3D0_S188.fasta
 ```
