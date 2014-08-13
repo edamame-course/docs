@@ -10,7 +10,7 @@ Welcome back, Microbe Enthusiasts!
 
 Previously, we left off with quality-controlled merged Illumina paired-end sequences, picked OTUs and an alignment of the representative sequences from those OTUs.
 
-###3.1  Assign taxonomy to representative sequences**
+###3.1  Assign taxonomy to representative sequences
 
 Navigate into the QIIMETutorial directory using `cd`, and, enter the QIIME environment. We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top. Documentation is [here](http://qiime.org/scripts/assign_taxonomy.html).
 
@@ -40,36 +40,101 @@ head Schloss_otu_table.biom
 ```
 ![img12](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_12.jpg)
 
-Be not alarmed! This file is in .biom table format.  Whereas a traditional taxon (OTU) table in ecology is often a matrix of samples (communities) by taxa (OTUs), there are just too many taxa in microbial communities for the traditional table to be efficiently used in computation.  Thus, some of the QIIME folks developed the .biom format.  Documentation about the .biom format is [here](http://biom-format.org/).  If you scroll down on your terminal screen, you will see that the taxonomic assignments were incorporated into the OTU table.
+Be not alarmed! This file is in .biom table format.  Whereas a traditional taxon (OTU) table in ecology is often a matrix of samples (communities) by taxa (OTUs), there are just too many taxa in microbial communities for the traditional table to be efficiently used in computation.  Thus, some of the QIIME folks developed the .biom format.  General information about the .biom format is [here](http://biom-format.org/).  Scroll down through the terminal screen, to observe that the taxonomic assignments were incorporated into the OTU table.
 
-We can get a summary of everything in the .biom OTU table.  **This is an important script.**  Documentation is [here](http://biom-format.org/documentation/summarizing_biom_tables.html)
+We can get a summary of everything in the .biom OTU table using a script that begins with `biom`, which indicates the special format and handling of the data table. The syntax of these biom scripts is a bit different from other QIIME scripts. More information about biom format motivation is [here](http://biom-format.org/documentation/biom_format.html). **This is an important script.**  Documentation for `summarize_table` is [here](http://biom-format.org/documentation/summarizing_biom_tables.html).
 ```
-biom summarize_table -i Schloss_otu_table.biom -o summary_Schloss_otu_table.biom
+biom summarize_table -i Schloss_otu_table.biom -o summary_Schloss_otu_table.txt
 ```
+The summary file contains information about the number of sequences per sample, which will help us to make decisions about rarefaction (subsampling).  When we inspect the file, we see that sample F3D142.S208 has 2212 reads, the minimum observed.  This is what we will use as a subsampling depth.  Also, a lot of the info in this file is typically reported in methods sections of manuscripts.
+
+![img13](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_13.jpg)
+
 ###3.2  Sanity check #3
+**NotWorkingYet**
 How can we be sure that our failed alignment sequences were excluded from the OTU table?
 
+```
+grep '[265,' Schloss_otu_table.biom
+```
+**EndNotWork**
+
+###3.3  Make a phylogenetic tree
+We will make a phylogenetic tree of the short-read sequences so that we can use information about the relatedness among taxa to estimate and compare diversity.  We will use FastTree for this.  
+It is best not to use trees made from short-reads as very robust hypotheses of evolution. I suggest using trees from short-read sequences for ecological analyses, visualization and hypothesis-generation rather than strict phylogenetic inference.
+Documentation is [here](http://qiime.org/scripts/make_phylogeny.html).
+```
+mkdir fasttree_cdhit
+```
+```
+make_phylogeny.py -i pynast_aligned/cdhit_rep_seqs_aligned.fasta -t fasttree -o fasttree_cdhit/fasttree_cdhit.tre
+```
+A few notables:  The tree algorithm input is the alignment file; the output extension is .tre.
+
+Inspect the new tree file ([Newick](http://marvin.cs.uidaho.edu/Teaching/CS515/newickFormat.html) format). The OTU ID is given first, and then the branch length to the next node. This format is generally compatible with other tree-building and viewing software. For example, I have used it to input into the [Interactive Tree of Life](http://itol.embl.de/) to build visually appealing figures. [Topiary Explorer](http://topiaryexplorer.sourceforge.net/) is another options for visualization, and is a QIIME add-on.
 
 
+###3.4 Rarefaction (subsampling)
+Navigate back into the QIIMETutorial directory.
+Before we start any ecological analyses, we want to evenly subsample ("rarefy", but see ) all the samples to an equal ("even") number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by [Gihring et al. 2011](http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full)) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.
+To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples *included* in analyses.  Sometimes this is not straightforward, but here are some things to consider:
+*  Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.
+*  How complex is the community?  An acid-min drainage community is less rich than a soil, and so fewer sequences per sample are needed to adequately evaluate diversity.
+*  How exhaustive is the sequencing?  If this is unknown, an exploratory rarefaction analysis could be done to estimate.
+*  How important is it to keep all samples in the analysis?  Consider the costs and benefits of, for example, dropping one not-very-well-sequenced replicate in favor of increasing overall sequence information.  If you've got $$ to spare, built-in sequencing redundancy/replication is helpful for this.
+*  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.
+
+In this example dataset, we want to keep all of our samples, so we will subsample to 2212.  Documentation is [here](http://qiime.org/scripts/single_rarefaction.html?highlight=rarefaction).
+
+```
+single_rarefaction.py -i Schloss_otu_table.biom -o Schloss_otu_table_even2212.biom -d 2212
+```
+We append _even2212 to the end of the table to distinguish it from the full table.  This is even2212 table is the final biom table on which to perform ecological analyses.  If we run the biom summary command, we will now see that every sample in the new table has exactly the same number of sequences:
+
+```
+biom summarize_table -i Schloss_otu_table_even2212.biom -o summary_Schloss_otu_table_even2212.txt
+```
+![img14](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_14.jpg)
+
+Our "clean" dataset has 19 samples and 858 OTUs defined at 97% sequence identity.
+
+There is a [recent paper](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531) that suggests that even subsampling is not necessarily, but it is contentious.
+
+###3.5 Calculating alpha (within-sample) diversity
+Navigate back into the QIIMETutorial directory, and make a new directory for alpha diversity results.
+
+```
+mkdir alphadiversity_even2212
+```
+We will calculate richness (observed # taxa) and phylogenetic diversity (PD) for each sample.
+
+```
+alpha_diversity.py -i Schloss_otu_table_even2212.biom -m observed_species,PD_whole_tree -o alphadiversity_even2212/cdhit_alpha_even2212.txt -t fasttree_cdhit/fasttree_cdhit.tre
+```
+As always, inspect the results file.  What are the ranges that were observed in richness and PD?
+
+QIIME offers a variety of additional options for calculating diversity, and the -s option prints them all!
+```
+alpha_diversity.py -s
+```
+
+**This part is not working? Old scripts w/ old python?**
+We can append the richness and PD calculations to our mapping file, keeping all the data in one convenient place.
+```
+add_alpha_to_mapping_file.py -i alphadiversity_even2212/cdhit_alpha_even2212.txt -m Schloss_Map.txt
+```
 
 
+###3.6 Visualizing alpha diversity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+This is a "workflow script" that calculates summaries of taxa at different taxonomic levels.
+```
+mkdir taxa_summary_even2212
+```
+```
+summarize_taxa_through_plots.py -o taxa_summary_even2212/taxa_summary_even2212.txt -i Schloss_otu_table_even2212.biom -m Schloss_Map.txt
+```
+**EndNotWork**
 
 ##Where to find QIIME resources and help
 *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
