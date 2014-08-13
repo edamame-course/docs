@@ -68,13 +68,13 @@ Inspect the new tree file ([Newick](http://marvin.cs.uidaho.edu/Teaching/CS515/n
 
 ###3.3 Rarefaction (subsampling)
 Navigate back into the QIIMETutorial directory.
-Before we start any ecological analyses, we want to evenly subsample ("rarefy", but see ) all the samples to an equal ("even") number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by [Gihring et al. 2011](http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full)) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.
+Before we start any ecological analyses, we want to evenly subsample ("rarefy", but see this [discussion](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531)) all the samples to an equal ("even") number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by [Gihring et al. 2011](http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full)) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.
 To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples *included* in analyses.  Sometimes this is not straightforward, but here are some things to consider:
 *  Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.
-*  How complex is the community?  An acid-min drainage community is less rich than a soil, and so fewer sequences per sample are needed to adequately evaluate diversity.
+*  How complex is the community?  An acid-mine drainage community is less rich than a soil, and so fewer sequences per sample are needed to evaluate diversity.
 *  How exhaustive is the sequencing?  If this is unknown, an exploratory rarefaction analysis could be done to estimate.
 *  How important is it to keep all samples in the analysis?  Consider the costs and benefits of, for example, dropping one not-very-well-sequenced replicate in favor of increasing overall sequence information.  If you've got $$ to spare, built-in sequencing redundancy/replication is helpful for this.
-*  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.
+*  Don't fret!  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.
 
 In this example dataset, we want to keep all of our samples, so we will subsample to 2212.  Documentation is [here](http://qiime.org/scripts/single_rarefaction.html?highlight=rarefaction).
 
@@ -90,7 +90,7 @@ biom summarize_table -i Schloss_otu_table_even2212.biom -o summary_Schloss_otu_t
 
 Our "clean" dataset has 19 samples and 858 OTUs defined at 97% sequence identity.
 
-There is a [recent paper](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531) that suggests that even subsampling is not necessarily, but it is contentious.
+There is a [recent paper](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531) that suggests that even subsampling is not necessary, but this is very actively debated.
 
 ###3.3 Calculating alpha (within-sample) diversity
 Navigate back into the QIIMETutorial directory, and make a new directory for alpha diversity results.
@@ -99,7 +99,7 @@ Navigate back into the QIIMETutorial directory, and make a new directory for alp
 mkdir alphadiversity_even2212
 ```
 
-We will calculate richness (observed # taxa) and phylogenetic diversity (PD) for each sample.
+We will calculate richness (observed # taxa) and phylogenetic diversity (PD) for each sample.  Documentation is [here](http://qiime.org/scripts/alpha_diversity.html).
 
 ```
 alpha_diversity.py -i Schloss_otu_table_even2212.biom -m observed_species,PD_whole_tree -o alphadiversity_even2212/cdhit_alpha_even2212.txt -t fasttree_cdhit/fasttree_cdhit.tre
@@ -107,41 +107,49 @@ alpha_diversity.py -i Schloss_otu_table_even2212.biom -m observed_species,PD_who
 
 As always, inspect the results file.  What are the ranges that were observed in richness and PD?
 
+```
+head alphadiversity_even2212/cdhit_alpha_even2212.txt
+```
+
 QIIME offers a variety of additional options for calculating diversity, and the -s option prints them all!
 
 ```
 alpha_diversity.py -s
 ```
-**Add alpha diversity to map file?**
 
+There is workflow script, [alpha_rarefaction.py](http://qiime.org/scripts/alpha_rarefaction.html), which is useful if you want to udnerstand how measures of alpha diversity change with sequencing effort.  The script calculates alpha diversity on iterations of a subsampled OTU table.
 
-###Compare alpha diversity
+###3.4 Visualizing alpha diversity
 
-```
-compare_alpha_diversity.py -i alphadiversity_even2212/cdhit_alpha_even2212.txt -m Schloss_Map.txt -c Early_Late -o alpha_test/
-```
-
-###3.5 Visualizing alpha diversity
-
-This is a "workflow script" that calculates summaries of taxa at different taxonomic levels.
+This is a "workflow script" that calculates summaries of OTUs at different taxonomic levels. Documentation is [here](http://qiime.org/scripts/summarize_taxa_through_plots.html).
 
 ```
 summarize_taxa_through_plots.py -o taxa_summary_even2212/ -i Schloss_otu_table_even2212.biom -m Schloss_Map.txt
 ```
 
-When the script is finished, navigate into the results file, and into the "taxa_summary_plots" and find the html area and bar charts.
+When the script is finished, navigate into the results file, and into the "taxa_summary_plots" and find the html area and bar charts.  Use the `open` command to open the html file in your browser. Neato!
 
 ```
 open area_charts.html
 ```
 
+![img16](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_16.jpg)
+
+The links above and below the charts point to the raw data or other summaries.  Spend some time exploring all of the different links.  Scroll over the charts and notice how the SampleID and taxonomic assignment "pop" up.
+
 ```
 open bar_charts.html
 ```
 
+As you are navigating to these html files, notice that the script has produced an OTU/biom table for every taxonomic level (designated by the "L").  The "L" stands for "lineage", and each "level" is designated by a number.  L1 is Domain, L2 is Phylum, L3 is Class, etc.  The more resolved the lineage (higher number), the less accurate the definition (e.g., L6 is not entirely and consistently the same as  "genus").
+
+The taxa_summary_plots/charts subdirectory contains individual files of all of the charts, but their file names are not useful.  The easiest way to view individual charts is to start with the html page, and then click on the "View Chart" link below each figure, which points to this directory.
+
+![img15](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_15.jpg)
+
 In your browser, carefully inspect and interact with this quick charts.  Though these are not publication-ready, they are a great first exploration of the taxa in the dataset.
 
-
+(We will test differences in alpha diversity in R.)
 
 
 ##Where to find QIIME resources and help
