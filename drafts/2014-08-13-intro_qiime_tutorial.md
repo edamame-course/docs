@@ -146,7 +146,7 @@ more Schloss_Map.txt
   * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
 
 ###2.2  Call QIIME
-For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.  For VB and EC2 users, simply call `qiime`.  
+For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.
 
 ###2.3  Merging assembled reads into the one big ol' data file.
 QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the `add_qiime_labels.py` script. Documentation is [here](http://qiime.org/scripts/add_qiime_labels.html).
@@ -192,13 +192,14 @@ The default QIIME 1.8.0 method for OTU picking is uclust (de novo, but there is 
 
   Make sure you are in the QIIMETutorial directory to start.  This will take a few (<10ish) minutes.
 ```
-pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ -s 0.97
+pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ -s 0.97 -n 100
 ```
 In the above script:
   *  We tell QIIME to look in the "combined_fasta" directory for the input file `-i`, "combined_seqs.fna".
   *  We chose the clustering method CD-HIT `-m`
   *  We defined an output file "cdhit_picked_otus" `-o`.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
   *  We define OTUs at 97% sequence identity `-s 0.97`
+  *  We opt for a pre-filtering step, unique to CD-HIT `-n` = 100.
 
   Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).
 
@@ -212,7 +213,7 @@ Representative sequences are those that will be aligned and used to build a tree
 mkdir cdhit_rep_seqs/
 ```
 ```
-pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/combined_seqs.fna -o cdhit_rep_seqs/cdhit_rep_seqs.fasta -l cdhit_rep_seqs/cdhit_rep_seqs.log -n 100
+pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/combined_seqs.fna -o cdhit_rep_seqs/cdhit_rep_seqs.fasta -l cdhit_rep_seqs/cdhit_rep_seqs.log
 ```
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
 Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.
