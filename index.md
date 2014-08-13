@@ -17,8 +17,13 @@ title: "Welcome to EDAMAME!"
 
 ## Announcements
 
+**Wednesday, August 13th, 2014**
 
-**Before We Begin - Things to install before we start the course.**
+1. [Wednesday, August 13th Overview](https://edamame-course.github.io/docs/august_13.html)
+
+---------------------------------------------
+
+**Before We Begin - Things to install before we start the course on the 13th**
 
 **Everyone**
 
@@ -38,12 +43,8 @@ title: "Welcome to EDAMAME!"
 
 2. [Installing a Virtual Box to run QIIME on your own machine](https://edamame-course.github.io/docs/QIIME_VB_for_Windows.html)
 
----------------------------------------------
-**Wednesday, August 13th, 2014**
+----------------------------------------------
 
-1. [Wednesday, August 13th Overview](https://edamame-course.github.io/docs/august_13.html)
-
----------------------------------------------
 **Thursday, August 14th, 2014**
 
 1. [Thursday, August 14th Overview](https://edamame-course.github.io/docs/august_14.html)

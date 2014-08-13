@@ -43,6 +43,7 @@
     <li class=divider></li>
     <li class=nav-header>Wednesday, August 13th</li>
     <li><a href="https://edamame-course.github.io/docs/august_13.html">Wednesday, August 13th Overview</a></li>
+    <li><a href="https://github.com/edamame-course/edamame-data/tree/master/shell">An Introduction To Using The Shell</a></li>
     <li class=divider></li>
     <li class=nav-header>Thursday, August 14th</li>
     <li><a href="https://edamame-course.github.io/docs/august_14.html">Thursday, August 14th Overview</a></li>
@@ -219,6 +220,14 @@ more Schloss_Map.txt
 
 <p>For Mac users, to enter the QIIME environment in all of its glory, use <code>macqiime</code>.</p>
 
+<p>A good command to know is:
+<code>
+print_qiime_config.py
+</code>
+<img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_09.jpg" alt="img9"></p>
+
+<p>This will give you really important information about versions of software, etc.  You will need this info</p>
+
 <h3 id="2.3-merging-assembled-reads-into-the-one-big-ol&#39;-data-file.">2.3  Merging assembled reads into the one big ol&#39; data file.</h3>
 
 <p>QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the <code>add_qiime_labels.py</code> script. Documentation is <a href="http://qiime.org/scripts/add_qiime_labels.html">here</a>.
@@ -321,7 +330,7 @@ count_seqs.py -i cdhit_rep_seqs_aligned.fasta
  * Some combination of the above, as well as some other scenarios.</p>
 
 <p>We will filter out these failed-to-align sequences (really, the removing the entire OTU cluster that they represent) from the dataset after we make the OTU table.  In the meantime, let&#39;s create a text file of all the names of the rep. sequence OTU IDs that we want to remove.  We only have three failures, so we easily could do it by hand.  What if we had more?  Here&#39;s how to automate the generation of the &quot;cdhit_rep_seqs_failures_names.txt&quot; file using the <code>grep</code> command. We will not go into details, but general grep help is <a href="http://unixhelp.ed.ac.uk/CGI/man-cgi?grep">here</a>. Navigate back into the QIIMETutorial directory to run the grep command.</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">  grep -o -E &quot;^&gt;\w+&quot; pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d &quot;&gt;&quot; &gt; cdhit_rep_seqs_failures_names.txt
+<div class="highlight"><pre><code class="language-text" data-lang="text">  grep -o -E &quot;^&gt;\w+&quot; pynast_aligned/cdhit_rep_seqs_failures.fasta | tr -d &quot;&gt;&quot; &gt; pynast_aligned/cdhit_rep_seqs_failures_names.txt
 </code></pre></div>
 <p>Congratulations!  You just had the QIIME of Your Life!</p>
 
