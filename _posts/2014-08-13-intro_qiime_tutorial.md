@@ -24,13 +24,16 @@ These data are 16S rRRNA V4 amplicons sequenced with MiSeq technology:
 
   Unzip (the directory with the data will be called MiSeq_SOP) and move it into the "QIIMETutorial" directory.  
 
-*If you are on the EC2 or the QIIME Virtual Box*, download the Schloss data from the terminal, using `wget`:
+*If you are on the EC2 or the QIIME Virtual Box*, download the Schloss data from the terminal, using `wget` :  
+
 ```
-wget http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip
+wget http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip  
 ```
+
 ```
-unzip MiSeqSOPData.zip
+unzip MiSeqSOPData.zip  
 ```
+
 This will make the directory "MISeq_SOP."  Move this into the QIIMETutorial directory.
 
 
@@ -61,10 +64,12 @@ There are some questions you may be having: What does pandaseq return?  Are ther
   We know the V4 forward primer sequence that the Schloss lab used because these sequences are provided in Kozich et al. 2013.
 Here is the V4 primer sequence : GTCCAGCMGCCGCGGTAA
 
-  We can search for that sequence in the assembled sequence file, using the `grep` function.
+  We can search for that sequence in the assembled sequence file, using the `grep` function.  
+
 ```
 cd pandaseq_merged_reads
 ```
+
 ```
 head F3D0_S188.fasta
 ```
@@ -80,13 +85,16 @@ We can double check our sanity by using a positive control.  Let's use `grep` to
 ```
 grep M00967 F3D0_S188.fasta
 ```
+
 Whoa!  That is hard to read all of those lines. Let's put the results into a list by appending `> list.txt` to the command.  The ">" symbol means to output the results to a new file, which is specified next.
+
 
 ```
 grep M00967 F3D0_S188.fasta > list.txt
 ```
 
 This creates a new file called "list.txt", in which all instances of the character string "M00967" are provided.  Let's look at the head.
+
 ```
 head list.txt
 ```
@@ -95,6 +103,7 @@ head list.txt
 
 
   Our positive control worked, and we should be convinced and joyous that we executed `grep` correctly AND that the primers were trimmed by PANDAseq.  We can now remove the list file.
+
 ```
 rm list.txt
 ```
@@ -104,20 +113,24 @@ We would have to execute an iteration of the PANDAseq command for every pair of 
 Download this [list](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/SchlossSampleNames.txt) (*VB/EC2 users*, use `wget`) of all the unique sample names and move it to your QIIMETutorial directory.  
 Then, download this shell [script](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/pandaseq_merge.sh) (*VB/EC2 users*, use `wget`) and move it to your QIIMETutorial directory.  
 Change permissions on the script
+
 ```
 chmod +x pandaseq_merge.sh
 ```
 
   Execute the script from the QIIMETutorial Directory.
+
 ```
 ./pandaseq_merge.sh
 ```
 
 ###1.6  Sanity check #2.
 How many files were we expecting from the assembly?  There were 19 pairs to be assembled, and we are generating one assembled fasta and one log for each.  Thus, the pandaseq_merged_reads directory should contain 38 files.  We use the `wc` command to check the number of files in the directory.
+
 ```
 ls -1 pandaseq_merged_reads | wc -l
 ```
+
 The terminal should return the number "38."  Congratulations, you lucky duck! You've assembled paired-end reads!  
 
 ![img4](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial1_IMG/IMG_04.jpg)  
@@ -130,6 +143,7 @@ While working through the tutorial, open your web browser and navigate to this [
 QIIME requires a [mapping file](http://qiime.org/documentation/file_formats.html) for most analyses.  This file is important because it links the sample IDs with their metadata (and, with their primers/barcodes if using QIIME for quality-control). Because we are super-amazing, we've already created a mapping file for the Schloss data for you.  [Download it](https://github.com/edamame-course/docs/raw/gh-pages/misc/QIIMETutorial_Misc/Schloss_Map.txt) (*VB/EC2* users, use `wget`), and move it to your QIIMETutorial directory.
 
   Let's spend few moments getting to know the mapping file:
+
 ```
 more Schloss_Map.txt
 ```
@@ -154,6 +168,7 @@ more Schloss_Map.txt
 For Mac users, to enter the QIIME environment in all of its glory, use `macqiime`.
 
 A good command to know is:
+
 ```
 print_qiime_config.py
 ```
@@ -165,10 +180,13 @@ This will give you really important information about versions of software, etc.
 
 ###2.3  Merging assembled reads into the one big ol' data file.
 QIIME expects all of the data to be in one file, and, currently, we have one separate fastq file for each assembled read.  We will add labels to each sample and merge into one fasta using the `add_qiime_labels.py` script. Documentation is [here](http://qiime.org/scripts/add_qiime_labels.html).
+
 ```
 add_qiime_labels.py -i pandaseq_merged_reads/ -m Schloss_Map.txt -c InputFileName -n 1 -o combined_fasta
 ```
+
 This script creates a new directory called "combined_fasta."  Use `cd` and `ls` to navigate to that directory and examine the files.  Inspect the new file "combined_seqs.fna."
+
 ```
 head combined_seqs.fna
 ```
@@ -179,9 +197,11 @@ head combined_seqs.fna
   Observe that QIIME has added the SampleIDs from the mapping file to the start of each sequence.  This allows QIIME to quickly link each sequence to its sampleID and metadata.
 
   While we are inspecting the combined_seqs.fna file, let's confirm how many sequences we have in the dataset.
+
 ```
 count_seqs.py -i combined_seqs.fna
 ```
+
 This is a nice QIIME command to call frequently, because it provides the total number of sequences in a file, as well as some information about the lengths of those sequences.  But, suppose we wanted to know more than the median/mean of these sequences?
 
   Another trick with QIIME is that you can call all the mothur commands within the QIIME environment, which is very handy.  mothur offers a very useful command called `summary.seqs`, which operates on a fasta/fna file to give summary statistics about its contents.  We will cover mothur in all its glory later, but for now, execute the command:
@@ -189,9 +209,11 @@ This is a nice QIIME command to call frequently, because it provides the total n
   ```
   mothur
   ```
+
   ```
   summary.seqs(fasta=combined_seqs.fna)
   ```
+
   Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  
 
 !(img/QIIMETutorial1_IMG/summary.seqs.jpg)
@@ -199,6 +221,7 @@ This is a nice QIIME command to call frequently, because it provides the total n
 ```
 quit()
 ```
+
   *2.3.2  Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required).
 
 ###2.4  Picking Operational Taxonomic Units, OTUs.
@@ -210,9 +233,11 @@ Picking OTUs is sometimes called "clustering," as sequences with some threshold 
 The default QIIME 1.8.0 method for OTU picking is uclust (de novo, but there is a reference-based alternative, see below), but we will use the CD-HIT algorithm (de novo).  However, we encourage you to explore different OTU clustering algorithms to understand how they perform.  They are not created equal.  Honestly, we are using CD-HIT here because because it is fast.
 
   Make sure you are in the QIIMETutorial directory to start.  This will take a few (<10ish) minutes.
+
 ```
 pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ -s 0.97 -n 100
 ```
+
 In the above script:
   *  We tell QIIME to look in the "combined_fasta" directory for the input file `-i`, "combined_seqs.fna".
   *  We chose the clustering method CD-HIT `-m`
@@ -230,12 +255,15 @@ In the above script:
 
 ###2.5  Pick a representative sequence from each OTU.
 Representative sequences are those that will be aligned and used to build a tree.  They are selected as the one sequence, out of its whole OTU cluster, that will "define" its OTUs. As you can imagine, understanding how these "rep seqs" are chosen is very important.  Here, we will use the default method (the first sequence listed in the OTU cluster) of QIIME's `pick_rep_set.py` script; documentation [here](http://qiime.org/scripts/pick_rep_set.html).
+
 ```
 mkdir cdhit_rep_seqs/
 ```
+
 ```
 pick_rep_set.py -i cdhit_picked_otus/combined_seqs_otus.txt -f combined_fasta/combined_seqs.fna -o cdhit_rep_seqs/cdhit_rep_seqs.fasta -l cdhit_rep_seqs/cdhit_rep_seqs.log
 ```
+
 As before, we specify the input files (the script needs the OTU clusters and the raw sequence file as input), and then we additionally specified the a new directory for the results.
 Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.
 
@@ -248,20 +276,27 @@ Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.
 
 ###2.6 Align representative sequences.
 Navigate back to the QIIMETutorial directory. We will align our representative sequences using PyNAST, which uses a "gold" reference template for the alignment.  QIIME uses a "gold" pre-aligned template made from the greengenes database.  The default alignment to the template is minimum 75% sequence identity and minimum length 150. The default minimum length is not great for short reads like we have, so we will be more generous and change the default. What should we change it to?
+
 ```
 count_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta
 ```
+
 Given that our average assembled read length is ~252 bp, let's decide that at least 100 bp must align.  We will have the `-e` option to 100. The alignment will take a few minutes.  Documentation for `align_seqs.py` is [here](http://qiime.org/scripts/align_seqs.html).
+
 ```
 align_seqs.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -o pynast_aligned/ -e 100
 ```
+
 Navigate into the pynast_aligned directory.  There are three files waiting there:  one file of sequences that failed to align, one of sequences that did align, and a log file.  Inspect each.
+
 ```
 count_seqs.py -i cdhit_rep_seqs_failures.fasta
 ```
+
 ```
 count_seqs.py -i cdhit_rep_seqs_aligned.fasta
 ```
+
   We see that there were ~3 rep. sequences that failed to align, and ~1224 that did.  (Also, notice what short-read alignments generally look like...not amazing).
 
   *Sanity check?*  If you like, [BLAST](http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&BLAST_SPEC=MicrobialGenomes) the top sequence that failed to align to convince yourself that it is, indeed, a pitiful failure.
