@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
-        <title>EDAMAME : August 18th</title>
+        <title>EDAMAME : Installing & Connecting Dropbox on your EC2 machine</title>
         <meta name="description" content="course materials & tutorials">
 
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -78,18 +78,40 @@
 
                     <div id=content class=span9>
                         <div class=page-header>
-    <h2>August 18th
+    <h2>Installing & Connecting Dropbox on your EC2 machine
         
     </h2>
 </div>
 
-<h4 id="wednesday,-august-18th">Wednesday, August 18th</h4>
+<p><strong>IMPORTANT:</strong> If you are a Dropbox user, you can use it to sync and &quot;instantly&quot; move files from your EC2 to your laptop.  This is handy if you need to use the computer power of EC2 to do OTU clustering or chimera checking, but then want to do the less memory intensive stuff on your desktop or laptop computer.</p>
 
-<p>This will be the information page for the activities on August 18th.  Check back soon for an update.</p>
+<p>If you are already using Dropbox for a lot of stuff, you might want to create a separate Dropbox account just to deal with your files because they still can add up the memory space.</p>
 
-<hr>
+<p><strong>1.</strong> Start at the login prompt on your EC2 machine:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">cd /root
+</code></pre></div>
+<p>If you can not do this (&quot;Permission denied&quot;), make sure you are in
+superuser mode. (You should see a text line that starts with something like
+ <code>root@ip-10-235-34-223:~$</code>. If not, use <code>sudo bash</code> to switch.)</p>
 
-<hr>
+<p><strong>2.</strong> Then, grab the latest dropbox installation package for Linux:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">wget -O dropbox.tar.gz &quot;http://www.dropbox.com/download/?plat=lnx.x86_64&quot;
+</code></pre></div>
+<p><strong>3.</strong> Unpack it:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">tar -xvzf dropbox.tar.gz
+</code></pre></div>
+<p><strong>4.</strong> Make the Dropbox directory on /mnt and link it in:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir /mnt/Dropbox
+ln -fs /mnt/Dropbox /root
+</code></pre></div>
+<p>and then run it, configuring it to put stuff in /mnt:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">HOME=/mnt /root/.dropbox-dist/dropboxd &amp;
+</code></pre></div>
+<p>When you get a message saying &quot;this client is not linked to any account&quot;,
+copy/paste the URL into browser and go log in.  Voila!</p>
+
+<p>Your directory &#39;/root/Dropbox&#39;, or, equivalently, &#39;/mnt/Dropbox&#39;, is now
+linked to your Dropbox account!</p>
 
 
 <div id="disqus_thread"></div>
