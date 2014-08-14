@@ -143,12 +143,15 @@ Documentation is <a href="http://qiime.org/scripts/make_phylogeny.html">here</a>
 <p>Before we start any ecological analyses, we want to evenly subsample (&quot;rarefy&quot;, but see this <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531">discussion</a>) all the samples to an equal (&quot;even&quot;) number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full">Gihring et al. 2011</a>) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.</p>
 
 <p>To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples <em>included</em> in analyses.  Sometimes this is not straightforward, but here are some things to consider:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">*  Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.
-*  How complex is the community?  An acid-mine drainage community is less rich than a soil, and so fewer sequences per sample are needed to evaluate diversity.
-*  How exhaustive is the sequencing?  If this is unknown, an exploratory rarefaction analysis could be done to estimate.
-*  How important is it to keep all samples in the analysis?  Consider the costs and benefits of, for example, dropping one not-very-well-sequenced replicate in favor of increasing overall sequence information.  If you&#39;ve got $$ to spare, built-in sequencing redundancy/replication is helpful for this.
-*  Don&#39;t fret!  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.
-</code></pre></div>
+
+<ul>
+<li> Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.</li>
+<li> How complex is the community?  An acid-mine drainage community is less rich than a soil, and so fewer sequences per sample are needed to evaluate diversity.</li>
+<li> How exhaustive is the sequencing?  If this is unknown, an exploratory rarefaction analysis could be done to estimate.</li>
+<li> How important is it to keep all samples in the analysis?  Consider the costs and benefits of, for example, dropping one not-very-well-sequenced replicate in favor of increasing overall sequence information.  If you&#39;ve got $$ to spare, built-in sequencing redundancy/replication is helpful for this.</li>
+<li> Don&#39;t fret!  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.</li>
+</ul>
+
 <p>In this example dataset, we want to keep all of our samples, so we will subsample to 2212.  Documentation is <a href="http://qiime.org/scripts/single_rarefaction.html?highlight=rarefaction">here</a>.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">single_rarefaction.py -i Schloss_otu_table.biom -o Schloss_otu_table_even2212.biom -d 2212
 </code></pre></div>
@@ -206,12 +209,15 @@ Documentation is <a href="http://qiime.org/scripts/make_phylogeny.html">here</a>
 <p>(We will test differences in alpha diversity in R.)</p>
 
 <h2 id="where-to-find-qiime-resources-and-help">Where to find QIIME resources and help</h2>
-<div class="highlight"><pre><code class="language-text" data-lang="text">*  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
-*  [Documentation](http://www.qiime.org/scripts/index.html) for all QIIME scripts.
-*  There is a very active [QIIME Forum](https://groups.google.com/forum/#!forum/qiime-forum) on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!
-*  The [QIIME Blog](http://qiime.wordpress.com/) provides updates like bug fixes, new features, and new releases.
-*  QIIME development is on [GitHub](https://github.com/biocore/qiime).
-</code></pre></div>
+
+<ul>
+<li> <a href="qiime.org">QIIME</a> offers a suite of developer-designed <a href="http://www.qiime.org/tutorials/tutorial.html">tutorials</a>.</li>
+<li> <a href="http://www.qiime.org/scripts/index.html">Documentation</a> for all QIIME scripts.</li>
+<li> There is a very active <a href="https://groups.google.com/forum/#!forum/qiime-forum">QIIME Forum</a> on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!</li>
+<li> The <a href="http://qiime.wordpress.com/">QIIME Blog</a> provides updates like bug fixes, new features, and new releases.</li>
+<li> QIIME development is on <a href="https://github.com/biocore/qiime">GitHub</a>.</li>
+</ul>
+
 <hr>
 
 <hr>
