@@ -83,7 +83,7 @@
     </h2>
 </div>
 
-<p>Welcome back, Microbe Enthusiasts!</p>
+<h2 id="welcome-back,-microbe-enthusiasts!">Welcome back, Microbe Enthusiasts!</h2>
 
 <h2 id="creating-an-otu-table-in-qiime">Creating an OTU table in QIIME</h2>
 
@@ -94,11 +94,9 @@
 <p>Navigate into the QIIMETutorial directory using <code>cd</code>, and, enter the QIIME environment. We will use the RDP classifier with a greengenes 16S rRNA reference database (both default options in QIIME).  This script will take a few minutes to run on a lap-top. Documentation is <a href="http://qiime.org/scripts/assign_taxonomy.html">here</a>.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">assign_taxonomy.py -i cdhit_rep_seqs/cdhit_rep_seqs.fasta -m rdp -c 0.8
 </code></pre></div>
-<p>Navigate into the new rdp_assigned_taxonomy directory and inspect the head of the tax_assignments file.
-<code>
-head cdhit_rep_seqs_tax_assignments.txt
-</code></p>
-
+<p>Navigate into the new rdp_assigned_taxonomy directory and inspect the head of the tax_assignments file.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">head cdhit_rep_seqs_tax_assignments.txt
+</code></pre></div>
 <p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_11.jpg" alt="img11"></p>
 
 <p>This assignment file is used anytime an OTU ID (the number) needs to be linked with its taxonomic assignment.
@@ -107,24 +105,21 @@ head cdhit_rep_seqs_tax_assignments.txt
 <h3 id="3.2-make-an-otu-table,-append-the-assigned-taxonomy,-and-exclude-failed-alignment-otus">3.2  Make an OTU table, append the assigned taxonomy, and exclude failed alignment OTUs</h3>
 
 <p>The OTU table is the table on which all ecological analyses (e.g. diversity, patterns, etc) is performed.  However, building the OTU table is relatively straightforward (you just count how many of each OTU was observed in each sample).  Instead, every step up until building the OTU table is important.  The algorithms that are chosen to assemble reads, quality control reads, define OTUs, etc are all gearing up to this one summarization. Documentation for make_otu_table.py is <a href="http://qiime.org/scripts/make_otu_table.html">here</a>. Note that the &quot;map&quot; file is not the actually mapping file, but the OTU cluster file (the output of cdhit).
-Navigate back into the &quot;QIIMETutorial&quot; directory to execute the script.
-<code>
-make_otu_table.py -i cdhit_picked_otus/combined_seqs_otus.txt -o Schloss_otu_table.biom -e pynast_aligned/cdhit_rep_seqs_failures_names.txt -t rdp_assigned_taxonomy/cdhit_rep_seqs_tax_assignments.txt
-</code>
-We used our previously-created list of failed-seq-alignments with the <code>-e</code> option to exclude these OTUs.
-Inspect the .biom table.
-<code>
-head Schloss_otu_table.biom
-</code>
-<img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_12.jpg" alt="img12"></p>
+Navigate back into the &quot;QIIMETutorial&quot; directory to execute the script.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">make_otu_table.py -i cdhit_picked_otus/combined_seqs_otus.txt -o Schloss_otu_table.biom -e pynast_aligned/cdhit_rep_seqs_failures_names.txt -t rdp_assigned_taxonomy/cdhit_rep_seqs_tax_assignments.txt
+</code></pre></div>
+<p>We used our previously-created list of failed-seq-alignments with the <code>-e</code> option to exclude these OTUs.
+Inspect the .biom table.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">head Schloss_otu_table.biom
+</code></pre></div>
+<p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_12.jpg" alt="img12"></p>
 
 <p>Be not alarmed! This file is in .biom table format.  Whereas a traditional taxon (OTU) table in ecology is often a matrix of samples (communities) by taxa (OTUs), there are just too many taxa in microbial communities for the traditional table to be efficiently used in computation.  Thus, the .biom format was developed.  General information about the .biom format is <a href="http://biom-format.org/">here</a>.  Scroll down through the terminal screen, to observe that the taxonomic assignments were incorporated into the OTU table.</p>
 
-<p>We can get a summary of everything in the .biom OTU table using a script that begins with <code>biom</code>, which indicates the special format and handling of the biom data table. The syntax and structure of these biom scripts are only slightly bit different from other QIIME scripts. More information about biom format motivation is <a href="http://biom-format.org/documentation/biom_format.html">here</a>. <strong>This is an important script.</strong>  Documentation for <code>summarize_table</code> is <a href="http://biom-format.org/documentation/summarizing_biom_tables.html">here</a>.
-<code>
-biom summarize_table -i Schloss_otu_table.biom -o summary_Schloss_otu_table.txt
-</code>
-The summary file contains information about the number of sequences per sample, which will help us to make decisions about rarefaction (subsampling).  When we inspect the file, we see that sample F3D142.S208 has 2212 reads, the minimum observed.  This is what we will use as a subsampling depth.  Also, a lot of the info in this file is typically reported in methods sections of manuscripts.</p>
+<p>We can get a summary of everything in the .biom OTU table using a script that begins with <code>biom</code>, which indicates the special format and handling of the biom data table. The syntax and structure of these biom scripts are only slightly bit different from other QIIME scripts. More information about biom format motivation is <a href="http://biom-format.org/documentation/biom_format.html">here</a>. <strong>This is an important script.</strong>  Documentation for <code>summarize_table</code> is <a href="http://biom-format.org/documentation/summarizing_biom_tables.html">here</a>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">biom summarize_table -i Schloss_otu_table.biom -o summary_Schloss_otu_table.txt
+</code></pre></div>
+<p>The summary file contains information about the number of sequences per sample, which will help us to make decisions about rarefaction (subsampling).  When we inspect the file, we see that sample F3D142.S208 has 2212 reads, the minimum observed.  This is what we will use as a subsampling depth.  Also, a lot of the info in this file is typically reported in methods sections of manuscripts.</p>
 
 <p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_13.jpg" alt="img13"></p>
 
@@ -132,28 +127,27 @@ The summary file contains information about the number of sequences per sample, 
 
 <p>We will make a phylogenetic tree of the short-read sequences so that we can use information about the relatedness among taxa to estimate and compare diversity.  We will use FastTree for this.<br>
 It is best not to use trees made from short-reads as very robust hypotheses of evolution. I suggest using trees from short-read sequences for ecological analyses, visualization and hypothesis-generation rather than strict phylogenetic inference.
-Documentation is <a href="http://qiime.org/scripts/make_phylogeny.html">here</a>.
-<code>
-mkdir fasttree_cdhit
-</code>
-<code>
-make_phylogeny.py -i pynast_aligned/cdhit_rep_seqs_aligned.fasta -t fasttree -o fasttree_cdhit/fasttree_cdhit.tre
-</code>
-A few notables:  The tree algorithm input is the alignment file; the output extension is .tre.</p>
+Documentation is <a href="http://qiime.org/scripts/make_phylogeny.html">here</a>.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir fasttree_cdhit
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">make_phylogeny.py -i pynast_aligned/cdhit_rep_seqs_aligned.fasta -t fasttree -o fasttree_cdhit/fasttree_cdhit.tre
+</code></pre></div>
+<p>A few notables:  The tree algorithm input is the alignment file; the output extension is .tre.</p>
 
 <p>Inspect the new tree file (<a href="http://marvin.cs.uidaho.edu/Teaching/CS515/newickFormat.html">Newick</a> format). The OTU ID is given first, and then the branch length to the next node. This format is generally compatible with other tree-building and viewing software. For example, I have used it to input into the <a href="http://itol.embl.de/">Interactive Tree of Life</a> to build visually appealing figures. <a href="http://topiaryexplorer.sourceforge.net/">Topiary Explorer</a> is another options for visualization, and is a QIIME add-on.</p>
 
 <h3 id="3.3-rarefaction-(subsampling)">3.3 Rarefaction (subsampling)</h3>
 
-<p>Navigate back into the QIIMETutorial directory.
-Before we start any ecological analyses, we want to evenly subsample (&quot;rarefy&quot;, but see this <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531">discussion</a>) all the samples to an equal (&quot;even&quot;) number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full">Gihring et al. 2011</a>) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.
-To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples <em>included</em> in analyses.  Sometimes this is not straightforward, but here are some things to consider:
-*  Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.
+<p>Navigate back into the QIIMETutorial directory.</p>
+
+<p>Before we start any ecological analyses, we want to evenly subsample (&quot;rarefy&quot;, but see this <a href="http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531">discussion</a>) all the samples to an equal (&quot;even&quot;) number of sequences so that they can be directly compared to one another. Many heartily agree (as exampled by <a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1462-2920.2011.02550.x/full">Gihring et al. 2011</a>) that sample-to-sample comparisons cannot be made unless subsampling to an equal sequencing depth is performed.</p>
+
+<p>To subsample the OTU table, we need to decide the appropriate subsampling depth. What is the best number of sequences?  As a rule, we must subsample to the minimum number of sequences per sample for all samples <em>included</em> in analyses.  Sometimes this is not straightforward, but here are some things to consider:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">*  Are there low-sequence samples that have very few reads because there was a technological error (a bubble, poor DNA extraction, poor amplification, etc)?  These samples should be removed (and hopefully re-sequenced), especially if there is no biological explanation for the low number of reads.
 *  How complex is the community?  An acid-mine drainage community is less rich than a soil, and so fewer sequences per sample are needed to evaluate diversity.
 *  How exhaustive is the sequencing?  If this is unknown, an exploratory rarefaction analysis could be done to estimate.
 *  How important is it to keep all samples in the analysis?  Consider the costs and benefits of, for example, dropping one not-very-well-sequenced replicate in favor of increasing overall sequence information.  If you&#39;ve got $$ to spare, built-in sequencing redundancy/replication is helpful for this.
-*  Don&#39;t fret!  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.</p>
-
+*  Don&#39;t fret!  Soon sequencing will be so inexpensive that we will be sequencing every community exhaustively and not have to worry about it anymore.
+</code></pre></div>
 <p>In this example dataset, we want to keep all of our samples, so we will subsample to 2212.  Documentation is <a href="http://qiime.org/scripts/single_rarefaction.html?highlight=rarefaction">here</a>.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">single_rarefaction.py -i Schloss_otu_table.biom -o Schloss_otu_table_even2212.biom -d 2212
 </code></pre></div>
@@ -211,15 +205,12 @@ To subsample the OTU table, we need to decide the appropriate subsampling depth.
 <p>(We will test differences in alpha diversity in R.)</p>
 
 <h2 id="where-to-find-qiime-resources-and-help">Where to find QIIME resources and help</h2>
-
-<ul>
-<li> <a href="qiime.org">QIIME</a> offers a suite of developer-designed <a href="http://www.qiime.org/tutorials/tutorial.html">tutorials</a>.</li>
-<li> <a href="http://www.qiime.org/scripts/index.html">Documentation</a> for all QIIME scripts.</li>
-<li> There is a very active <a href="https://groups.google.com/forum/#!forum/qiime-forum">QIIME Forum</a> on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!</li>
-<li> The <a href="http://qiime.wordpress.com/">QIIME Blog</a> provides updates like bug fixes, new features, and new releases.</li>
-<li> QIIME development is on <a href="https://github.com/biocore/qiime">GitHub</a>.</li>
-</ul>
-
+<div class="highlight"><pre><code class="language-text" data-lang="text">*  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
+*  [Documentation](http://www.qiime.org/scripts/index.html) for all QIIME scripts.
+*  There is a very active [QIIME Forum](https://groups.google.com/forum/#!forum/qiime-forum) on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!
+*  The [QIIME Blog](http://qiime.wordpress.com/) provides updates like bug fixes, new features, and new releases.
+*  QIIME development is on [GitHub](https://github.com/biocore/qiime).
+</code></pre></div>
 <hr>
 
 <hr>
