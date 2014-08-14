@@ -9,16 +9,7 @@ date: 2014-08-15 18:44:36
 
 If you are already using Dropbox for a lot of stuff, you might want to create a separate Dropbox account just to deal with your files because they still can add up the memory space.
 
-**1.** Start at the login prompt on your EC2 machine:
-
-```
-cd /root
-```
-If you can not do this ("Permission denied"), make sure you are in
-superuser mode. (You should see a text line that starts with something like
- `root@ip-10-235-34-223:~$`. If not, use `sudo bash` to switch.)
-
-**2.** Then, grab the latest dropbox installation package for Linux:
+**1.** Then, grab the latest dropbox installation package for Linux:
 
 ```
 wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86_64"
@@ -30,21 +21,13 @@ wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86_64"
 tar -xvzf dropbox.tar.gz
 ```
 
-**4.** Make the Dropbox directory on /mnt and link it in:
+and then run it, configuring it to put stuff in and connect it to your Dropbox:
 
 ```
-mkdir /mnt/Dropbox
-ln -fs /mnt/Dropbox /root
-```
-
-and then run it, configuring it to put stuff in /mnt:
-
-```
-HOME=/mnt /root/.dropbox-dist/dropboxd &
+.dropbox-dist/dropboxd &
 ```
 
 When you get a message saying "this client is not linked to any account",
 copy/paste the URL into browser and go log in.  Voila!
 
-Your directory '/root/Dropbox', or, equivalently, '/mnt/Dropbox', is now
-linked to your Dropbox account!
+Your directory is now linked to your Dropbox account!
