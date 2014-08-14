@@ -62,7 +62,7 @@ The summary file contains information about the number of sequences per sample, 
 ![img13](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_13.jpg)
 
 
-### 3.2  Make a phylogenetic tree
+### 3.3  Make a phylogenetic tree
 
 We will make a phylogenetic tree of the short-read sequences so that we can use information about the relatedness among taxa to estimate and compare diversity.  We will use FastTree for this.  
 It is best not to use trees made from short-reads as very robust hypotheses of evolution. I suggest using trees from short-read sequences for ecological analyses, visualization and hypothesis-generation rather than strict phylogenetic inference.
@@ -80,7 +80,7 @@ A few notables:  The tree algorithm input is the alignment file; the output exte
 
 Inspect the new tree file ([Newick](http://marvin.cs.uidaho.edu/Teaching/CS515/newickFormat.html) format). The OTU ID is given first, and then the branch length to the next node. This format is generally compatible with other tree-building and viewing software. For example, I have used it to input into the [Interactive Tree of Life](http://itol.embl.de/) to build visually appealing figures. [Topiary Explorer](http://topiaryexplorer.sourceforge.net/) is another options for visualization, and is a QIIME add-on.
 
-### 3.3 Rarefaction (subsampling)
+### 3.4 Rarefaction (subsampling)
 
 Navigate back into the QIIMETutorial directory.
 
@@ -112,7 +112,7 @@ Our "clean" dataset has 19 samples and 858 OTUs defined at 97% sequence identity
 
 There is a [recent paper](http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1003531) that suggests that even subsampling is not necessary, but this is very actively debated.
 
-### 3.3 Calculating alpha (within-sample) diversity
+### 3.5 Calculating alpha (within-sample) diversity
 
 Navigate back into the QIIMETutorial directory, and make a new directory for alpha diversity results.
 
@@ -140,7 +140,7 @@ alpha_diversity.py -s
 
 There is workflow script, [alpha_rarefaction.py](http://qiime.org/scripts/alpha_rarefaction.html), which is useful if you want to udnerstand how measures of alpha diversity change with sequencing effort.  The script calculates alpha diversity on iterations of a subsampled OTU table.
 
-### 3.4 Visualizing alpha diversity
+### 3.6 Visualizing alpha diversity
 
 `summarize_taxa_through_plots.py` is a QIIME workflow script that calculates summaries of OTUs at different taxonomic levels. Documentation is [here](http://qiime.org/scripts/summarize_taxa_through_plots.html).
 
