@@ -27,7 +27,7 @@ title: "Welcome to EDAMAME!"
 
 4. [Beta Diversity Lecture]()
 
-5. [QIIME Tutorial Part Three]()
+5. [QIIME Tutorial Part Three](https://edamame-course.github.io/docs/qiime_3.html)
 _____________________________________________
 
 **Wednesday, August 13th, 2014**
