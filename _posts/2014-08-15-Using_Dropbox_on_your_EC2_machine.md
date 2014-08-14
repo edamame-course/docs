@@ -15,13 +15,13 @@ If you are already using Dropbox for a lot of stuff, you might want to create a 
 wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86_64"
 ```
 
-**3.** Unpack it:
+**2.** Unpack it:
 
 ```
 tar -xvzf dropbox.tar.gz
 ```
 
-and then run it, configuring it to put stuff in and connect it to your Dropbox:
+**3.** and then run it, configuring it to put stuff in and connect it to your Dropbox:
 
 ```
 .dropbox-dist/dropboxd &
