@@ -28,6 +28,9 @@ title: "Welcome to EDAMAME!"
 4. [Beta Diversity Lecture](https://edamame-course.github.io/docs/extra/Presentations/2014-08-14-PM_Ashley_Lecture3.pdf?raw=true)
 
 5. [QIIME Tutorial Part Three](https://edamame-course.github.io/docs/qiime_3.html)
+
+6.  [Titus Brown Lecture: Metagenomic Assembly](2014-edamame-assembly_TBrown.pdf?=true)
+
 _____________________________________________
 
 **Wednesday, August 13th, 2014**
