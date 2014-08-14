@@ -88,31 +88,19 @@
 
 <p>If you are already using Dropbox for a lot of stuff, you might want to create a separate Dropbox account just to deal with your files because they still can add up the memory space.</p>
 
-<p><strong>1.</strong> Start at the login prompt on your EC2 machine:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">cd /root
-</code></pre></div>
-<p>If you can not do this (&quot;Permission denied&quot;), make sure you are in
-superuser mode. (You should see a text line that starts with something like
- <code>root@ip-10-235-34-223:~$</code>. If not, use <code>sudo bash</code> to switch.)</p>
-
-<p><strong>2.</strong> Then, grab the latest dropbox installation package for Linux:</p>
+<p><strong>1.</strong> Then, grab the latest dropbox installation package for Linux:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">wget -O dropbox.tar.gz &quot;http://www.dropbox.com/download/?plat=lnx.x86_64&quot;
 </code></pre></div>
-<p><strong>3.</strong> Unpack it:</p>
+<p><strong>2.</strong> Unpack it:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">tar -xvzf dropbox.tar.gz
 </code></pre></div>
-<p><strong>4.</strong> Make the Dropbox directory on /mnt and link it in:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">mkdir /mnt/Dropbox
-ln -fs /mnt/Dropbox /root
-</code></pre></div>
-<p>and then run it, configuring it to put stuff in /mnt:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">HOME=/mnt /root/.dropbox-dist/dropboxd &amp;
+<p><strong>3.</strong> and then run it, configuring it to put stuff in and connect it to your Dropbox:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">.dropbox-dist/dropboxd &amp;
 </code></pre></div>
 <p>When you get a message saying &quot;this client is not linked to any account&quot;,
 copy/paste the URL into browser and go log in.  Voila!</p>
 
-<p>Your directory &#39;/root/Dropbox&#39;, or, equivalently, &#39;/mnt/Dropbox&#39;, is now
-linked to your Dropbox account!</p>
+<p>Your directory is now linked to your Dropbox account!</p>
 
 
 <div id="disqus_thread"></div>
