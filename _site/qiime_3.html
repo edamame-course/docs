@@ -107,10 +107,9 @@ of the tutorial you can download it here:</p>
 
 ##4.2 Using QIIME for visualization:  Ordination
 QIIME scripts can easily make an ordination using principal components analysis (PCoA). We&#39;ll perform PCoA on all resemblance matrices, and compare them.  Documentation is [here](http://qiime.org/scripts/principal_coordinates.html).  As always, make sure you are in the QIIMETutorial directory to execute these analyses.
+</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">principal_coordinates.py -i beta_div_even2212/ -o beta_div_even2212_PCoA/
 </code></pre></div>
-<p>principal_coordinates.py -i beta_div_even2212/ -o beta_div_even2212_PCoA/
-``<code>
-Notice that the</code>-i` command only specifies the directory, and not an individual filepath.  PCoA will be performed on all resemblances in that directory.  If we navigate into the new directory, we see there is one results file for each input resemblence matrix.</p>
+<p>Notice that the <code>-i</code> command only specifies the directory, and not an individual filepath.  PCoA will be performed on all resemblances in that directory.  If we navigate into the new directory, we see there is one results file for each input resemblence matrix.</p>
 
 <p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial3_IMG/IMG_17.jpg" alt="img17"></p>
 
