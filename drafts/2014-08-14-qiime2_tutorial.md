@@ -28,7 +28,7 @@ This assignment file is used anytime an OTU ID (the number) needs to be linked w
 *Note* that this list of OTUs and taxonomic assignments includes our "failed-to-align" representative sequences.  We will remove these at the next step.
 
 ###3.2  Make an OTU table, append the assigned taxonomy, and exclude failed alignment OTUs
-The OTU table is the table on which all ecological analyses (e.g. diversity, patterns, etc) is performed.  However, building the OTU table is non-contentious (you just count how many of each OTU was observed in each sample).  Instead, every step up until building the OTU table is important.  The algorithms that are chosen to assemble reads, quality control reads, define OTUs, etc are all gearing up to this one summarization. Documentation for make_otu_table.py is [here](http://qiime.org/scripts/make_otu_table.html). Note that the "map" file is not the actually mapping file, but the OTU cluster file (the output of cdhit).
+The OTU table is the table on which all ecological analyses (e.g. diversity, patterns, etc) is performed.  However, building the OTU table is relatively straightforward (you just count how many of each OTU was observed in each sample).  Instead, every step up until building the OTU table is important.  The algorithms that are chosen to assemble reads, quality control reads, define OTUs, etc are all gearing up to this one summarization. Documentation for make_otu_table.py is [here](http://qiime.org/scripts/make_otu_table.html). Note that the "map" file is not the actually mapping file, but the OTU cluster file (the output of cdhit).
 Navigate back into the "QIIMETutorial" directory to execute the script.
 ```
 make_otu_table.py -i cdhit_picked_otus/combined_seqs_otus.txt -o Schloss_otu_table.biom -e pynast_aligned/cdhit_rep_seqs_failures_names.txt -t rdp_assigned_taxonomy/cdhit_rep_seqs_tax_assignments.txt
@@ -40,9 +40,9 @@ head Schloss_otu_table.biom
 ```
 ![img12](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_12.jpg)
 
-Be not alarmed! This file is in .biom table format.  Whereas a traditional taxon (OTU) table in ecology is often a matrix of samples (communities) by taxa (OTUs), there are just too many taxa in microbial communities for the traditional table to be efficiently used in computation.  Thus, some of the QIIME folks developed the .biom format.  General information about the .biom format is [here](http://biom-format.org/).  Scroll down through the terminal screen, to observe that the taxonomic assignments were incorporated into the OTU table.
+Be not alarmed! This file is in .biom table format.  Whereas a traditional taxon (OTU) table in ecology is often a matrix of samples (communities) by taxa (OTUs), there are just too many taxa in microbial communities for the traditional table to be efficiently used in computation.  Thus, the .biom format was developed.  General information about the .biom format is [here](http://biom-format.org/).  Scroll down through the terminal screen, to observe that the taxonomic assignments were incorporated into the OTU table.
 
-We can get a summary of everything in the .biom OTU table using a script that begins with `biom`, which indicates the special format and handling of the data table. The syntax of these biom scripts is a bit different from other QIIME scripts. More information about biom format motivation is [here](http://biom-format.org/documentation/biom_format.html). **This is an important script.**  Documentation for `summarize_table` is [here](http://biom-format.org/documentation/summarizing_biom_tables.html).
+We can get a summary of everything in the .biom OTU table using a script that begins with `biom`, which indicates the special format and handling of the biom data table. The syntax and structure of these biom scripts are only slightly bit different from other QIIME scripts. More information about biom format motivation is [here](http://biom-format.org/documentation/biom_format.html). **This is an important script.**  Documentation for `summarize_table` is [here](http://biom-format.org/documentation/summarizing_biom_tables.html).
 ```
 biom summarize_table -i Schloss_otu_table.biom -o summary_Schloss_otu_table.txt
 ```
@@ -121,19 +121,27 @@ There is workflow script, [alpha_rarefaction.py](http://qiime.org/scripts/alpha_
 
 ###3.4 Visualizing alpha diversity
 
-This is a "workflow script" that calculates summaries of OTUs at different taxonomic levels. Documentation is [here](http://qiime.org/scripts/summarize_taxa_through_plots.html).
+`summarize_taxa_through_plots.py` is a QIIME workflow script that calculates summaries of OTUs at different taxonomic levels. Documentation is [here](http://qiime.org/scripts/summarize_taxa_through_plots.html).
 
 ```
 summarize_taxa_through_plots.py -o taxa_summary_even2212/ -i Schloss_otu_table_even2212.biom -m Schloss_Map.txt
 ```
 
-When the script is finished, navigate into the results file, and into the "taxa_summary_plots" and find the html area and bar charts.  Use the `open` command to open the html file in your browser. Neato!
+When the script is finished, navigate into the results file, and into the "taxa_summary_plots" and find the html area and bar charts.  If you are on a Mac, use the `open` command to open the html file in your browser. Neato!
 
 ```
 open area_charts.html
 ```
 
 ![img16](https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial2_IMG/IMG_16.jpg)
+
+To view the HTML files, the EC2 users will need to execute the following command:
+
+```
+cp -r taxa_summary_even2212/taxa_summary_plots/ ../Dropbox/
+```
+
+If the file doesn't open correctly, EC2 users may need to download the folder from Dropbox and unzip the folder (7-Zip --> Extract Here), and then when they open the file, it will show the graphs and other hoopla!
 
 The links above and below the charts point to the raw data or other summaries.  Spend some time exploring all of the different links.  Scroll over the charts and notice how the SampleID and taxonomic assignment "pop" up.
 
