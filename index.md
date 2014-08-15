@@ -27,7 +27,9 @@ title: "Welcome to EDAMAME!"
 
 2. [Intro to Amazon EC2](https://edamame-course.github.io/docs/intro_to_ec2_instance.html)
 
-3. [mothur to the max](https://edamame-course.github.io/docs/august_15.html)
+3. [Pat Schloss's Presentation](http://pschloss.github.io/2014_08_15-mothur/#1)
+
+4. [mothur to the max](http://www.mothur.org/wiki/MiSeq_SOP)
 
 _____________________________________________
 
