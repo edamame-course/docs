@@ -35,6 +35,8 @@
     <li class=divider></li>
     <li class=nav-header>Friday, August 15th</li>
     <li><a href="https://edamame-course.github.io/docs/august_15.html">Friday, August 15th Overview</a></li>
+    <li><a href="http://pschloss.github.io/2014_08_15-mothur/#1">Pat Schloss's Presentation</a></li>
+    <li><a href="https://edamame-course.github.io/docs/august_15.html">mothur to the max</a></li>
     <!-- <li><a href="http://edamame-course.org">EDAMAME course home page</a></li> -->
     <li class=divider></li>
     <li class=nav-header>Saturday, August 16th</li>
@@ -84,11 +86,9 @@
     </h2>
 </div>
 
-<p>Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</p>
+<h2 id="mac-os-&amp;-linux-users,-connecting-to-your-amazon-ec2-instance-at-the-command-line-is-pretty-easy.">Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</h2>
 
-<ol>
-<li>Open a Terminal:</li>
-</ol>
+<h3 id="1.-open-a-terminal:">1. Open a Terminal:</h3>
 
 <p><strong>MAC Users:</strong> Terminal is under: Applications --&gt; Utilities
 <strong>Linux Users:</strong> Press Ctrl + Alt + t</p>
@@ -97,25 +97,29 @@
 
 <p>You will need to know what your Public DNS is for your EC2 Instance.</p>
 
-<ol>
-<li>Enter the following command into the terminal:</li>
-</ol>
+<h3 id="2.-enter-the-following-command-into-the-terminal:">2. Enter the following command into the terminal:</h3>
 <div class="highlight"><pre><code class="language-text" data-lang="text">chmod 400 **/path/to/your/key/**EDAMAME.pem
 </code></pre></div>
-<ol>
-<li>Enter the following command into the terminal:</li>
-</ol>
+<h3 id="3.-enter-the-following-command-into-the-terminal:">3. Enter the following command into the terminal:</h3>
 <div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
 </code></pre></div>
-<ol>
-<li>SUCCESS! You have now logged into your computer in the cloud!</li>
-</ol>
+<p>SUCCESS! You have now logged into your computer in the cloud!</p>
+
+<h3 id="4.-after-the-first-login">4. After the first login</h3>
 
 <p>After the first login to the EC2, you do not need to repeat the chmod to change permissions for the key.
-Every time you start an previously-stopped EC2 instance, there will be a new Public DNS.  To connect to the EC2 after the first login, copy and paste that new Public DNS into &quot;UNIQUE SET OF NUMBERS&quot;, open terminal, and paste:
-<code>
-ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
-</code></p>
+Every time you start an previously-stopped EC2 instance, there will be a new Public DNS.  To connect to the EC2 after the first login, copy and paste that new Public DNS into &quot;UNIQUE SET OF NUMBERS&quot;, open terminal, and paste:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+</code></pre></div>
+<h3 id="5.-transferring-files-to-the-ec2">5. Transferring files to the EC2</h3>
+
+<p>Some options:
+1.  You can use the scp command to transfer files to the EC2.  </p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">scp -man
+</code></pre></div>
+<ol>
+<li> You can use a file transfer software like <a href="https://filezilla-project.org/">Filezilla</a>.</li>
+</ol>
 
 <hr>
 
