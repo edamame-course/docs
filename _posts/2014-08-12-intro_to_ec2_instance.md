@@ -9,7 +9,9 @@ date: 2014-08-12 08:55:36
 Go to [Amazon Web Services](https://aws.amazon.com) in a web browser.
 
 Select ‘My Account/Console’ menu option ‘AWS Management Console.”
+
 ![AWS Login Image](img/aws/aws_login.png)
+
 Log in with your username & password. If you are new to _Amazon_ then select **'I am a new user.'** and create an account (NOTE: You do need a credit card, but there is a free tier of usage).
 
 Click on **EC2** (towards the upper left of the page).
@@ -30,6 +32,7 @@ Select "Community AMIs" and search for EDAMAME and Click the blue "Select" butto
 ![Community AMIs](img/aws/ami_choice.png)
 
 #### Step 2:
+
 Select the appropriate instance type. This depends on the size of the data you are working with.
 
 For the purpose of this workshop we will choose **m3.large**
@@ -37,6 +40,7 @@ For the purpose of this workshop we will choose **m3.large**
 Select **Next: Configure Instance Details**
 
 #### Step 3:
+
 At this step you can change specfic components of the instance.
 
 For the purposes of this workshop we will not need to change any details.
@@ -44,6 +48,7 @@ For the purposes of this workshop we will not need to change any details.
 Select **Next: Add Storage**
 
 #### Step 4:
+
 You can get up to 30 Gb of free storage on an EC2 Instance. If you have a particularly large data set, then you may want to request more data storage space.
 
 For the purposes of this workshop, 30 Gb should be plenty of space for our data files.
@@ -51,6 +56,7 @@ For the purposes of this workshop, 30 Gb should be plenty of space for our data 
 Select **Next: Tag Instance**
 
 #### Step 5:
+
 As you become more adept at utilizing EC2 Instances, you may wish to create tags for them.
 
 For the purposes of this workshop we will not need to create a tag of the instance.
@@ -58,8 +64,8 @@ For the purposes of this workshop we will not need to create a tag of the instan
 Select **Next: Configure Security Group**
 
 #### Step 6:
-Here we **will** be making some changes.
 
+Here we **will** be making some changes.
 
 1. Name the **Security Group Name** to something you like.  We chose the name EDAMAME for the purposes of this workshop.
 
@@ -102,13 +108,13 @@ If you do not have an existing key pair or you do not want to use one you alread
 
 At this point you will be brought to your list of Instances on the EC2 Dashboard. The instance you just launched will have a yellow pending circle next to it. When the yellow cirle changes to a green circle, your instance is up and running. In the example below, there are two instances currently running. When you select on by click on the box to the left of the instance, you will see the Instance details appear in the pane below your list of instances.
 
-
 ![EC2 Dashboard Instance List](img/aws/ec2_dashboard.png)
 
 Locate the Public DNS for your instance. It should look something like this:
 
->ec2-**some set of numbers**.compute-1.amazonaws.com.
-
+```
+ec2-**some set of numbers**.compute-1.amazonaws.com.
+```
 
 At some point you will need to highlight and copy the Public DNS. This is the link to your specific instance that you started at Amazon Web Services (AWS).
 
