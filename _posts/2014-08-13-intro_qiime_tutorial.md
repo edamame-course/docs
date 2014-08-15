@@ -4,6 +4,9 @@ title: "Intro to QIIME"
 comments: true
 date: 2014-08-13 08:44:36
 ---
+###Handouts of workflow charts are available for the QIIME workflow discussed in these tutorials:
+-  [Paired-End Illumina](https://github.com/edamame-course/docs/tree/gh-pages/extra/Handouts/QIIMEFlowChart_IlluminaPairedEnds_13aug2014.pdf?raw=true)
+-  [454](https://github.com/edamame-course/docs/tree/gh-pages/extra/Handouts/QIIMEFlowChart_454_13aug2014.pdf?raw=true)
 
 ## Getting started
 
