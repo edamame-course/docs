@@ -17,6 +17,16 @@ title: "Welcome to EDAMAME!"
 
 ## Announcements
 
+**Friday, August 15th, 2014**
+
+1. [Friday, August 15th Overview](https://edamame-course.github.io/docs/august_15.html)
+
+2. [Intro to Amazon EC2](https://edamame-course.github.io/docs/intro_to_ec2_instance.html)
+
+3. [mothur to the max](https://edamame-course.github.io/docs/august_15.html)
+
+_____________________________________________
+
 **Thursday, August 14th, 2014**
 
 1. [Thursday, August 14th Overview](https://edamame-course.github.io/docs/august_14.html)
