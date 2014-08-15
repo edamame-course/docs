@@ -13,6 +13,8 @@ title: "Welcome to EDAMAME!"
 
 [Our Etherpad is located here and is a shared note-taking space](https://edamame.etherpad.mozilla.org/1).
 
+[Handouts from tutorials are here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Handouts)
+
 ---------------------------------------------
 
 ## Announcements
