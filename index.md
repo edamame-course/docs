@@ -7,7 +7,7 @@ title: "Welcome to EDAMAME!"
 
 [For more about this course, see edamame-course.org](http://edamame-course.org).
 
-##### Some of our links are a little wonky and we're working on getting them fixed.  If at any point you have an issue, just right click and open in another tab in your browser. 
+##### Some of our links are a little wonky and we're working on getting them fixed.  If at any point you have an issue, just right click and open in another tab in your browser.
 
 ![edamame header image](img/gull_lake.jpg)
 
@@ -20,6 +20,8 @@ title: "Welcome to EDAMAME!"
 ---------------------------------------------
 
 ## Announcements
+**Saturday, August 15th, 2014**
+1.  [Using a local BLAST db](https://edamame-course.github.io/docs/BLASTdb.html)
 
 **Friday, August 15th, 2014**
 
