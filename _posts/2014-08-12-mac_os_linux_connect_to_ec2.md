@@ -39,13 +39,5 @@ ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.co
 ```
 
 ###5. Transferring files to the EC2
-Some options:
-1.  You can use the scp command to transfer files to the EC2.  
 
-```
-scp -man
-```
-2.  You can use a file transfer software like [Filezilla](https://filezilla-project.org/).
-
------------------------------------------------
------------------------------------------------
+QP has made some great tutorials on how to transfer materials; they are available [here](http://angus.readthedocs.org/en/2014/amazon/).
