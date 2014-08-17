@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width">
 
-        <title>EDAMAME : Mac OS & Linux Users: Connecting to your EC2 Instance</title>
+        <title>EDAMAME : BLAST databases 2:  Legacy edition</title>
         <meta name="description" content="course materials & tutorials">
 
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -86,39 +86,36 @@
 
                     <div id=content class=span9>
                         <div class=page-header>
-    <h2>Mac OS & Linux Users: Connecting to your EC2 Instance
+    <h2>BLAST databases 2:  Legacy edition
         
     </h2>
 </div>
 
-<h2 id="mac-os-&amp;-linux-users,-connecting-to-your-amazon-ec2-instance-at-the-command-line-is-pretty-easy.">Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</h2>
+<h3 id="tutorial-on-running-blast-locally">Tutorial on running blast locally</h3>
 
-<h3 id="1.-open-a-terminal:">1. Open a Terminal:</h3>
+<h2 id="how-to-make-a-blast-database-by-formatting-a-local-file">How to make a blast database by formatting a local file</h2>
 
-<p><strong>MAC Users:</strong> Terminal is under: Applications --&gt; Utilities
-<strong>Linux Users:</strong> Press Ctrl + Alt + t</p>
+<h3 id="1-navigate-to-the-miseq_sop-directory-we-will-use-hmp-fasta-file-from-pat-s-dataset-to-make-a-local-database-the-input-has-to-be-a-fasta-file-">1.  Navigate to the MiSeq_SOP/ directory.  We will use HMP fasta file from Pat's dataset to make a local database.  The input has to be a fasta file.</h3>
 
-<p>You will need to know the location of your <strong>key pair</strong> you created when you launched your instance.  Usually this will be in your &quot;Downloads&quot; folder, but you may want to move it elsewhere.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>formatdb&nbsp;-i&nbsp;HMP_MOCK.v35.fasta&nbsp;-n&nbsp;MyFavoriteDB.db&nbsp;-p&nbsp;F</span></span></span></div></pre><p>In the above command, the <code>-i</code> argument is the input file of sequences from which you want to make the database.  The <code>-n</code> argument is the name that you want to give the database.  The <code>-p</code> F argument signifies that this will be a nucleotide database (as opposed to, e.g., a protein db).</p>
+<p>View the new files using <code>ls.</code></p>
+<p>This command will output four files: a log file, and three .db files:</p>
+<ul>
+<li>a .nhr file</li>
+<li>a .nin file</li>
+<li>a .nsq file</li>
+</ul>
+<p>Together, all of these comprise the new database.</p>
+<h3 id="2-make-a-new-file-of-a-sequence-to-blast-against-your-database-">2.  Make a new file of a sequence to BLAST against your database.</h3>
+<p> We will use the first sequence in of our cdhit_rep_seqs.fasta.  This is our first representative sequence, from QIIME OTU 0.</p>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>head&nbsp;-n2&nbsp;../cdhit_rep_seqs/cdhit_rep_seqs.fasta&nbsp;&gt;&nbsp;myfavseq.fasta</span></span></span></div></pre><p>We call the output file "myfavseq.fasta"</p>
+<h3 id="3-blast-myfavseq-against-your-new-hmp-database">3.  BLAST myfavseq against your new HMP database</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>blastall&nbsp;-i&nbsp;myfavseq.fasta&nbsp;-d&nbsp;MyFavoriteDB.db&nbsp;-p&nbsp;blastn&nbsp;-o&nbsp;results.blast</span></span></span></div></pre><h3 id="4-inspect-the-results-file-using-less-">4.  Inspect the results file using less.</h3>
+<pre class="editor-colors lang-text"><div class="line"><span class="text plain"><span class="meta paragraph text"><span>less&nbsp;results.blast</span></span></span></div></pre>
 
-<p>You will need to know what your Public DNS is for your EC2 Instance.</p>
+<hr>
 
-<h3 id="2.-enter-the-following-command-into-the-terminal:">2. Enter the following command into the terminal:</h3>
-<div class="highlight"><pre><code class="language-text" data-lang="text">chmod 400 **/path/to/your/key/**EDAMAME.pem
-</code></pre></div>
-<h3 id="3.-enter-the-following-command-into-the-terminal:">3. Enter the following command into the terminal:</h3>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
-</code></pre></div>
-<p>SUCCESS! You have now logged into your computer in the cloud!</p>
-
-<h3 id="4.-after-the-first-login">4. After the first login</h3>
-
-<p>After the first login to the EC2, you do not need to repeat the chmod to change permissions for the key.
-Every time you start an previously-stopped EC2 instance, there will be a new Public DNS.  To connect to the EC2 after the first login, copy and paste that new Public DNS into &quot;UNIQUE SET OF NUMBERS&quot;, open terminal, and paste:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
-</code></pre></div>
-<h3 id="5.-transferring-files-to-the-ec2">5. Transferring files to the EC2</h3>
-
-<p>QP has made some great tutorials on how to transfer materials; they are available <a href="http://angus.readthedocs.org/en/2014/amazon/">here</a>.</p>
+<hr>
 
 
 <div id="disqus_thread"></div>
