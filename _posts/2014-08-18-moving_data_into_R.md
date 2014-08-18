@@ -4,7 +4,8 @@ title: "Moving data from one program to another"
 comments: true
 date: 2014-08-18 12:55:36
 ---
-###1.  Moving data from QIIME:  converting the .biom table
+
+### **1.**  Moving data from QIIME:  converting the .biom table
 
 This command changes frequently, as the biom format is a work in progress.  Use `biom convert -h` to find the most up-to-date arguments and options; the web page is not updated as frequently as the help file.
 
@@ -14,15 +15,14 @@ biom convert -b -i Schloss_otu_table_even2212.biom -o Schloss_otu_table_even2212
 
 Here, we use the argument `-b` to specify that we are converting a biom-formatted table to a "classic" otu table.  We specify input and output files with `-i` and `-o`, as always.  We also provide the `--table-type` arugment to "otu."  Finally, we specify that we want our OTU table to have the taxonomy assigned to each OTU as the last column in the table (` --header-key` set to "taxonomy") and that the name of this column, `--output-metadata-id`, will be the "ConsensusLineage"
 
-
-###2.  QIIME to R  : Resemblance tables
+### **2.**  QIIME to R  : Resemblance tables
 
 For importing resemblance tables
 	1.  read.table(header=TRUE, row.names =1; sep =“\t”)
 	2.  as.dist()
 
 
-###3. Writing out (exporting) resemblance mtables from R
+### **3.** Writing out (exporting) resemblance mtables from R
 
 It is advisable to save resemblance matrices/OTU to a working directory so that we don't have to re-calculate them every time we continue analyses, or if we want to use these matrices in a different program.
 
