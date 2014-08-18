@@ -25,25 +25,25 @@ title: "Welcome to EDAMAME!"
 
 **Monday, August 18th, 2014**
 
-*1.* [Monday, August 18th Overview](https://edamame-course.github.io/docs/august_18.html)
+**1.** [Monday, August 18th Overview](https://edamame-course.github.io/docs/august_18.html)
 
-*2.* [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
+**2.** [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
 
-*3.* Stuart Jones: [Using R for community ecology analyses](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files)
+**3.** Stuart Jones: [Using R for community ecology analyses](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files)
 
 -------------------------------------------------------------------------------------
 
 **Sunday, August 17th, 2014**
 
-*1.*  **Currently Updating**  
+**1.**  **Currently Updating**  
 
 -------------------------------------------------------------------------------------
 
 **Saturday, August 16th, 2014**  
 
-*1.*  Josh's Lecture: [Why Metagenomics is Horrible and Why You Should Do It]()
+**1.**  Josh's Lecture: [Why Metagenomics is Horrible and Why You Should Do It]()
 
-*2.*  BLAST databases
+**2.**  BLAST databases
 	[BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
 	[Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)
 
