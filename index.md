@@ -51,34 +51,18 @@ title: "Welcome to EDAMAME!"
 
 **Friday, August 15th, 2014**
 
-*1.* [Friday, August 15th Overview](https://edamame-course.github.io/docs/august_15.html)
-
-*2.* [Intro to Amazon EC2](https://edamame-course.github.io/docs/intro_to_ec2_instance.html)
-
-*3.* [Pat Schloss's Presentation](http://pschloss.github.io/2014_08_15-mothur/#1)
-
-*4.* [mothur to the max](http://www.mothur.org/wiki/MiSeq_SOP)
+[Friday, August 15th Overview](https://edamame-course.github.io/docs/august_15.html)
 
 -------------------------------------------------------------------------------------
 
 **Thursday, August 14th, 2014**
 
-*1.* [Thursday, August 14th Overview](https://edamame-course.github.io/docs/august_14.html)
-
-*2.* [Alpha Diversity Lecture](https://edamame-course.github.io/docs/extra/Presentations/2014-08-14-AM_Ashley_Lecture2.pdf?raw=true)
-
-*3.* [QIIME Tutorial Part Two](https://edamame-course.github.io/docs/qiime_2_tutorial.html)
-
-*4.* [Beta Diversity Lecture](https://edamame-course.github.io/docs/extra/Presentations/2014-08-14-PM_Ashley_Lecture3.pdf?raw=true)
-
-*5.* [QIIME Tutorial Part Three](https://edamame-course.github.io/docs/qiime_3.html)
-
-*6.* [Titus Brown Lecture: Metagenomic Assembly](2014-edamame-assembly_TBrown.pdf?=true)
+[Thursday, August 14th Overview](https://edamame-course.github.io/docs/august_14.html)
 
 -------------------------------------------------------------------------------------
 
 **Wednesday, August 13th, 2014**
 
-*1.* [Wednesday, August 13th Overview](https://edamame-course.github.io/docs/august_13.html)
+[Wednesday, August 13th Overview](https://edamame-course.github.io/docs/august_13.html)
 
 -------------------------------------------------------------------------------------
