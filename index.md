@@ -20,8 +20,17 @@ title: "Welcome to EDAMAME!"
 ---------------------------------------------
 
 ## Announcements
-**Saturday, August 15th, 2014**
-1.  [Using a local BLAST db](https://edamame-course.github.io/docs/BLASTdb.html)
+**Saturday, August 17th, 2014**
+
+1.  
+
+**Saturday, August 16th, 2014**  
+
+1.  BLAST databases
+  *  [BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
+  *  [Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)
+
+2.  [Josh's lecture:  Why Metagenomics is Horrible and Why You Should Do It]
 
 **Friday, August 15th, 2014**
 
