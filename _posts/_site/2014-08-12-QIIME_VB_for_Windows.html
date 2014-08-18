@@ -1,0 +1,174 @@
+<p>These directions are slightly modified from those provided by <a href="http://qiime.org/">QIIME.org</a>.
+(<a href="http://qiime.org/install/virtual_box.html">http://qiime.org/install/virtual_box.html</a>)</p>
+
+<p><img src="img/QIIME_VB/QIIMEvb_HomePage.png" alt="QIIME Home Page" /></p>
+
+<p><strong>Please Note:</strong></p>
+
+<p>You will need a program to unzip files. If you are unsure about having such a program, then please <a href="http://downloads.sourceforge.net/sevenzip/7z920-x64.msi">download 7-zip</a> (<a href="http://downloads.sourceforge.net/sevenzip/7z920-x64.msi">http://downloads.sourceforge.net/sevenzip/7z920-x64.msi</a>) and install the program.</p>
+
+<p><img src="img/QIIME_VB/7-Zip.png" alt="7-zip via Sourceforge.net" /></p>
+
+<hr />
+<p><strong>INSTRUCTIONS to load QIIME Virtual Box for Windows 7</strong></p>
+
+<ul>
+  <li>Download and install the <a href="https://www.virtualbox.org/wiki/Download_Old_Builds_4_3">VirtualBox</a> (VB) <strong>version</strong> <strong>4.3.12</strong> for your machine.
+(<a href="https://www.virtualbox.org/wiki/Download_Old_Builds_4_3">https://www.virtualbox.org/wiki/Download_Old_Builds_4_3</a>)</li>
+</ul>
+
+<p><img src="img/QIIME_VB/VB_build.png" alt="VirtualBox Build 4.3.12" /></p>
+
+<ul>
+  <li>Download the <a href="ftp://thebeast.colorado.edu/pub/qiime-release-VMs/QIIME-1.8.0-amd64.vdi.gz">64-bit QIIME Virtual Box</a> 
+(<a href="ftp://thebeast.colorado.edu/pub/qiime-release-VMs/QIIME-1.8.0-amd64.vdi.gz">ftp://thebeast.colorado.edu/pub/qiime-release-VMs/QIIME-1.8.0-amd64.vdi.gz</a>) . 
+This file is large (approximately 2.3 Gb) so it may take between a few minutes and a few hours depending on your internet connection speed.</li>
+  <li>You will need to unzip the “QIIME-1.8.0-amd64.vdi.gz” file you just downloaded.
+    <ul>
+      <li>Right click on the file</li>
+      <li>Select “Extract Here”</li>
+      <li>This will take several minutes and create the file: ““QIIME-1.8.0-amd64.vdi”.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="img/QIIME_VB/7-Zip_Extract.png" alt="Use 7-zip to &quot;Extract Here&quot;" /></p>
+
+<ul>
+  <li>Create a new virtual machine:
+    <ul>
+      <li>Launch Oracle VM VirtualBox from the Start Menu, and create a new machine (<strong>Press</strong> the blue “New” button).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="img/QIIME_VB/Oracle_VM.png" alt="Create a new Virtual Machine" /></p>
+
+<ul>
+  <li>A new window will show up. In this screen type “QIIME” as the name for the virtual machine. Then select <strong>Linux</strong> as the Operating System, and <strong>Ubuntu (64 bit)</strong> as the version. Click <strong>Next</strong>.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Create_VM.png" alt="Create a 64 bit Ubuntu VM" /></p>
+
+<ul>
+  <li>Select the amount of RAM (memory). You will need <strong>at least</strong> 1000Mb, but the best option is based on your machine (3000+ Mb is ideal). If possible, avoid going into the red portion of the sliding scale. After selecting the amount of RAM, click <strong>Next</strong>.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Memory_VM.png" alt="Select at least 1000 Mb of RAM" /></p>
+
+<ul>
+  <li>Select “Use existing hard drive”, and click the folder icon next to the selector (it has a green up arrow). In the new window locate the virtual hard drive that was unzipped in Step 3. Select the file and then click <strong>Open</strong>.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/HD_VM.png" alt="Use an Existing HD" /></p>
+
+<p><img src="img/QIIME_VB/VDI_VM.png" alt="Select the QIIME-1.8.0-amd64.vdi from Step 3" /></p>
+
+<ul>
+  <li>In the new window click <strong>Create</strong>.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Final_Create.png" alt="Select Create" /></p>
+
+<ul>
+  <li>Double click on the new virtual machine created – it will be called QIIME – to boot it for the first time. This may take several minutes.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Start_QIIME_VM.png" alt="Boot up your QIIME Virtual Machine" /></p>
+
+<ul>
+  <li>If the window looks the image below, then CONGRATULATIONS! You are now running Ubuntu (a Linux operating system) on your Windows computer.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/QIIME_Desktop.png" alt="QIIME Desktop Image" /></p>
+
+<ul>
+  <li>When your new virtual machine boots, you will see a folder on the Desktop called “Before_you_start”. Double click on that folder to open it, and then double click on the “1.Welcome.txt” file in that folder.  Read the file, however follow the updated instructions below to get you started with using your QIIME virtual box.</li>
+</ul>
+
+<hr />
+
+<p><strong>Getting Started with your QIIME Virtual Box</strong></p>
+
+<p>Before getting started with QIIME, you should install the Virtual Box guest additions. The guest additions are a set of applications that will be installed in the virtual machine to add features such as enabling a larger window.</p>
+
+<ul>
+  <li>Go to the virtual box menu and select Devices-&gt;Insert Guest Additions CD Image…</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Guest_Image.png" alt="Select &quot;Insert Guest Additions CD Image&quot;" /></p>
+
+<ul>
+  <li>Click back into the virtual box, Select VBOXADDITIONS_4.3.12_93733 (it looks like a CD icon on the left hand side. (Note the name VBOXADDITIONS… may differ depending on your version of VirtualBox.) A new window should appear in the virtual machine. Select “Open Autorun Prompt”. Then select “Run” from the popup.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Autorun_Image.png" alt="Select &quot;Open Autorun Prompt&quot;" /></p>
+
+<ul>
+  <li>
+    <p>The <strong>PASSWORD</strong> is “qiime” (all lowercase).  Press Return once prompted.</p>
+  </li>
+  <li>
+    <p>Open a terminal by clicking on the black window with a “&gt;_” in the left menu bar of the virtual machine, and type this command into the terminal:</p>
+  </li>
+</ul>
+
+<pre><code>sudo /media/VBOXADDITIONS_4.3.12_93733 /VBoxLinuxAdditions.run
+</code></pre>
+
+<p>Again, the directory name VBOXADDITIONS… may differ depending on your version of VirtualBox. You can run ‘ls /media’ to find the name of this directory. When prompted, enter the password: “qiime”</p>
+
+<ul>
+  <li>When that command is finished running (i.e., you get a command prompt back), restart the virtual machine by clicking the power button to the right of word ‘qiime’ in the upper right corner of the virtual machine window and then selecting “Shut Down…” followed by “Restart” on the left side of the popup window.</li>
+</ul>
+
+<p><img src="img/QIIME_VB/Restart_Image.png" alt="Restart the Virtual Machine" /></p>
+
+<ul>
+  <li>
+    <p>After the virtual box restarts, select “Devices” then “Drag ‘n’ Drop” then click on “Bidirectional”. This will enable you to copy and paste material from your “Host” Windows 7 computer into your “Virtual Box” Linux computer. The “1.Welcome.txt” provides details on how to copy and paste in the terminal.</p>
+  </li>
+  <li>
+    <p>If you are interested in knowing which software has been installed in this Virtual Machine move on to Document 2; if you are having problems with the network, i.e. the wget commands do not work, move to Document 3; otherwise move along to Document 4. All the Documents are in the Before_you_start folder on your desktop.</p>
+  </li>
+</ul>
+
+<hr />
+
+<p><strong>Software and Dataset Installations in your Virtual Box</strong></p>
+
+<ul>
+  <li>Open a terminal by clicking on the black window with a “&gt;_” in the left menu bar of the virtual machine. First, install PandaSeq from Dr. Josh Neufeld’s Lab from Waterloo University by entering this command into the terminal:</li>
+</ul>
+
+<pre><code>sudo apt-add-repository ppa:neufeldlab/ppa &amp;&amp; sudo apt-get update &amp;&amp; sudo apt-get install pandaseq
+</code></pre>
+
+<ul>
+  <li>Now we will get an example data set from the Schloss Lab at the University of Michigan by entering this command into the terminal:</li>
+</ul>
+
+<pre><code>wget http://www.mothur.org/w/images/d/d6/MiSeqSOPData.zip
+</code></pre>
+
+<p>If you are interested, the details can be found in the following paper:
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/23793624">Kozich JJ, Westcott SL, Baxter NT, Highlander SK, Schloss PD. (2013): Development of a dual-index sequencing strategy and curation pipeline for analyzing amplicon sequence data on the MiSeq Illumina sequencing platform. Applied and Environmental Microbiology. 79(17):5112-20.</a></p>
+
+<ul>
+  <li>Now unzip the downloaded file by entering this command into the terminal:</li>
+</ul>
+
+<pre><code>unzip MiSeqSOPData.zip
+</code></pre>
+
+<hr />
+
+<p><strong>VirtualBox help video</strong></p>
+
+<p>If you are having difficulty, then there is a video illustrating these steps can be found <a href="http://www.youtube.com/watch?v=1jYupkquaME">here</a>. 
+(<a href="http://www.youtube.com/watch?v=1jYupkquaME">http://www.youtube.com/watch?v=1jYupkquaME</a>)</p>
+
+<p><a href="http://www.youtube.com/watch?v=1jYupkquaME"><img src="http://img.youtube.com/vi/1jYupkquaME/0.jpg" alt="Virtual Box Help Video" /></a></p>
+
+<hr />
+<hr />

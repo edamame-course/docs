@@ -1,0 +1,32 @@
+<p><strong>IMPORTANT:</strong> If you are a Dropbox user, you can use it to sync and “instantly” move files from your EC2 to your laptop (and vice versa).  This is handy if you need to use the computer power of EC2 to do OTU clustering or chimera checking, but then want to do the less memory intensive stuff on your desktop or laptop computer.</p>
+
+<p>If you are already using Dropbox for a lot of stuff, you might want to create a separate Dropbox account just to deal with your files because they still can add up the memory space.</p>
+
+<p><strong>1.</strong> Go to your user directory by entering:</p>
+
+<p><code>
+cd
+</code></p>
+
+<p><strong>2.</strong> Grab the latest dropbox installation package for Linux:</p>
+
+<p><code>
+wget -O dropbox.tar.gz "http://www.dropbox.com/download/?plat=lnx.x86_64"
+</code></p>
+
+<p><strong>3.</strong> Unpack it:</p>
+
+<p><code>
+tar -xvzf dropbox.tar.gz
+</code></p>
+
+<p><strong>4.</strong> and then run it, configuring it to put stuff in and connect it to your Dropbox:</p>
+
+<p><code>
+.dropbox-dist/dropboxd &amp;
+</code></p>
+
+<p>When you get a message saying “this client is not linked to any account”,
+copy/paste the listed URL into a web browser and log in.  Voila!  You’re connected!</p>
+
+<p>Your directory is now linked to your Dropbox account!</p>

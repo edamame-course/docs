@@ -1,0 +1,37 @@
+<p>Windows Users follow these directions to install MobaXterm and access your EC2 Instance:</p>
+
+<ol>
+  <li>First you will need a terminal to connect via the web.  We recommend you try MobaXTerm.  You can download here: <a href="http://mobaxterm.mobatek.net/MobaXterm_Setup_7.1.msi">MobaXterm Terminal</a></li>
+</ol>
+
+<p>Here is a nice <a href="http://mobaxterm.mobatek.net/">MobaXterm Introduction</a> (if you are interested).</p>
+
+<p>You are also welcome to try the terminal emulator of your choice.</p>
+
+<ol>
+  <li>
+    <p>Open MobaXterm after it is finished installing
+<img src="img/moba/mobaxterm.png" alt="What MobaXterm looks like" /></p>
+  </li>
+  <li>
+    <p>Start a new session by clicking on <strong>Session</strong>, then click on <strong>SSH</strong></p>
+  </li>
+  <li>
+    <p>Under the basic settings, enter the Public DNS from your EC2 Instance. It should look like:
+  ec2-<strong>UNIQUE SET OF NUMBERS</strong>.compute-1.amazonaws.com
+  (<strong>NOTE:</strong> The unique set of numbers will change each time you start your EC2 Instance.)</p>
+  </li>
+  <li>
+    <p>Check the box next to “Specify username” and fill in the username as “ubuntu”</p>
+  </li>
+  <li>
+    <p>Click the Advanced SSH settings tab and check the box next to “Use private key” and specify the location <strong>key pair</strong> you created when you launched your instance through the Amazon AWS website and then click <strong>“OK”</strong>
+<img src="img/moba/start_session.png" alt="How to start a sesssion" /></p>
+  </li>
+  <li>
+    <p>SUCCESS! You should now be connected!</p>
+  </li>
+</ol>
+
+<hr />
+<hr />
