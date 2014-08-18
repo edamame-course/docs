@@ -32,7 +32,7 @@ _____________________________________________
 
 **Sunday, August 17th, 2014**
 
-1.  **Currently Updating**  
+*1.*  **Currently Updating**  
 _____________________________________________
 
 **Saturday, August 16th, 2014**  
@@ -40,8 +40,8 @@ _____________________________________________
 *1.*  Josh's Lecture: [Why Metagenomics is Horrible and Why You Should Do It]()
 
 *2.*  BLAST databases
-  *  [BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
-  *  [Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)
+	[BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
+	[Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)
 
 _____________________________________________
 
