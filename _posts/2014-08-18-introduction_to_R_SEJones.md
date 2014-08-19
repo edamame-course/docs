@@ -6,7 +6,7 @@ date: 2014-08-18 08:55:36
 ---
 ###Introduction to R tutorial by Stuart Jones, University of Notre Dame
 
-*  Download the input files for the tutorial [here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_TutorialFiles/Jones_Data_Files.zip?raw=TRUE)
+*  Download the input files for the tutorial [here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files/Jones_Data_Files.zip?raw=true)
 
 *  Here is a link to Stuart's BioStats [course](http://www.nd.edu/~sjones20/JonesUND/BioStats.html)
 
