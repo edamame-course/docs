@@ -6,7 +6,7 @@ date: 2014-08-18 08:55:36
 ---
 ###Introduction to R tutorial by Stuart Jones, University of Notre Dame
 
-*  Download the input files for the tutorial [here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_TutorialFiles/Jones_Data_Files.zip?raw=TRUE)
+*  Download the input files for the tutorial [here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files?raw=true)
 
 *  Here is a link to Stuart's BioStats [course](http://www.nd.edu/~sjones20/JonesUND/BioStats.html)
 
@@ -31,7 +31,7 @@ date: 2014-08-18 08:55:36
 
 ###Continuing in R
 *  Here is a [primer](https://edamame-course.github.io/docs/moving_data_into_R.html) on how to get files out of one program (QIIME/mothur) and in to R.
-*  Here are [tutorials and a presentation (by Ashley)](https://github.com/edamame-course/docs/tree/gh-pages/extra/Shade_R_Tutorial/) for analysis of community patterns in R.  There is a bit of overlap with Stuart's, but there are also some tips for getting QIIME data into R.  The Day 5 lecture and tutorial continue with determining OTUs that contribute particular patterns.
+*  Here are [tutorials and a presentation (by Ashley)](https://github.com/edamame-course/docs/tree/gh-pages/extra/Shade_R_Tutorial/) for analysis of community patterns in R.  There is a bit of overlap with Stuart's, but there are also some tips for getting QIIME data into R.  The Day 5 lecture and tutorial continue with determining OTUs that contribute to particular patterns.
 
 -----------------------------------------------
 -----------------------------------------------
