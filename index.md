@@ -35,9 +35,9 @@ title: "Welcome to EDAMAME!"
 
 **5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
 
-	[Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
+[Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
 
-	[Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
+[Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
 **6.** [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
 
