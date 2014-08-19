@@ -23,6 +23,11 @@ title: "Welcome to EDAMAME!"
 
 -------------------------------------------------------------------------------------
 
+**Tuesday, August 19th, 2014**
+
+- [Tutorial on working with NCBI and MG-RAST and their APIs](http://adina-howe.readthedocs.org/en/latest/) from Adina Howe
+- [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
+
 **Monday, August 18th, 2014**
 
 **1.** [Monday, August 18th Overview](https://edamame-course.github.io/docs/august_18.html)
