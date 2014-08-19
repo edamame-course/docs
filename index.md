@@ -34,12 +34,14 @@ title: "Welcome to EDAMAME!"
 **4.** Guest Lecture: Kathryn Docherty
 
 **5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
-	* [Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
-	* [Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
+
+	[Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
+
+	[Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
 **6.** [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
 
-**7.** Wild and Woolly (updated soon)!
+**7.** Josh speaks about the wild and woolly world of other marker regions! (updated soon)!
 
 **8.** Tracy gives a tour of data visualization (updated soon)!
 

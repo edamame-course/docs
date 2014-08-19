@@ -5,7 +5,7 @@ comments: true
 date: 2014-08-19 08:55:36
 ---
 
-#### **4.** Assembling
+#### **1.** Assembling
 
 At last!  All that filtering and diginorming is done, and we can get
 down to the serious business of assembling.  Huzzah!
@@ -79,7 +79,7 @@ N       sum     max     filename
 45      666147  41120   idba.nodn.d/scaffold.fa
 ```
 
-#### **6.** Annotating your metagenome with Prokka
+#### **2.** Annotating your metagenome with Prokka
 
 ##### Installing Prokka
 
@@ -190,7 +190,7 @@ annotated protein sequences derived from the metagenome.
 
 Let's look at some of the files now!
 
-##### Assessing Assembly Quality with QUAST
+#### **3.** Assessing Assembly Quality with QUAST
 
 We're going to try to get an idea of what our assembly looks like by using the [QUAST (Quality Assessment Tool for Genome Assemblies)](http://bioinf.spbau.ru/quast).
 
