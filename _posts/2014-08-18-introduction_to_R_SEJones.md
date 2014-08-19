@@ -25,7 +25,8 @@ date: 2014-08-18 08:55:36
 
 
 ###Continuing in R
-Here are [tutorials and a presentation (by Ashley)](https://github.com/edamame-course/docs/tree/gh-pages/extra/Shade_R_Tutorial/) for analysis of community patterns in R.  There is a bit of overlap with Stuart's, but there are also some tips for getting QIIME data into R.  The Day 5 lecture and tutorial continue with determining OTUs that contribute particular patterns.
+*  Here is a [primer](https://edamame-course.github.io/moving_data_into_R.html) on how to get files out of one program (QIIME/mothur) and in to R.
+*  Here are [tutorials and a presentation (by Ashley)](https://github.com/edamame-course/docs/tree/gh-pages/extra/Shade_R_Tutorial/) for analysis of community patterns in R.  There is a bit of overlap with Stuart's, but there are also some tips for getting QIIME data into R.  The Day 5 lecture and tutorial continue with determining OTUs that contribute particular patterns.
 
 -----------------------------------------------
 -----------------------------------------------
