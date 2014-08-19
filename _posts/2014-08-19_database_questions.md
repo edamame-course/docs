@@ -27,6 +27,11 @@ wanted to try a different route.
 The below set of questions are aimed to help you explore the database
 and figure out how to interact with it. Use as you wish.
 
+### Go to the website
+
+Probably the database has some obvious URL. You should be able to find it
+just by searching for it though.
+
 ### Accounts
 
 - Do you have to create an account to interact with this site? Would creating
