@@ -25,15 +25,19 @@ title: "Welcome to EDAMAME!"
 
 **Tuesday, August 19th, 2014**
 
-**1.** Guest Lecture from Jim Cole
+**1.** [Tuesday, August 19th, Overview]()
 
-**2.** Adina Howe: [Tutorial on working with NCBI and MG-RAST and their APIs](http://adina-howe.readthedocs.org/en/latest/)
+**2.** Guest Lecture from Jim Cole
 
-**3.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
+**3.** Adina Howe: [Tutorial on working with NCBI and MG-RAST and their APIs](http://adina-howe.readthedocs.org/en/latest/)
+
+**4.** Guest Lecture: Kathryn Docherty
+
+**5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
 	* [Installing Dropbox on any computer from the command line]()
 	* [Metagenome Assembly, Annotation, and Quality Assessment]()
 
-**4.** [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
+**6.** [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
 
 
 
