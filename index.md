@@ -29,7 +29,7 @@ title: "Welcome to EDAMAME!"
 
 **2.** [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
 
-**3.** Stuart Jones: [Using R for community ecology analyses](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files)
+**3.** Stuart Jones: [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
 
 -------------------------------------------------------------------------------------
 
