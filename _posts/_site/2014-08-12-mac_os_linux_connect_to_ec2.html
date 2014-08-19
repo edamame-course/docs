@@ -1,0 +1,36 @@
+<h2 id="mac-os--linux-users-connecting-to-your-amazon-ec2-instance-at-the-command-line-is-pretty-easy">Mac OS &amp; Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.</h2>
+
+<h3 id="open-a-terminal">1. Open a Terminal:</h3>
+
+<p><strong>MAC Users:</strong> Terminal is under: Applications –&gt; Utilities
+<strong>Linux Users:</strong> Press Ctrl + Alt + t</p>
+
+<p>You will need to know the location of your <strong>key pair</strong> you created when you launched your instance.  Usually this will be in your “Downloads” folder, but you may want to move it elsewhere.</p>
+
+<p>You will need to know what your Public DNS is for your EC2 Instance.</p>
+
+<h3 id="enter-the-following-command-into-the-terminal">2. Enter the following command into the terminal:</h3>
+
+<p><code>
+chmod 400 **/path/to/your/key/**EDAMAME.pem
+</code></p>
+
+<h3 id="enter-the-following-command-into-the-terminal-1">3. Enter the following command into the terminal:</h3>
+
+<p><code>
+ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+</code>
+SUCCESS! You have now logged into your computer in the cloud!</p>
+
+<h3 id="after-the-first-login">4. After the first login</h3>
+
+<p>After the first login to the EC2, you do not need to repeat the chmod to change permissions for the key.
+Every time you start an previously-stopped EC2 instance, there will be a new Public DNS.  To connect to the EC2 after the first login, copy and paste that new Public DNS into “UNIQUE SET OF NUMBERS”, open terminal, and paste:</p>
+
+<p><code>
+ssh -i **/path/to/your/key/**EDAMAME.pem ubuntu@ec2-**UNIQUE SET OF NUMBERS**.compute-1.amazonaws.com
+</code></p>
+
+<h3 id="transferring-files-to-the-ec2">5. Transferring files to the EC2</h3>
+
+<p>QP has made some great tutorials on how to transfer materials; they are available <a href="http://angus.readthedocs.org/en/2014/amazon/">here</a>.</p>

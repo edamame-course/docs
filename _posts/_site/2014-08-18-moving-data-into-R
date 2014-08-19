@@ -1,9 +1,3 @@
----
-layout: page
-title: "Moving data from one program to another"
-comments: true
-date: 2014-08-18 12:55:36
----
 ###1.  Moving data from QIIME:  converting the .biom table
 
 This command changes frequently, as the biom format is a work in progress.  Use `biom convert -h` to find the most up-to-date arguments and options; the web page is not updated as frequently as the help file.
