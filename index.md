@@ -53,7 +53,7 @@ title: "Welcome to EDAMAME!"
 
 **7.** Josh speaks about the wild and woolly world of other marker regions! (updated soon)!
 
-**8.** Tracy gives a tour of data visualization (updated soon)!
+**8.** Tracy gives a tour of data visualization](https://github.com/edamame-course/docs/extra/metagenomic_visualization.pdf)
 
 
 -------------------------------------------------------------------------------------
