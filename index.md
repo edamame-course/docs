@@ -35,7 +35,7 @@ title: "Welcome to EDAMAME!"
 
 **Tuesday, August 19th, 2014**
 
-**1.** Tuesday, August 19th, Overview
+**1.** [Tuesday, August 19th, Overview](https://edamame-course.github.io/docs/august_19.html)
 
 **2.** Guest Lecture from Jim Cole
 
