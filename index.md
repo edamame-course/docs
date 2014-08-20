@@ -23,6 +23,16 @@ title: "Welcome to EDAMAME!"
 
 -------------------------------------------------------------------------------------
 
+**Wednesday, August 20th, 2014**
+
+[Wednesday, August 20th Overview](https://edamame-course.github.io/docs/august_20.html)
+
+**1.** Guest Lecture from Dirk Colbry - [Using A Compute Cluster](https://wiki.hpcc.msu.edu/display/~colbrydi@msu.edu/2014/08/19/EDAMAME+Workshop+at+Kellogg+Biological+Center)
+
+[Dirk's Presentation Slides](https://edamame-course.github.io/docs/extra/Presentations/2014-08-20_Cluster_Computing_EDAMAME.pdf?raw=true)
+
+-------------------------------------------------------------------------------------
+
 **Tuesday, August 19th, 2014**
 
 **1.** Tuesday, August 19th, Overview
