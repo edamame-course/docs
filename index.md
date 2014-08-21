@@ -42,8 +42,8 @@ title: "Welcome to EDAMAME!"
 **4.** Guest lecture from Kathryn Docherty - [Learning activity and introduction to NEON](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Docherty_NEON.pdf?raw=true)
 
 **5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment  
-		*  [Installing Dropbox on any computer from the command   line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
-		*  [Metagenome Assembly, Annotation, and Quality   Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
+		-[Installing Dropbox on any computer from the command   line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
+		-[Metagenome Assembly, Annotation, and Quality   Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
 **6.** [Self guided tour of investigating databases](https://edamame-course.github.io/docs/database_questions.html)
 
@@ -64,13 +64,13 @@ title: "Welcome to EDAMAME!"
 
 **3.** Guest tutorial from Stuart Jones - [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
 
-**4.** Discussion on experimental design led by Jay Lennon
-	* [Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)
-	* [Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)
+**4.** Discussion on experimental design led by Jay Lennon  
+	-[Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)  
+	-[Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)  
 
-**5. ** Guest lecture from Stuart Jones
+**5.** Guest lecture from Stuart Jones
 
-**6. ** Guest lecture from Jay Lennon
+**6.** Guest lecture from Jay Lennon
 
 
 -------------------------------------------------------------------------------------
