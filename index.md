@@ -78,7 +78,7 @@ title: "Welcome to EDAMAME!"
 
 **Saturday, August 16th, 2014**  
 
-**1.**  Josh's Lecture: [Why Metagenomics is Horrible and Why You Should Do It]()
+**1.**  Josh's Lecture: Why Metagenomics is Horrible and Why You Should Do It (updated soon!)
 
 **2.**  BLAST databases
 	[BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
