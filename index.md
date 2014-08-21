@@ -53,7 +53,9 @@ title: "Welcome to EDAMAME!"
 
 **7.** Josh speaks about the wild and woolly world of other marker regions! (updated soon)!
 
-**8.** Tracy gives a tour of data visualization [pdf of slides](https://github.com/edamame-course/docs/blob/gh-pages/extra/metagenomic_visualization.pdf)
+**8.** Ariane Peralta: [Lecture on Human-impacted ecosystems](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Peralta.pdf?raw=true)
+
+**9.** Tracy gives a tour of data visualization [pdf of slides](https://github.com/edamame-course/docs/blob/gh-pages/extra/metagenomic_visualization.pdf)
 
 
 -------------------------------------------------------------------------------------
