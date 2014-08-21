@@ -49,7 +49,7 @@ title: "Welcome to EDAMAME!"
 
 > [Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
-**6.** [Self guided tour of investigating databases](https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md)
+**6.** [Self guided tour of investigating databases](https://edamame-course.github.io/docs/database_questions.html)
 
 **7.** Josh speaks about the wild and woolly world of other marker regions! (updated soon)!
 
