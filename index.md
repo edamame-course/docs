@@ -27,9 +27,7 @@ title: "Welcome to EDAMAME!"
 
 [Wednesday, August 20th Overview](https://edamame-course.github.io/docs/august_20.html)
 
-**1.** Guest Lecture from Dirk Colbry - [Using A Compute Cluster](https://wiki.hpcc.msu.edu/display/~colbrydi@msu.edu/2014/08/19/EDAMAME+Workshop+at+Kellogg+Biological+Center)
-
-[Dirk's Presentation Slides](https://edamame-course.github.io/docs/extra/Presentations/2014-08-20_Cluster_Computing_EDAMAME.pdf?raw=true)
+**1.** Guest Lecture from Dirk Colbry - [Using A Compute Cluster](https://edamame-course.github.io/docs/extra/Presentations/2014-08-20_Cluster_Computing_EDAMAME.pdf?raw=true)
 
 -------------------------------------------------------------------------------------
 
@@ -43,9 +41,9 @@ title: "Welcome to EDAMAME!"
 
 **4.** Guest lecture from Kathryn Docherty - [Learning activity and introduction to NEON](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Docherty_NEON.pdf?raw=true)
 
-**5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
-		*  [Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
-		*  [Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
+**5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment  
+		*  [Installing Dropbox on any computer from the command   line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
+		*  [Metagenome Assembly, Annotation, and Quality   Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
 **6.** [Self guided tour of investigating databases](https://edamame-course.github.io/docs/database_questions.html)
 
@@ -62,9 +60,18 @@ title: "Welcome to EDAMAME!"
 
 **1.** [Monday, August 18th Overview](https://edamame-course.github.io/docs/august_18.html)
 
-**2.** [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
+**2.** Ashley gives a lecture on [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
 
 **3.** Guest tutorial from Stuart Jones - [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
+
+**4.** Discussion on experimental design led by Jay Lennon
+	* [Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)
+	* [Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)
+
+**5. ** Guest lecture from Stuart Jones
+
+**6. ** Guest lecture from Jay Lennon
+
 
 -------------------------------------------------------------------------------------
 
@@ -78,9 +85,9 @@ title: "Welcome to EDAMAME!"
 
 **1.**  Josh's Lecture: Why Metagenomics is Horrible and Why You Should Do It (updated soon!)
 
-**2.**  BLAST databases
-	[BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)
-	[Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)
+**2.**  BLAST databases  
+	* [BLAST+](https://edamame-course.github.io/docs/2014-08-16-running_blast_from_command_line.html)  
+	* [Legacy BLAST databases](https://edamame-course.github.io/docs/2014-08-16-legacy_blast_db.html)  
 
 -------------------------------------------------------------------------------------
 
