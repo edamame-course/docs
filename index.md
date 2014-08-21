@@ -65,8 +65,8 @@ title: "Welcome to EDAMAME!"
 **3.** Guest tutorial from Stuart Jones - [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
 
 **4.** Discussion on experimental design led by Jay Lennon  
-	-[Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)  
-	-[Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)  
+	* [Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)  
+	* [Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)  
 
 **5.** Guest lecture from Stuart Jones
 
