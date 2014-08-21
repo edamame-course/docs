@@ -37,25 +37,23 @@ title: "Welcome to EDAMAME!"
 
 **1.** [Tuesday, August 19th, Overview](https://edamame-course.github.io/docs/august_19.html)
 
-**2.** Guest Lecture from Jim Cole
+**2.** Guest Lecture from Jim Cole - [Ribosomal Database Project](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Cole_EDAMAME_2014.pdf?raw=true)
 
-**3.** Adina Howe: [Tutorial on working with NCBI and MG-RAST and their APIs](http://adina-howe.readthedocs.org/en/latest/)
+**3.** Guest lecture from Adina Howe - [Tutorial on working with NCBI and MG-RAST and their APIs](http://adina-howe.readthedocs.org/en/latest/)
 
-**4.** Guest Lecture: Kathryn Docherty
+**4.** Guest lecture from Kathryn Docherty - [Learning activity and introduction to NEON](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Docherty_NEON.pdf?raw=true)
 
 **5.** Josh: Finishing Up Metagenome Assembly - Annotation and Quality Assessment
-
-> [Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
-
-> [Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
+		*  [Installing Dropbox on any computer from the command line](https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html)
+		*  [Metagenome Assembly, Annotation, and Quality Assessment](https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html)
 
 **6.** [Self guided tour of investigating databases](https://edamame-course.github.io/docs/database_questions.html)
 
 **7.** Josh speaks about the wild and woolly world of other marker regions! (updated soon)!
 
-**8.** Ariane Peralta: [Lecture on Human-impacted ecosystems](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Peralta.pdf?raw=true)
+**8.** Guest lecture from Ariane Peralta - [Lecture on Human-impacted ecosystems](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Peralta.pdf?raw=true)
 
-**9.** Tracy gives a tour of data visualization [pdf of slides](https://github.com/edamame-course/docs/blob/gh-pages/extra/metagenomic_visualization.pdf)
+**9.** Tracy gives a tour of [data visualization](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-20-metagenomic_visualization.pdf?raw=true)
 
 
 -------------------------------------------------------------------------------------
@@ -66,7 +64,7 @@ title: "Welcome to EDAMAME!"
 
 **2.** [Hypothesis testing, identifying gradients, and linking environmental and community data](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true)
 
-**3.** Stuart Jones: [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
+**3.** Guest tutorial from Stuart Jones - [Using R for community ecology analyses](https://edamame-course.github.io/docs/introduction_to_R_SEJones.html)
 
 -------------------------------------------------------------------------------------
 
