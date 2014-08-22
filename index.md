@@ -68,7 +68,7 @@ title: "Welcome to EDAMAME!"
 	* [Replicate or Lie](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Prosser_EM_2010.pdf?raw=true)  
 	* [Replication, Lies and Lesser Known Truths...](https://github.com/edamame-course/docs/blob/gh-pages/extra/PDFs/Lennon_EM_2011.pdf?raw=true)  
 
-**5.** Guest lecture from Stuart Jones
+**5.** Guest lecture from Stuart Jones - [Metagenomics interpretation informed by microbial natural history](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-Jones_edamame.pdf?raw=true)
 
 **6.** Guest lecture from Jay Lennon - [Microbial seed bands](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-EDAMAME_Lennon.pdf?raw=true)
 
