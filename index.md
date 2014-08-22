@@ -70,7 +70,7 @@ title: "Welcome to EDAMAME!"
 
 **5.** Guest lecture from Stuart Jones
 
-**6.** Guest lecture from Jay Lennon
+**6.** Guest lecture from Jay Lennon - [Microbial seed bands](https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-EDAMAME_Lennon.pdf?raw=true)
 
 
 -------------------------------------------------------------------------------------
