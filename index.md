@@ -5,11 +5,13 @@ title: "Welcome to EDAMAME!"
 
 ## Welcome to the EDAMAME course!
 
+##### EDAMAME happened already for 2014, if you're interesting in being on our mailing list for EDAMAME 2015, [please provide us your name and email by going here](https://docs.google.com/forms/d/1aYhD6I9zE-eSKCNtYk-IOvodv5GDcQfX7mvBGQX7DfQ/viewform).
+
 [For more about this course, see edamame-course.org](http://edamame-course.org).
 
-##### Some of our links are set to download raw data or presentation files. If at any point you have an issue, just right click and open in another tab in your browser.
-
 ![edamame header image](img/gull_lake.jpg)
+
+##### Some of our links are set to download raw data or presentation files. If at any point you have an issue, just right click and open in another tab in your browser.
 
 [Our Mendeley reading list is located here](http://www.mendeley.com/groups/4688421/edamame/). [PDF copies of readings can be found here](https://github.com/edamame-course/docs/tree/gh-pages/extra/PDFs)
 
