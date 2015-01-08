@@ -1,0 +1,124 @@
+<h3 id="handouts-of-workflow-charts-are-available-for-the-qiime-workflow-discussed-in-these-tutorials">Handouts of workflow charts are available for the QIIME workflow discussed in these tutorials:</h3>
+<ul>
+  <li><a href="https://github.com/edamame-course/docs/tree/gh-pages/extra/Handouts/QIIMEFlowChart_IlluminaPairedEnds_13aug2014.pdf?raw=true">Paired-End Illumina</a></li>
+  <li><a href="https://github.com/edamame-course/docs/tree/gh-pages/extra/Handouts/QIIMEFlowChart_454_13aug2014.pdf?raw=true">454</a></li>
+</ul>
+
+<h2 id="make-resemblance-matrices-to-analyze-comparative-beta-diversity">4.1 Make resemblance matrices to analyze comparative (beta) diversity</h2>
+<p>Make sure that you are in the QIIMETutorial directory.  Enter the QIIME environment.</p>
+
+<p>If you need the Schloss_otu_table_even2212.biom file from Parts 1 and 2
+of the tutorial you can download it here:</p>
+
+<p><a href="https://edamame-course.github.io/docs/extra/Schloss_otu_table_even2212.biom?raw=true">Schloss_otu_table_even2212.biom</a></p>
+
+<p>We will make three kinds of resemblance matrices (sample by sample comparisons) for assessing comparative diversity.</p>
+
+<p>Use the <code>-s</code> option to see all of the different options for calculating beta diversity in QIIME.</p>
+
+<p><code>
+beta_diversity.py -s
+</code></p>
+
+<p>To compare weighted/uweighted and phylogenetic/taxonomic metrics, we will ask QIIME to create four resemblance matrices of all of these different flavors.</p>
+
+<p><code>
+beta_diversity.py -i Schloss_otu_table_even2212.biom -m unweighted_unifrac,weighted_unifrac,binary_sorensen_dice,bray_curtis -o beta_div_even2212/ -t fasttree_cdhit/fasttree_cdhit.tre
+</code></p>
+
+<p>There should be four new resemblance matrices in the new directory.  We’re going to get all crazy and open these outside of the terminal. Use Excel to inspect them, and to compare their values.  This should be a square matrix, and the upper and lower triangles should be mirror-images.  The diagonal should be zero.</p>
+
+<p><code>
+cd beta_div_even2212
+</code></p>
+
+<p>Pop quiz:  Why is the diagonal zero?</p>
+
+<h2 id="using-qiime-for-visualization--ordination">4.2 Using QIIME for visualization:  Ordination</h2>
+
+<p>QIIME scripts can easily make an ordination using principal components analysis (PCoA). We’ll perform PCoA on all resemblance matrices, and compare them.  Documentation is <a href="http://qiime.org/scripts/principal_coordinates.html">here</a>.  As always, make sure you are in the QIIMETutorial directory to execute these analyses.</p>
+
+<p><code>
+principal_coordinates.py -i beta_div_even2212/ -o beta_div_even2212_PCoA/
+</code></p>
+
+<p>Notice that the <code>-i</code> command only specifies the directory, and not an individual filepath.  PCoA will be performed on all resemblances in that directory.  If we navigate into the new directory, we see there is one results file for each input resemblence matrix.</p>
+
+<p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial3_IMG/IMG_17.jpg" alt="img17" /></p>
+
+<p>Inspect the one of these files using nano.</p>
+
+<p><code>
+nano pcoa_weighted_unifrac_Schloss_otu_table_even2212.txt
+</code></p>
+
+<p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial3_IMG/IMG_18.jpg" alt="img18" /></p>
+
+<p>The first column has SampleIDs, and column names are PCoA axis scores for every dimension.  In PCoA, there are as many dimensions (axes) as there are samples. Remember that, typically, each axis explains less variability in the dataset than the previous axis.</p>
+
+<p>These PCoA results files can be imported into other software for making ordinations outside of QIIME.</p>
+
+<p>Navigate back into the QIIMETutorial directory.</p>
+
+<p>We can make 2d plots of the output of <code>principal_coordinates.py</code>, and map the colors to the categories in the mapping file.</p>
+
+<p><code>
+make_2d_plots.py -i beta_div_even2212_PCoA/pcoa_weighted_unifrac_Schloss_otu_table_even2212.txt -m Schloss_Map.txt -o plotting_PCoA2d_even2212_wu/ --ellipsoid_opacity 0
+</code></p>
+
+<p>Navigate into the new directory and open the html link.
+<code>
+cd plotting_PCoA2d_even2212_wu/
+</code></p>
+
+<p><code>
+open _2D_PCoA_plots.html
+</code></p>
+
+<p><img src="https://github.com/edamame-course/docs/raw/gh-pages/img/QIIMETutorial3_IMG/IMG_19.jpg" alt="img19" /></p>
+
+<p>This is where  a comprehensive mapping file is priceless because any values or categories reported in the mapping file will be automatically color-coded for data exploration.  In the example above, there is an obvious difference in the community structure of the gut microbiota of the F3 mouse over time (using).</p>
+
+<p>Take some time to explore these plots: toggle samples, note color categories, hover over points to examine sample IDs.  What hypotheses can be generated based on exploring these ordinations?</p>
+
+<p><em>Exercise</em>
+Make 2D plots for each PCoA analysis from each of the four difference resemblance results and compare them.  How are the results different, if at all?  Would you reach difference conclusions?</p>
+
+<p><a href="http://ordination.okstate.edu/">The Ordination Web Page</a> is a great resource about all the different flavors of ordination.</p>
+
+<h3 id="other-visualizations-in-qiime">4.3  Other visualizations in QIIME</h3>
+<p>We can also make a quick heatmap in QIIME, which shows the number of sequences per sample relative to one another.</p>
+
+<p><code>
+make_otu_heatmap_html.py -i Schloss_otu_table_even2212.biom -o heatmap/
+</code></p>
+
+<p><code>
+open Schloss_otu_table_even2212.html
+</code></p>
+
+<p>Explore this visualization.  You can filter the minimum number of OTUs, filter by sample ID, or by OTU ID.  </p>
+
+<p><strong>Visualization considerations</strong>
+QIIME visualizations are currently being re-vamped by the developers.  In the next version, there will visualization scripts that are no longer supported, in favor of new tools.  Some of these tools include co-occurence networks enabled by Cytoscape (a MacQIIME add-on), and other visualizations by <a href="http://biocore.github.io/emperor/">emperor</a>.  There is always something new!</p>
+
+<h3 id="exporting-the-qiime-created-biom-table-for-use-in-other-software-r-primer-phinch-etc">4.4  Exporting the QIIME-created biom table for use in other software (R, Primer, Phinch, etc)</h3>
+<p>This command changes frequently, as the biom format is a work in progress.  Use <code>biom convert -h</code> to find the most up-to-date arguments and options; the web page is not updated as frequently as the help file.</p>
+
+<p><code>
+biom convert -b -i Schloss_otu_table_even2212.biom -o Schloss_otu_table_even2212.txt --table-type otu  --header-key taxonomy --output-metadata-id "ConsensusLineage"
+</code></p>
+
+<p>Here, we use the argument <code>-b</code> to specify that we are converting a biom-formatted table to a “classic” otu table.  We specify input and output files with <code>-i</code> and <code>-o</code>, as always.  We also provide the <code>--table-type</code> arugment to “otu.”  Finally, we specify that we want our OTU table to have the taxonomy assigned to each OTU as the last column in the table (<code> --header-key</code> set to “taxonomy”) and that the name of this column, <code>--output-metadata-id</code>, will be the “ConsensusLineage”</p>
+
+<h2 id="where-to-find-qiime-resources-and-help">Where to find QIIME resources and help</h2>
+<ul>
+  <li><a href="qiime.org">QIIME</a> offers a suite of developer-designed <a href="http://www.qiime.org/tutorials/tutorial.html">tutorials</a>.</li>
+  <li><a href="http://www.qiime.org/scripts/index.html">Documentation</a> for all QIIME scripts.</li>
+  <li>There is a very active <a href="https://groups.google.com/forum/#!forum/qiime-forum">QIIME Forum</a> on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!</li>
+  <li>The <a href="http://qiime.wordpress.com/">QIIME Blog</a> provides updates like bug fixes, new features, and new releases.</li>
+  <li>QIIME development is on <a href="https://github.com/biocore/qiime">GitHub</a>.</li>
+</ul>
+
+<hr />
+<hr />

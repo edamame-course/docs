@@ -171,13 +171,13 @@ A clear and comprehensive mapping file should contain all of the information tha
 *Hint*:  Mapping files are also a great way to organize all of the data for posterity in the research group.  New lab members interested in repeating the analysis should have all of the required information in the mapping file.  PIs should ask their students to curate and deposit both mapping files and raw data files.
 
 Guidelines for formatting map files:
-  * Mapping files should be tab-delimited
-  * The first column must be "#SampleIDs" (commented out using the `#`).
-  *  SampleIDs are VERY IMPORTANT. Choose wisely! Ideally, a user who did not design the experiment should be able to distiguishes the samples easily, as is the case with the Schloss data. SampleIDs must be alphanumeric characters or periods.  They cannot have underscores.
-  * The last column must be "Description".
-  * There can be as many in-between columns of contextual data as needed.
-  * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
-  * Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
+  - Mapping files should be tab-delimited
+  - The first column must be "#SampleIDs" (commented out using the `#`).
+  -  SampleIDs are VERY IMPORTANT. Choose wisely! Ideally, a user who did not design the experiment should be able to distiguishes the samples easily, as is the case with the Schloss data. SampleIDs must be alphanumeric characters or periods.  They cannot have underscores.
+  - The last column must be "Description".
+  - There can be as many in-between columns of contextual data as needed.
+  - If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
+  - Excel can cause formatting heartache.  See more details [here](misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md).
 
 ### 2.2  Call QIIME
 
@@ -233,7 +233,7 @@ summary.seqs(fasta=combined_seqs.fna)
 
 Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  
 
-!(img/QIIMETutorial1_IMG/summary.seqs.jpg)
+![img](img/QIIMETutorial1_IMG/summary_seqs.jpg)
 
 ```
 quit()
@@ -256,11 +256,11 @@ pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ 
 ```
 
 In the above script:
-  *  We tell QIIME to look in the "combined_fasta" directory for the input file `-i`, "combined_seqs.fna".
-  *  We chose the clustering method CD-HIT `-m`
-  *  We defined an output file "cdhit_picked_otus" `-o`.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
-  *  We define OTUs at 97% sequence identity `-s 0.97`
-  *  We opt for a pre-filtering step, unique to CD-HIT `-n` = 100.
+  - We tell QIIME to look in the "combined_fasta" directory for the input file `-i`, "combined_seqs.fna".
+  - We chose the clustering method CD-HIT `-m`
+  - We defined an output file "cdhit_picked_otus" `-o`.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
+  - We define OTUs at 97% sequence identity `-s 0.97`
+  - We opt for a pre-filtering step, unique to CD-HIT `-n` = 100.
 
 Inspect the log and the resulting combined_seqs_otus.txt file, using `head`.  You should see an OTU ID (yellow box), starting at "0" the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).  
 
@@ -336,11 +336,11 @@ Congratulations!  You just had the QIIME of Your Life!
 
 
 ## Where to find QIIME resources and help
-  *  [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
-  *  [Documentation](http://www.qiime.org/scripts/index.html) for all QIIME scripts.
-  *  There is a very active [QIIME Forum](https://groups.google.com/forum/#!forum/qiime-forum) on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!
-  *  The [QIIME Blog](http://qiime.wordpress.com/) provides updates like bug fixes, new features, and new releases.
-  *  QIIME development is on [GitHub](https://github.com/biocore/qiime).
+  - [QIIME](qiime.org) offers a suite of developer-designed [tutorials](http://www.qiime.org/tutorials/tutorial.html).
+  - [Documentation](http://www.qiime.org/scripts/index.html) for all QIIME scripts.
+  - There is a very active [QIIME Forum](https://groups.google.com/forum/#!forum/qiime-forum) on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!
+  - The [QIIME Blog](http://qiime.wordpress.com/) provides updates like bug fixes, new features, and new releases.
+  - QIIME development is on [GitHub](https://github.com/biocore/qiime).
 
 -----------------------------------------------
 -----------------------------------------------
