@@ -3,7 +3,7 @@ layout: default
 title: "Welcome to EDAMAME!"
 ---
 
-## Welcome to the EDAMAME course!
+### Welcome to the EDAMAME course!
 
 ##### EDAMAME happened already for 2014, if you're interesting in being on our mailing list for EDAMAME 2015, [please provide us your name and email by going here](https://docs.google.com/forms/d/1aYhD6I9zE-eSKCNtYk-IOvodv5GDcQfX7mvBGQX7DfQ/viewform).
 
