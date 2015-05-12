@@ -5,7 +5,6 @@ date:
 category : tutorial
 tags : []
 ---
-{% include JB/setup %}
 
 ## Background On Quality Trimming
 
