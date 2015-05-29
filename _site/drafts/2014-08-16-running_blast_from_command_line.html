@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
+
+        <title>EDAMAME : Running BLAST from the command line to identify environmental sequences</title>
+        <meta name="description" content="course materials & tutorials">
+
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/syntax.css">
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <div class=row-fluid>
+                <div id=header class=span12>
+                    <h4><a class=brand href="http://edamame-course.org">EDAMAME</a>
+    <small>course materials & tutorials</small>
+</h4>
+
+                </div>
+            </div>
+
+            <div class=row-fluid>
+                
+                
+                    <div id=navigation class=span3>
+                        
+<ul class="nav nav-list">
+    <li class=nav-header>HOME</li>
+    <li><a href="index.html">EDAMAME course materials</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Before We Begin</li>
+    <li><a href="https://edamame-course.github.io/docs/general_set_up_guidelines.html">Getting Set Up For The Course</a></li>
+    <li><a href="https://edamame-course.github.io/docs/intro_to_ec2_instance.html">All Users: Setting up an EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/mobaxterm.html">Windows Users: Connecting to your AWS EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/mac_os_linux_connect_to_ec2.html">Mac and Linux Users: Connecting to your AWS EC2 instance</a></li>
+    <li><a href="https://edamame-course.github.io/docs/extra/macqiime_installation.html">Mac Users: Installing MacQIIME</a></li>
+    <li><a href="https://edamame-course.github.io/docs/QIIME_VB_for_Windows.html">Windows Users: Installing a Virtual Box to run QIIME on your own Windows computer</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 13th</li>
+    <li><a href="https://edamame-course.github.io/docs/august_13.html">Wednesday, August 13th Overview</a></li>
+    <li><a href="https://edamame-course.github.io/docs/the_shell.html">An Introduction To Using The Shell</a></li>
+    <li><a href="https://edamame-course.github.io/docs/intro_qiime_tutorial.html">Introduction to Data Analysis with QIIME</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Thursday, August 14th</li>
+    <li><a href="https://edamame-course.github.io/docs/august_14.html">Thursday, August 14th Overview</a></li>
+    <li><a href="https://edamame-course.github.io/docs/extra/Presentations/2014-08-14-AM_Ashley_Lecture2.pdf?raw=true">Alpha Diversity Lecture</a></li>
+    <li><a href="https://edamame-course.github.io/docs/qiime_2_tutorial.html">QIIME Tutorial Part Two</a></li>
+    <li><a href="https://edamame-course.github.io/docs/extra/Presentations/2014-08-14-PM_Ashley_Lecture3.pdf?raw=true">Beta Diversity Lecture</a></li>
+    <li><a href="https://edamame-course.github.io/docs/qiime_3.html">QIIME Tutorial Part Three</a></li>
+    <li><a href="https://edamame-course.github.io/docs/extra/Presentations/2014-edamame-assembly_TBrown.pdf?raw=true">Titus Brown's Intro to Metagenomics Lecture</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Friday, August 15th</li>
+    <li><a href="https://edamame-course.github.io/docs/august_15.html">Friday, August 15th Overview</a></li>
+    <li><a href="https://edamame-course.github.io/docs/intro_to_ec2_instance.html">Introduction to using Amazon EC2</a></li>
+    <li><a href="http://pschloss.github.io/2014_08_15-mothur/#1">Pat Schloss's Presentation</a></li>
+    <li><a href="http://www.mothur.org/wiki/MiSeq_SOP">mothur to the max</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Saturday, August 16th</li>
+    <li><a href="https://edamame-course.github.io/docs/august_15.html">Saturday, August 16th Overview</a></li>
+    <li><a href="">Introduction to Metagenomics</a></li>
+    <li><a href="">Using BLAST at the command line</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Sunday, August 17th</li>
+    <li>Brunch with Jim Tiedje!</li>
+    <li><a href="">Metagenome Assembly</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Monday, August 18th</li>
+    <li><a href="https://github.com/edamame-course/docs/august_18.html">Monday, August 18th Overview</a></li>
+    <li><a href="https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-18-AM_Ashley_Lecture4.pdf?raw=true">Hypothesis testing, identifying gradients, and linking environmental and community data</a></li>
+    <li><a href="https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files">Using R for community ecology analyses</a></li>
+    <li><a href=""></a></li>
+    <li class=divider></li>
+    <li class=nav-header>Tuesday, August 19th</li>
+    <li><a href="">Jim Cole - Guest Lecture</a></li>
+    <li><a href="http://adina-howe.readthedocs.org/en/latest/">Adina Howe: Tutorial on working with NCBI and MG-RAST and their APIs</a></li>
+    <li><a href="https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Docherty_NEON.pdf?raw=true">Kathryn Docherty - Guest Lecture</a></li>
+    <li><a href="https://edamame-course.github.io/docs/metagenome_assembly_and_annotation.html">Josh: Metagenome Assembly, Annotation, and Quality Assessment</a></li>
+    <li><a href="https://edamame-course.github.io/docs/using_dropbox_on_your_ec2_machine.html">Josh: Installing Dropbox on any computer from the command line</a></li>
+    <li><a href="https://github.com/edamame-course/docs/blob/gh-pages/_posts/2014-08-19_database_questions.md">Self Guided Tour of Databases</a></li>
+    <li><a href="">Josh speaks about the wild and woolly world of other marker regions!</a></li>
+    <li><a href="https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-19-Peralta.pdf?raw=true"></a>Guest lecture from Ariane Peralta on Human-impacted ecosystems</li>
+    <li><a href="https://github.com/edamame-course/docs/blob/gh-pages/extra/Presentations/2014-08-20-metagenomic_visualization.pdf?raw=true">Tracy gives a tour of data visualization!</a></li>
+    <li class=divider></li>
+    <li class=nav-header>Wednesday, August 20th</li>
+    <li><a href="https://edamame-course.github.io/docs/extra/Presentations/2014-08-20_Cluster_Computing_EDAMAME.pdf?raw=true">Guest Lecture from Dirk Colbry - Using a Computer Cluster</a></li>
+    <li>Course Wrap-Up and Evaluation</li>
+</ul>
+
+                    </div>
+
+                    <div id=content class=span9>
+                        <div class=page-header>
+    <h2>Running BLAST from the command line to identify environmental sequences
+        
+    </h2>
+</div>
+
+<h4 id="introduction">Introduction</h4>
+
+<p>OK, your first introduction to the use and abuse of command line tools is... BLAST! That’s right, the <a href="http://en.wikipedia.org/wiki/BLAST">Basic Local Alignment Search Tool</a>!</p>
+
+<p>Let&#39;s assume that all of you have used the NCBI BLAST Web page to do individual searches. Today we’ll automate batch searches at the command line on your own computer. This is a technique that works well for small-to-medium sized sequencing data sets. The various database (nr, nt) are getting big enough that it’s reasonably time consuming to search them on your own, although of course you can do it if you want – you might just have to wait a while for things to finish.</p>
+
+<p>Before I forget, let me say that there are a lot of tips and tricks for working at the UNIX command line that I’m going to show you, so even if you’ve used command line BLAST before, you should skim along.</p>
+
+<p>First, let&#39;s check and see if we have BLAST.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">which blastall
+</code></pre></div>
+<p>If you have BLAST installed and in your path (BLAST may be installed but not in your path), it will give you something like this:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">/opt/blast/bin/blastall
+</code></pre></div>
+<p>If you don&#39;t have BLAST (you should have it in your QIIME or mothur paths), then you will need to install it.</p>
+
+<h4 id="installing-blast">Installing BLAST</h4>
+
+<p>To install the BLAST software, you need to download it from NCBI, unpack it, and copy it into standard locations:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -O ftp://ftp.ncbi.nih.gov/blast/executables/release/2.2.24/blast-2.2.24-ia32-linux.tar.gz
+tar xzf blast-2.2.24-ia32-linux.tar.gz
+cp blast-2.2.24/bin/* /usr/local/bin
+cp -r blast-2.2.24/data /usr/local/blast-data
+</code></pre></div>
+<h4 id="download-the-databases">Download the databases</h4>
+
+<p>Now, we can&#39;t run BLAST without downloading the databases. Let’s start by doing a BLAST of some sequences from an environmental sequencing project (not telling you from what yet). For this you’ll need the nt db.  This, like a lot of NCBI databases is huge, so I don&#39;t suggest putting this on your laptop unless you have a lot of room.  It&#39;s best on a larger computer (HPCC, Amazon machine, that you have access to).  I wouldn&#39;t install this database unless you know you have room on your computer.</p>
+
+<p>Use curl to retrieve them:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.01.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.02.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.03.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.04.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.05.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.06.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.07.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.08.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.09.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.10.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.11.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.12.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.13.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.14.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.15.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.16.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.17.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.18.tar.gz \
+curl -O ftp://ftp.ncbi.nlm.nih.gov/blast/db/nt.19.tar.gz \
+</code></pre></div>
+<p>This downloads the database files into the current working directory from the given FTP site, naming the files for the last part of the path (e.g. ‘mouse.protein.faa.gz’). You can do this from any Web or FTP address.</p>
+
+<p>Now you’ve got these files. How big are they?</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">ls -l *.gz
+</code></pre></div>
+<p>These are large files and they are going to be even larger when you uncompress them.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">gunzip *.faa.gz
+</code></pre></div>
+<p>So, now we’ve got the database files, but BLAST requires that each subject database be preformatted for use; this is a way of speeding up certain types of searches. To do this, we have to format the database.  You should do:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">formatdb -i nt.*.faa -o T -p F
+</code></pre></div>
+<p>The -i parameter gives the name of the database, the -o parameter says “save the results”, and the -p parameter says “this is a protein database”. For DNA, you’d want to use ‘-p F’, or false.</p>
+
+<p>Before we start a BLAST of all of our sequences, we need to make sure our blast is working.  To do this, we want to start with something small. Let’s take a few sequences off the top of the mouse protein set:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">head nt.01.fasta &gt; nt_first.fasta
+</code></pre></div>
+<p>Here, the program ‘head’ takes the first ten lines from that file, and the ‘&gt;’ tells UNIX to put them into another file, <code>nt-first.fasta</code>. </p>
+
+<p>Just a reminder:</p>
+
+<p><em>1.</em> UNIX generally doesn’t care what the file is called, so ‘.faa’ and ‘.fa’ are all the same to it.
+<em>2.</em> UNIX utilities work well with text files, and almost everything you’ll encounter is a basic text file. This is different from Windows and Mac, where more complicated formats are used that can’t be as easily dealt with on UNIX.</p>
+
+<p>Now try a BLAST:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">blastall -i nt-first.fasta -d nt -p blastn
+</code></pre></div>
+<p>You can do three things at this point. </p>
+
+<p>First, you can scroll up in your terminal window to look at the output.  </p>
+
+<p>Second, you can save the output to a file:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">blastall -i nt-first.fasta -d nt -p blastn -o out.txt
+</code></pre></div>
+<p>and then use ‘less’ to look at it:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">less out.txt
+</code></pre></div>
+<p>and third, you can pipe it directly to less, by which I mean you can send all of the output to the ‘less’ command without saving it to a file:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">blastall -i nt-first.fasta -d nt -p blastn | less
+</code></pre></div>
+<h3 id="different-blast-options">Different BLAST options</h3>
+
+<p>BLAST has lots and lots and lots of options. Run ‘blastall’ by itself to see what they are. Some of the most useful ones are ‘-v’, ‘-b’, and ‘-e’.</p>
+
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'edamame'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+
+                    </div>
+
+                
+            </div>
+
+
+            <div class=row-fluid>
+                <div id=footer class=span12>
+                    Documentation for <a href="http://edamame-course.org">EDAMAME</a>.
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function orderNav() {
+                var list,
+                    section,
+                    header,
+                    sections = [],
+                    lists = {},
+                    headers = {};
+
+                var navUl = document.querySelectorAll('#navigation ul')[0],
+                    navLis = document.querySelectorAll('#navigation ul li');
+
+                if (!navUl) return;
+
+                for (var i = 0; i < navLis.length; i++) {
+                    var order, li = navLis[i];
+
+                    if (li.classList.contains('nav-header')) {
+                        section = li.textContent || li.innerText;
+                        sections.push(section);
+                        headers[section] = li;
+                        continue;
+                    }
+
+                    if (!lists[section]) {
+                        lists[section] = [];
+                    }
+
+                    order = parseFloat(li.getAttribute('data-order'))
+                    lists[section].push([order, li]);
+                }
+
+                for (var i = 0; i < sections.length; i++) {
+                    section = sections[i];
+                    list = lists[section].sort(function(a, b) {
+                        return a[0] - b[0];
+                    });
+
+                    if (header = headers[section]) {
+                        navUl.appendChild(header);
+                    }
+                    for (var j = 0; j < list.length; j++) {
+                        navUl.appendChild(list[j][1]);
+                    }
+                }
+            }
+
+            if (document.querySelectorAll) orderNav();
+        </script>
+    </body>
+</html>

@@ -126,11 +126,13 @@ of the tutorial you can download it here:</p>
 </code></pre></div>
 <p>There should be four new resemblance matrices in the new directory.  We&#39;re going to get all crazy and open these outside of the terminal. Use Excel to inspect them, and to compare their values.  This should be a square matrix, and the upper and lower triangles should be mirror-images.  The diagonal should be zero.</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">cd beta_div_even2212
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">Pop quiz:  Why is the diagonal zero?
+</code></pre></div>
+<p>Pop quiz:  Why is the diagonal zero?</p>
 
-##4.2 Using QIIME for visualization:  Ordination
-QIIME scripts can easily make an ordination using principal components analysis (PCoA). We&#39;ll perform PCoA on all resemblance matrices, and compare them.  Documentation is [here](http://qiime.org/scripts/principal_coordinates.html).  As always, make sure you are in the QIIMETutorial directory to execute these analyses.
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">principal_coordinates.py -i beta_div_even2212/ -o beta_div_even2212_PCoA/
+<h2 id="4.2-using-qiime-for-visualization:-ordination">4.2 Using QIIME for visualization:  Ordination</h2>
+
+<p>QIIME scripts can easily make an ordination using principal components analysis (PCoA). We&#39;ll perform PCoA on all resemblance matrices, and compare them.  Documentation is <a href="http://qiime.org/scripts/principal_coordinates.html">here</a>.  As always, make sure you are in the QIIMETutorial directory to execute these analyses.</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">principal_coordinates.py -i beta_div_even2212/ -o beta_div_even2212_PCoA/
 </code></pre></div>
 <p>Notice that the <code>-i</code> command only specifies the directory, and not an individual filepath.  PCoA will be performed on all resemblances in that directory.  If we navigate into the new directory, we see there is one results file for each input resemblence matrix.</p>
 
@@ -175,7 +177,8 @@ Make 2D plots for each PCoA analysis from each of the four difference resemblanc
 </code></pre></div>
 <p>Explore this visualization.  You can filter the minimum number of OTUs, filter by sample ID, or by OTU ID.  </p>
 
-<p><em>Visualization considerations.</em> QIIME visualizations are currently being re-vamped by the developers.  In the next version, there will visualization scripts that are no longer supported, in favor of new tools.  Some of these tools include co-occurence networks enabled by Cytoscape (a MacQIIME add-on), and other visualizations by <a href="http://biocore.github.io/emperor/">emperor</a>.  There is always something new!</p>
+<p><strong>Visualization considerations</strong>
+QIIME visualizations are currently being re-vamped by the developers.  In the next version, there will visualization scripts that are no longer supported, in favor of new tools.  Some of these tools include co-occurence networks enabled by Cytoscape (a MacQIIME add-on), and other visualizations by <a href="http://biocore.github.io/emperor/">emperor</a>.  There is always something new!</p>
 
 <h3 id="4.4-exporting-the-qiime-created-biom-table-for-use-in-other-software-(r,-primer,-phinch,-etc)">4.4  Exporting the QIIME-created biom table for use in other software (R, Primer, Phinch, etc)</h3>
 

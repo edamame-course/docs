@@ -224,13 +224,13 @@
 <p><em>Hint</em>:  Mapping files are also a great way to organize all of the data for posterity in the research group.  New lab members interested in repeating the analysis should have all of the required information in the mapping file.  PIs should ask their students to curate and deposit both mapping files and raw data files.</p>
 
 <p>Guidelines for formatting map files:
-  * Mapping files should be tab-delimited
-  * The first column must be &quot;#SampleIDs&quot; (commented out using the <code>#</code>).
-  *  SampleIDs are VERY IMPORTANT. Choose wisely! Ideally, a user who did not design the experiment should be able to distiguishes the samples easily, as is the case with the Schloss data. SampleIDs must be alphanumeric characters or periods.  They cannot have underscores.
-  * The last column must be &quot;Description&quot;.
-  * There can be as many in-between columns of contextual data as needed.
-  * If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
-  * Excel can cause formatting heartache.  See more details <a href="misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md">here</a>.</p>
+  - Mapping files should be tab-delimited
+  - The first column must be &quot;#SampleIDs&quot; (commented out using the <code>#</code>).
+  -  SampleIDs are VERY IMPORTANT. Choose wisely! Ideally, a user who did not design the experiment should be able to distiguishes the samples easily, as is the case with the Schloss data. SampleIDs must be alphanumeric characters or periods.  They cannot have underscores.
+  - The last column must be &quot;Description&quot;.
+  - There can be as many in-between columns of contextual data as needed.
+  - If you plan to use QIIME for quality control (which we do not need because the PANDAseq merger included QC), the BarcodeSequence and LinkerPrimer sequence columns are also needed, as the second and third columns, respectively.
+  - Excel can cause formatting heartache.  See more details <a href="misc/QIIMETutorial_Misc/MapFormatExcelHeartAche.md">here</a>.</p>
 
 <h3 id="2.2-call-qiime">2.2  Call QIIME</h3>
 
@@ -266,7 +266,7 @@
 </code></pre></div>
 <p>Note that both summary.seqs and count_seqs.py have returned the same total number of seqs in the .fna file.  Use the following command to quit the mothur environment and return to QIIME.  </p>
 
-<p>!(img/QIIMETutorial1_IMG/summary.seqs.jpg)</p>
+<p><img src="img/QIIMETutorial1_IMG/summary_seqs.jpg" alt="img"></p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">quit()
 </code></pre></div>
 <h5 id="2.3.2-optional-step*-:-chimera-checking-with-usearch-before-picking-otus.-usearch-is-an-add-on-to-macqiime-(extra-installation-steps-required).">2.3.2  Optional step* :  chimera checking with USEARCH before picking OTUs.  USEARCH is an add-on to MacQIIME (extra installation steps required).</h5>
@@ -284,11 +284,11 @@ The default QIIME 1.8.0 method for OTU picking is uclust (de novo, but there is 
 <div class="highlight"><pre><code class="language-text" data-lang="text">pick_otus.py -i combined_fasta/combined_seqs.fna -m cdhit -o cdhit_picked_otus/ -s 0.97 -n 100
 </code></pre></div>
 <p>In the above script:
-  *  We tell QIIME to look in the &quot;combined_fasta&quot; directory for the input file <code>-i</code>, &quot;combined_seqs.fna&quot;.
-  *  We chose the clustering method CD-HIT <code>-m</code>
-  *  We defined an output file &quot;cdhit_picked_otus&quot; <code>-o</code>.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
-  *  We define OTUs at 97% sequence identity <code>-s 0.97</code>
-  *  We opt for a pre-filtering step, unique to CD-HIT <code>-n</code> = 100.</p>
+  - We tell QIIME to look in the &quot;combined_fasta&quot; directory for the input file <code>-i</code>, &quot;combined_seqs.fna&quot;.
+  - We chose the clustering method CD-HIT <code>-m</code>
+  - We defined an output file &quot;cdhit_picked_otus&quot; <code>-o</code>.  Names of output files are important, because there are many options for each analysis. Using the algorithm choice in the directory name is key for comparing the output of multiple algothims (for instance, if you wanted to compare how picking OTUs with CD-HIT and with uclust may influence your results.)
+  - We define OTUs at 97% sequence identity <code>-s 0.97</code>
+  - We opt for a pre-filtering step, unique to CD-HIT <code>-n</code> = 100.</p>
 
 <p>Inspect the log and the resulting combined_seqs_otus.txt file, using <code>head</code>.  You should see an OTU ID (yellow box), starting at &quot;0&quot; the the left most column.  After that number, there is a list of Sequence IDs that have been clustered into that OTU ID.  The first part of the sequence ID is the SampleID from which it came (green box), and the second part is the sequence number within that sample (purple box).  </p>
 
@@ -343,11 +343,11 @@ Inspect the head of the new fasta file, cdhit_rep_seqs.fasta.</p>
 <h2 id="where-to-find-qiime-resources-and-help">Where to find QIIME resources and help</h2>
 
 <ul>
-<li> <a href="qiime.org">QIIME</a> offers a suite of developer-designed <a href="http://www.qiime.org/tutorials/tutorial.html">tutorials</a>.</li>
-<li> <a href="http://www.qiime.org/scripts/index.html">Documentation</a> for all QIIME scripts.</li>
-<li> There is a very active <a href="https://groups.google.com/forum/#!forum/qiime-forum">QIIME Forum</a> on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!</li>
-<li> The <a href="http://qiime.wordpress.com/">QIIME Blog</a> provides updates like bug fixes, new features, and new releases.</li>
-<li> QIIME development is on <a href="https://github.com/biocore/qiime">GitHub</a>.</li>
+<li><a href="qiime.org">QIIME</a> offers a suite of developer-designed <a href="http://www.qiime.org/tutorials/tutorial.html">tutorials</a>.</li>
+<li><a href="http://www.qiime.org/scripts/index.html">Documentation</a> for all QIIME scripts.</li>
+<li>There is a very active <a href="https://groups.google.com/forum/#!forum/qiime-forum">QIIME Forum</a> on Google Groups.  This is a great place to troubleshoot problems, responses often are returned in a few hours!</li>
+<li>The <a href="http://qiime.wordpress.com/">QIIME Blog</a> provides updates like bug fixes, new features, and new releases.</li>
+<li>QIIME development is on <a href="https://github.com/biocore/qiime">GitHub</a>.</li>
 </ul>
 
 <hr>

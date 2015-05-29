@@ -1,0 +1,60 @@
+<h2 id="background-on-quality-trimming">Background On Quality Trimming</h2>
+
+<p>When DNA sequencing takes place, errors are inevitable.  No sequencing method is perfect and some are drastically different than others in regard to sequence length and quality.  We&#39;re going to trim the poor quality tail end sections of our Illumina reads.  Although in general Illumina reads are very high quality, this degradation at the end of the sequencing run is typical of the Illumina sequencing platforms.</p>
+
+<p>Some sequencing centers will remove library adapters (our sequencing center does), but you will have to check with your data provider to know what they give you and ALWAYS check for your self to verify what you have been told.</p>
+
+<p>As always, you want to make sure you read the manual of any tool to be sure you know what the tool is doing to your data and if that is the right tool for the job.  Knowing which tool to use is very important -- you wouldn&#39;t use a saw to put a nail in a piece of wood, would you?</p>
+
+<p>We&#39;ll be using a tool which is not aware of paired-end reads. This is fine as the downstream metagenome assembly program we will use (megahit) only takes single end reads.  If you choose to use a different assembly program that accepts (or even requires!) paired-end reads then you will have to choose a tool to do trimming on the paired-ends.  </p>
+
+<h2 id="quality-trimming-your-sequence-data">Quality Trimming Your Sequence Data</h2>
+
+<ol>
+<li> Start a <code>m1.xlarge</code> machine from Amazon Web Services running the EDAMAME AWS ami (insert ami here).  This instance has about 15 GB of RAM, and 2 CPUs, and should be enough to complete the assembly of the example data set we will use.</li>
+</ol>
+
+<p><strong>Note:</strong> One of the issues with processing whole genome shotgun data is how long it takes for the computer to process many steps of the workflow.  This can be time consuming and you should consider using <code>screen</code> or <code>tmux</code> to ensure that an internet connection issue does not cause you to lose your workflow progress.</p>
+
+<p><strong>Pro-Tip:</strong> You&#39;ll also want to keep in mind that these assemblies take a lot of computer power to run which can cost you some money -- for your own benefit, you can try to optimize your scripts on a desktop or laptop before you actually fire up the AWS instance of this size.</p>
+
+<ol>
+<li> First, let&#39;s get an idea of some quality stats from our data.  We&#39;re going to first use the <code>fastx_quality_stats</code> <a href="http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_statistics_usage">script</a> from the Hannon Lab&#39;s <a href="http://hannonlab.cshl.edu/fastx_toolkit/index.html">fastx-toolkit</a> package.</li>
+</ol>
+<div class="highlight"><pre><code class="language-text" data-lang="text">fastx_quality_stats -i &lt;filename&gt;.fastq.gz -o quality.txt
+
+cat quality.txt
+</code></pre></div>
+<p>This will give us some idea of what we are dealing with.  We&#39;ll want to keep this in mind when we check the quality after trimming.</p>
+
+<p>Then we run this command:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">gunzip -c &lt;filename&gt;.fastq.gz | fastq_quality_filter -Q33 -q 30 -p 50 | gzip -9c &gt; &lt;filename&gt;.qc.fastq.gz
+</code></pre></div>
+<p>This command first takes your data file and unzips it, then uses the <code>fastq_quality_filter</code> <a href="http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_quality_filter_usage">script</a> from Hannon Lab&#39;s <a href="http://hannonlab.cshl.edu/fastx_toolkit/index.html">fastx-toolkit</a> to trim the data using Illumina-33 <a href="http://en.wikipedia.org/wiki/Phred_quality_score">Phred quality score</a>.    The last part of the command then zips up the data again.</p>
+
+<p>Note that you can modify the <code>fastq_quality_filter</code> <a href="http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_quality_filter_usage">script</a> to trim to any specific length or quality level that you desire.  As always, read the <a href="http://hannonlab.cshl.edu/fastx_toolkit/commandline.html#fastq_quality_filter_usage">manual</a> for information on how to use a script.</p>
+
+<p>If when you are using your own data, the <code>fastq_quality_filter</code> complains about invalid quality scores, first try removing the -Q33 in the command.  There are numerous types of quality scores and you may have older data which did not use the Q33 output.  For more information on fastq quality scores, <a href="http://en.wikipedia.org/wiki/FASTQ_format">this is a good overview</a>.</p>
+
+<p>For a sanity check, let&#39;s use the <code>fastx_quality_stats</code> script again to see what changed in our trimmed data files:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">fastx_quality_stats -i &lt;filename&gt;.qc.fastq.gz -o qc_quality.txt
+
+cat quality.txt
+
+cat qc_quality.txt
+</code></pre></div>
+<p>What are the differences between the raw data and the quality trimmed data?</p>
+
+<h2 id="other-tools-for-quality-trimming">Other tools for quality trimming</h2>
+
+<p>There are other tools for quality trimming your data -- some are for specific types of data and have different features.  It&#39;s a good idea to read the manual of each tool and do a sanity check on your data after using the tools (at the very least <code>head</code>, <code>tail</code>, <code>more</code>, <code>less</code>, <em>etc</em>.) to see that you are actually removing what you think you are removing.</p>
+
+<p>Some handy quality and/or adapter trimming tools you might want to investigate are:
+    1. <a href="http://www.usadellab.org/cms/?page=trimmomatic">Trimmomatic</a> - all purpose
+    2. <a href="https://code.google.com/p/cutadapt/">cutadapt</a> - adapter trimming
+    3. <a href="https://github.com/najoshi/sickle">sickle</a> - read quality trimming
+    4. <a href="https://github.com/vsbuffalo/scythe">scythe</a> - adapter contamination trimming</p>
+
+<h2 id="next-step">Next step</h2>
+
+<p>Now we&#39;re going to take our quality trimmed reads and run digital normalization on the reads to remove redundant information and also remove some erroneous information.</p>
