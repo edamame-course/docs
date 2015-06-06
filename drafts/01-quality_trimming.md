@@ -1,6 +1,6 @@
 ---
 title: Quality Trimming Raw Metagenomic Sequencing
-layout: post
+layout: post 
 date:
 category : tutorial
 tags : []
