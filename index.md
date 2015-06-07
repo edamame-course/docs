@@ -24,34 +24,34 @@ ________________________________________________________________________________
 ### Tutorials by topic
 
 ##### Getting around at the command line
-    * Terminal basics
-    * Automation and text matching tips
+* Terminal basics
+* Automation and text matching tips
 ##### Cloud computing
-    * Amazon EC2 start-up
-    * File transfer to the EC2
+* Amazon EC2 start-up
+* File transfer to the EC2
 ##### Amplicon analysis
-    * Assessing sequencing quality
-    * Subsampling a large amplicon dataset for developing an analysis workflow
-    * Paired end merging (with PANDASeq)
-    * QIIME workflow: rarefaction, building an OTU table, diversity analysis
-    * mothur workflow: rarefaction, building an OTU table, diversity analysis
+* Assessing sequencing quality
+* Subsampling a large amplicon dataset for developing an analysis workflow
+* Paired end merging (with PANDASeq)
+* QIIME workflow: rarefaction, building an OTU table, diversity analysis
+* mothur workflow: rarefaction, building an OTU table, diversity analysis
 ##### Shotgun metagenome analysis
-    * Subsampling a large metagenome dataset for developing an analysis workflow
-    * Quality Trimming
-    * Digital normalization
-    * Assembly with MEGAHit
-    * Annotation of assembled reads
+* Subsampling a large metagenome dataset for developing an analysis workflow
+* Quality Trimming
+* Digital normalization
+* Assembly with MEGAHit
+* Annotation of assembled reads
 ##### R
-    * R basics
-    * Advanced R
-    * R visualizations
+* R basics
+* Advanced R
+* R visualizations
 ##### Using Databases
-    * Local BLAST
-    * Using APIs to access NCBI and MG-RAST data
+* Local BLAST
+* Using APIs to access NCBI and MG-RAST data
 
 ____________________________________________________________________________________________________
 
-#Schedule EDAMAME 2015
+### Tutorials by 2015 Schedule
 * [21 June 2015](#21) <br>
 * [22 June 2015](#22) <br>
 * [23 June 2015](#23) <br>
@@ -66,14 +66,14 @@ ________________________________________________________________________________
 
 #### <a name="21"></a> Sunday 21 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 15:00     | Check in after 3 pm | Front Desk at McCrary Dining Hall |
 | 19:00 | Meet & Greet (optional)     |    Carriage House Classroom |
 Enjoy the summer solstice at the lake!
 
 #### <a name="22"></a> Monday 22 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00     | Breakfast | McCrary Dining Hall |
 | 09:00      | Welcome & Introductions     |  Carriage House Classroom |
 | 09:30 | _Assessment_: Front-end (STEM, LLC)    | Carriage House Classroom   |
@@ -92,7 +92,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="23"></a> Tuesday 23 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00     | Breakfast | McCrary Dining Hall |
 | 09:00      | [_Tutorial:_ Merging paired-end reads and Introduction to QIIME](insertlink) (Ashley)    |  Carriage House Classroom |
 | 10:30 | _Break_  | Fresh air, coffee!   |
@@ -105,7 +105,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="24"></a>  Wednesday 24 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00     | Breakfast | McCrary Dining Hall |
 | 09:00      | [_Tutorial:_ mothur](http://www.mothur.org/wiki/MiSeq_SOP) (Schloss lab)    |  Carriage House Classroom |
 | 10:30 | _Break_  | Tea and coffee, please   |
@@ -119,7 +119,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="25"></a> Thursday 25 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:00 | _Lecture:_ Computing workflows for biologists (Ashley)    |  Carriage House Classroom |
 | 09:30 | _Lecture:_ Why metagenomics is flawed and why you want to do it (Josh)    |  Carriage House Classroom |
@@ -135,7 +135,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="26"></a> Friday 26 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:00 | [_Tutorial:_ Using APIs to access data in NCBI and MG-RAST](http://adina-howe.readthedocs.org/en/latest/ncbi/) (Jin)    |  Carriage House Classroom |
 | 10:30 | _Break_  | STRETCH  |
@@ -149,7 +149,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="27"></a> Saturday 27 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:30 | [_Tutorial:_ Introduction to ecological analysis in R](insertlink) (Stuart)    |  Carriage House Classroom |
 | 10:30 | _Break_  | Yes!  |
@@ -163,7 +163,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="28"></a> Sunday 28 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 09:30 | Brunch  | Carriage House Classroom  |
 |10:00 | _Guest Lecture:_ Informal Q&A with Jim Tiedje (Michigan State) | Carriage House Classroom   |
 | 12:00 | Lunch   | McCrary Dining Hall   |
@@ -175,7 +175,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="29"></a> Monday 29 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:30 | _Lecture/Demo:_ Ribosomal Database Project (Jim Cole, Michigan State)    |  Carriage House Classroom |
 | 10:30 | _Break_  | Tea and coffee, please   |
@@ -189,7 +189,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="30"></a> Tuesday 30 June 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:30 | [_Tutorial:_ Metagenome annotation wrap-up](insertlink)(Josh)    |  Carriage House Classroom |
 | 10:30 | _Break_  | Tea and coffee, please   |
@@ -203,7 +203,7 @@ Enjoy the summer solstice at the lake!
 
 #### <a name="01"></a> Wednesday 01 July 2015
 | Time       | Activity        | Location  |
-| ------------- |:-------------:| :-----:|
+|:-------------:|:-------------:|:-----:|
 | 08:00 | Breakfast | McCrary Dining Hall |
 | 09:30 | [_Demo:_ Data visualization](insertlink) (TBD)  |  Carriage House Classroom |
 | 10:30 | _Break_  | Tea and coffee, please   |
