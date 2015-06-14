@@ -7,7 +7,7 @@ tags : [tutorials, information]
 ---
 {% include JB/setup %}
 
-Our AWS ami can be found by searching for " ".
+Our AWS ami can be found by searching for `EDAMAME-2015` or `ami-af04f2c4`.  [See this page for help](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/usingsharedamis-finding.html) on finding public AMIs.
 
 **Here's what on the AMI and everything *should* be playing well together:**
 
