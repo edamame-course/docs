@@ -1,4 +1,11 @@
-# Self guided tour of databases
+---
+title:
+layout: post
+date: 2014-08-19
+category : 
+tags : []
+---
+{% include JB/setup %}# Self guided tour of databases
 
 MG-RAST/ SRA / SiLVA / greengenes / RDP / VAMPS / PHAST / UNITE
 

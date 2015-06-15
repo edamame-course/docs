@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Installing QIIME Virtual Box for Windows 7"
+date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---

@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Installing & Connecting to Dropbox on your EC2 machine (or any machine)"
+date: 2014-08-14
 comments: true
 date: 2014-08-15 18:44:36
 ---

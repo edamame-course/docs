@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Running BLAST from the command line to identify environmental sequences"
+date: 2014-08-16
 comments: true
 date: 2014-08-16 16:44:36
 ---

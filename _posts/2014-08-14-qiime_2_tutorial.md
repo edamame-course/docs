@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "QIIME Tutorial 2"
+date: 2014-08-14
 comments: true
 date: 2014-08-14 08:44:36
 ---

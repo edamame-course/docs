@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Introduction to R Tutorial"
+date: 2014-08-18
 comments: true
 date: 2014-08-18 08:55:36
 ---

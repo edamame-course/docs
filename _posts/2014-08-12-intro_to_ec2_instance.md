@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "How to set up an Amazon EC2 Instance"
+date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---

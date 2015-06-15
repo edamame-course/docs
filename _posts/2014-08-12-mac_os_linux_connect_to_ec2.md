@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Mac OS & Linux Users: Connecting to your EC2 Instance"
+date: 2014-08-12
 comments: true
 date: 2014-08-12 18:44:36
 ---

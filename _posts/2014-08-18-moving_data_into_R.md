@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Moving data from one program to another"
+date: 2014-08-18
 comments: true
 date: 2014-08-18 12:55:36
 ---

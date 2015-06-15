@@ -1,6 +1,7 @@
 ---
 layout: page
 title: "Getting Set Up For The Course"
+date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---
