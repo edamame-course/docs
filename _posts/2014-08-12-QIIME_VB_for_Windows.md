@@ -5,6 +5,7 @@ date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---
+{% include JB/setup %}
 
 These directions are slightly modified from those provided by [QIIME.org][1].
 ([http://qiime.org/install/virtual_box.html][2])

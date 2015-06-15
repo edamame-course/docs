@@ -5,6 +5,8 @@ date: 2014-08-18
 comments: true
 date: 2014-08-18 08:55:36
 ---
+{% include JB/setup %}
+
 ###Introduction to R tutorial by Stuart Jones, University of Notre Dame
 
 *  Download the input files for the tutorial [here](https://github.com/edamame-course/docs/tree/gh-pages/extra/Jones_R_Tutorial_Files?raw=true)

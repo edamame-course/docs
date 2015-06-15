@@ -2,6 +2,7 @@
 layout: default
 title: "Welcome to EDAMAME!"
 ---
+{% include JB/setup %}
 
 ### Welcome to the EDAMAME course!
 

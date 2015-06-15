@@ -5,6 +5,7 @@ date: 2014-08-16
 comments: true
 date: 2014-08-16 16:44:36
 ---
+{% include JB/setup %}
 
 <h3 id="tutorial-on-running-blast-locally">Tutorial on running blast locally</h3>
 <h2 id="how-to-make-a-blast-database-by-formatting-a-local-file">How to make a blast database by formatting a local file</h2>

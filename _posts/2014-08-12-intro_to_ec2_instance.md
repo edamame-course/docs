@@ -5,7 +5,7 @@ date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---
-
+{% include JB/setup %}
 
 Go to [Amazon Web Services](https://aws.amazon.com) in a web browser.
 

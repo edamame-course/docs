@@ -5,6 +5,7 @@ date: 2014-08-14
 comments: true
 date: 2014-08-15 18:44:36
 ---
+{% include JB/setup %}
 
 **IMPORTANT:** If you are a Dropbox user, you can use it to sync and "instantly" move files from your EC2 to your laptop (and vice versa).  This is handy if you need to use the computer power of EC2 to do OTU clustering or chimera checking, but then want to do the less memory intensive stuff on your desktop or laptop computer.
 

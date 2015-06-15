@@ -5,6 +5,7 @@ date: 2014-08-12
 comments: true
 date: 2014-08-12 08:55:36
 ---
+{% include JB/setup %}
 
 One of our major challenges we face in teaching this course is dealing with differences in the computer operating systems.  Most tools for bioinformatics are for Linux based machines.  Also, installing analysis programs and thier dependencies is not always easy.  While we'd like everyone to have working versions of the software on their computers, we realize this is not always possible, so we'll be using both virtual cloud machines as well as your own laptops.  
 

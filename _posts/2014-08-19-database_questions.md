@@ -2,10 +2,12 @@
 title:
 layout: post
 date: 2014-08-19
-category : 
+category : tutorial
 tags : []
 ---
-{% include JB/setup %}# Self guided tour of databases
+{% include JB/setup %}
+
+# Self guided tour of databases
 
 MG-RAST/ SRA / SiLVA / greengenes / RDP / VAMPS / PHAST / UNITE
 

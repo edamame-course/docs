@@ -5,6 +5,7 @@ date: 2014-08-12
 comments: true
 date: 2014-08-12 18:44:36
 ---
+{% include JB/setup %}
 
 Windows Users follow these directions to install MobaXterm and access your EC2 Instance:
 

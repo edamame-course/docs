@@ -5,6 +5,7 @@ date: 2014-08-18
 comments: true
 date: 2014-08-18 12:55:36
 ---
+{% include JB/setup %}
 
 ### **1.**  Moving data from QIIME:  converting the .biom table
 

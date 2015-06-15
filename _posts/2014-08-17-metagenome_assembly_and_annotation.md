@@ -5,6 +5,7 @@ date: 2014-08-17
 comments: true
 date: 2014-08-19 08:55:36
 ---
+{% include JB/setup %}
 
 #### **1.** Assembling
 

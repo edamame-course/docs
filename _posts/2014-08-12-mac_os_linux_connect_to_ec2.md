@@ -5,6 +5,7 @@ date: 2014-08-12
 comments: true
 date: 2014-08-12 18:44:36
 ---
+{% include JB/setup %}
 
 ##Mac OS & Linux Users, connecting to your Amazon EC2 instance at the command line is pretty easy.
 
