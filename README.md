@@ -1,1 +1,1 @@
-Documentation for [EDAMAME course](http:edamame-course.org).
+Documentation for EDAMAME course.
